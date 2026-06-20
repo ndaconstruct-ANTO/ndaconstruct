@@ -43,13 +43,13 @@ BG_FOLDERS = {
     "gris_argent": "gris_argent", "or_legendary": "or_legendary",
 }
 
-# Dégradé radial : (couleur centre, couleur bord). Centre clair -> bord foncé.
+# Dégradé radial PRONONCÉ : centre clair -> bords nettement plus foncés.
 BG_COLORS = {
-    "vert":        ((120, 210, 150), (18, 70, 45)),
-    "bleu":        ((120, 170, 235), (16, 44, 92)),
-    "rouge":       ((225, 120, 120), (92, 18, 26)),
-    "gris_argent": ((224, 226, 230), (92, 96, 106)),
-    "or_legendary": ((247, 218, 128), (120, 88, 24)),
+    "vert":        ((150, 240, 180), (6, 38, 24)),
+    "bleu":        ((140, 195, 248), (6, 24, 64)),
+    "rouge":       ((238, 145, 145), (60, 8, 14)),
+    "gris_argent": ((238, 240, 244), (62, 66, 76)),
+    "or_legendary": ((253, 230, 150), (92, 64, 14)),
 }
 
 
