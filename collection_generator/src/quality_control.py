@@ -191,6 +191,21 @@ def check_image(path: Path, config: Config) -> list:
     if subj_h < min_h_ratio:
         issues.append((REVIEW, f"Personnage trop petit (hauteur={subj_h:.0%})"))
 
+    # Chaussures : la bande basse (~82%-96% de la hauteur) doit contenir de la
+    # matière (pieds chaussés). Si elle est vide, signaler des pieds nus.
+    band_top = int(0.82 * h)
+    band_bottom = int(0.96 * h)
+    band_nonwhite = 0
+    for y in range(band_top, band_bottom, step):
+        row = y * w * ch
+        for x in range(0, w, step):
+            o = row + x * ch
+            if not (data[o] >= white_min and data[o + 1] >= white_min
+                    and data[o + 2] >= white_min):
+                band_nonwhite += 1
+    if band_nonwhite < step:  # quasiment rien en bas = pas de chaussures visibles
+        issues.append((REVIEW, "Chaussures non détectées en bas de l'image (pieds nus ?)"))
+
     return issues
 
 
@@ -204,15 +219,64 @@ def _status_from(issues: list) -> str:
     return VALID
 
 
+# Check-list de cohérence (section 12 du cahier des charges).
+# auto = vérifié automatiquement ; visual = à contrôler visuellement.
+_CONSISTENCY_RULES = [
+    ("Modèle maître utilisé", "visual"),
+    ("Posture identique", "visual"),
+    ("Taille identique", "auto"),
+    ("Cadrage identique", "auto"),
+    ("Espacements identiques", "auto"),
+    ("Visage inchangé", "visual"),
+    ("Morphologie inchangée", "visual"),
+    ("Personnage entièrement visible", "auto"),
+    ("Porte des chaussures", "auto"),
+    ("Aucune main humaine", "visual"),
+    ("Exactement un objet", "auto"),
+    ("Objet dans la patte droite (gauche de l'image)", "visual"),
+    ("Patte gauche vide", "visual"),
+    ("Fond blanc", "auto"),
+    ("Aucun logo commercial", "visual"),
+    ("Rendu ultra-réaliste", "visual"),
+]
+
+
 def build_report(combo: Combination, config: Config, image_path: Path | None) -> dict:
-    """Construit le rapport de validation d'une combinaison/image."""
+    """Construit le rapport de validation d'une combinaison/image (+ check-list)."""
     issues = check_logical(combo, config)
-    if image_path and Path(image_path).exists():
+    image_checked = bool(image_path and Path(image_path).exists())
+    if image_checked:
         issues += check_image(image_path, config)
+
+    reasons = [f"[{lvl}] {msg}" for lvl, msg in issues]
+    blob = " ".join(reasons).lower()
+
+    # Construit la check-list : par défaut OK pour l'auto, sinon le souci détecté
+    # rétrograde la ligne ; les lignes "visual" sont marquées À CONTRÔLER.
+    checklist = {}
+    for label, kind in _CONSISTENCY_RULES:
+        if kind == "visual":
+            checklist[label] = "À CONTRÔLER (visuel)"
+        else:
+            checklist[label] = VALID
+    if "non carrée" in blob or "résolution" in blob:
+        checklist["Cadrage identique"] = REVIEW
+        checklist["Taille identique"] = REVIEW
+    if "coupé" in blob:
+        checklist["Personnage entièrement visible"] = REVIEW
+    if "non centré" in blob or "trop petit" in blob:
+        checklist["Espacements identiques"] = REVIEW
+    if "chaussures non détectées" in blob:
+        checklist["Porte des chaussures"] = REVIEW
+    if "objet" in blob and "incohérent" in blob:
+        checklist["Exactement un objet"] = REJECT
+    if "fond non" in blob or "image vide" in blob:
+        checklist["Fond blanc"] = REJECT
 
     return {
         "id": combo.uid,
         "status": _status_from(issues),
-        "reasons": [f"[{lvl}] {msg}" for lvl, msg in issues],
-        "image_checked": bool(image_path and Path(image_path).exists()),
+        "reasons": reasons,
+        "image_checked": image_checked,
+        "consistency_checklist": checklist,
     }

@@ -23,7 +23,7 @@ from .duplicate_checker import DuplicateChecker
 from .image_provider import ImageProviderError, get_provider
 from .metadata_generator import file_base, write_all
 from .prompt_builder import PromptBuilder
-from .quality_control import build_report
+from .quality_control import REJECT, build_report
 from .rarity_engine import assign_rarity, trait_statistics
 from .utils import OUTPUT_DIR, ensure_dir, load_config
 
@@ -56,6 +56,12 @@ def _build_parser() -> argparse.ArgumentParser:
     g.add_argument("--output-dir", type=Path, default=OUTPUT_DIR, help="Dossier de sortie.")
     g.add_argument("--fresh", action="store_true", help="Ignorer le registre existant.")
     g.add_argument("--preview", type=int, default=10, help="Nombre d'exemples affichés.")
+    g.add_argument(
+        "--max-retries",
+        type=int,
+        default=1,
+        help="Régénérations max si une image réelle est REFUSÉE (défaut: 1).",
+    )
     g.set_defaults(func=_cmd_generate)
 
     lt = sub.add_parser("list-traits", help="Lister pelages, yeux et styles disponibles.")
@@ -119,6 +125,11 @@ def _cmd_generate(args: argparse.Namespace) -> int:
 
     mode = f"RÉEL ({provider.name})" if provider.is_real else "SIMULATION (aucune dépense)"
     print(f"Mode : {mode}")
+
+    # Image maître de référence (verrouillage du même lionceau).
+    reference = _load_reference(cfg) if provider.is_real else None
+    if provider.is_real:
+        print("Référence maître : " + ("ACTIVE ✅" if reference else "absente (texte→image)"))
     print(f"Génération de {len(combos)} lionceau(x)…")
 
     images_dir = ensure_dir(output_dir / "images")
@@ -132,19 +143,12 @@ def _cmd_generate(args: argparse.Namespace) -> int:
                 print(f"  ! existe déjà, conservé : {target.name}")
                 image_path = target
             else:
-                try:
-                    data = provider.generate(
-                        prompts[combo.uid]["positive"],
-                        prompts[combo.uid]["negative"],
-                        size=_OPENAI_SQUARE_SIZE,
-                        seed=combo.seed,
-                    )
-                except ImageProviderError as exc:
-                    print(f"erreur image {combo.uid} : {exc}", file=sys.stderr)
+                image_path = _generate_with_retries(
+                    provider, prompts[combo.uid], combo, cfg, target,
+                    reference, args.max_retries,
+                )
+                if image_path is None:
                     return 1
-                if data:
-                    target.write_bytes(data)
-                    image_path = target
         reports.append(build_report(combo, cfg, image_path))
 
     stats = trait_statistics(combos)
@@ -158,6 +162,48 @@ def _cmd_generate(args: argparse.Namespace) -> int:
             "rapports) est prêt dans le dossier de sortie."
         )
     return 0
+
+
+def _load_reference(cfg) -> bytes | None:
+    """Charge l'image maître de référence si activée et présente."""
+    mm = cfg.master_model
+    if not mm.get("use_reference_image"):
+        return None
+    rel = mm.get("reference_image")
+    if not rel:
+        return None
+    from .utils import PROJECT_ROOT
+
+    path = (PROJECT_ROOT / rel)
+    if path.exists():
+        return path.read_bytes()
+    print(f"  ! image de référence introuvable : {path} (passage en texte→image)")
+    return None
+
+
+def _generate_with_retries(provider, prompt, combo, cfg, target, reference, max_retries):
+    """Génère une image et régénère tant qu'elle est REFUSÉE (jusqu'à max_retries)."""
+    attempts = max(1, max_retries + 1)
+    last_path = None
+    for attempt in range(1, attempts + 1):
+        try:
+            data = provider.generate(
+                prompt["positive"], prompt["negative"],
+                size=_OPENAI_SQUARE_SIZE, seed=combo.seed, reference=reference,
+            )
+        except ImageProviderError as exc:
+            print(f"erreur image {combo.uid} : {exc}", file=sys.stderr)
+            return None
+        if not data:
+            return None
+        target.write_bytes(data)
+        last_path = target
+        report = build_report(combo, cfg, target)
+        if report["status"] != REJECT:
+            return target
+        if attempt < attempts:
+            print(f"  ↻ {combo.uid} REFUSÉ, régénération ({attempt}/{max_retries})…")
+    return last_path
 
 
 def _print_summary(combos, prompts, result, preview: int) -> None:

@@ -4,6 +4,9 @@ Sépare strictement :
   - les éléments FIXES (prompt de base, non modifiable par combinaison) ;
   - les éléments VARIABLES (injectés via les emplacements [VARIABLE]) ;
   - le prompt NÉGATIF officiel.
+
+Règles intégrées (pas seulement écrites) : objet dans la patte DROITE,
+chaussures OBLIGATOIRES et adaptées, pattes félines (jamais de mains humaines).
 """
 
 from __future__ import annotations
@@ -11,7 +14,27 @@ from __future__ import annotations
 from pathlib import Path
 
 from .combination_generator import Combination
-from .utils import PROMPTS_DIR, Config, read_text
+from .utils import PROMPTS_DIR, Config, Style, read_text
+
+
+def shoe_description(style: Style) -> str:
+    """Chaussures adaptées au style (champ dédié, sinon généré, sans marque)."""
+    if style.footwear:
+        return style.footwear
+    return (
+        f"sturdy shoes clearly suited to a {style.name_en.lower()}, original and "
+        f"generic design, no brand and no logo"
+    )
+
+
+def object_phrase(held_object: str) -> str:
+    """Transforme 'Single katana' -> 'a single katana' pour une phrase fluide."""
+    obj = (held_object or "").strip()
+    if not obj or obj.lower() == "none":
+        return "nothing"
+    if obj.lower().startswith("single "):
+        obj = obj[len("single "):]
+    return obj
 
 
 class PromptBuilder:
@@ -25,14 +48,24 @@ class PromptBuilder:
         self._template_cache: dict = {}
 
     # -- éléments variables ---------------------------------------------------
-    def _eye_text(self, eye) -> str:
-        txt = eye.name_en
-        if eye.effect:
-            txt += f" with a subtle {eye.effect} energetic glow"
-        return txt
+    def _eye_text(self, combo: Combination) -> str:
+        left, right = combo.eye_left, combo.eye_right
+        if combo.heterochromia:
+            l = left.name_en + (f" ({left.effect} glow)" if left.effect else "")
+            r = right.name_en + (f" ({right.effect} glow)" if right.effect else "")
+            return f"heterochromia eyes ({l} left eye and {r} right eye)"
+        glow = f" with a subtle {left.effect} energetic glow" if left.effect else ""
+        return f"{left.name_en} eyes{glow}"
 
     def _fur_text(self, fur) -> str:
-        return f"{fur.name_en} ({fur.prompt})" if fur.prompt else fur.name_en
+        base = f"{fur.name_en} realistic fur"
+        return f"{base} ({fur.prompt})" if fur.prompt else base
+
+    def _headwear_text(self, style: Style) -> str:
+        hw = (style.headwear or "").strip()
+        if not hw or hw.lower() == "none":
+            return "no headwear"
+        return f"a {hw}"
 
     # -- template (base ou spécifique au style) -------------------------------
     def _template_for(self, combo: Combination) -> str:
@@ -51,12 +84,11 @@ class PromptBuilder:
         resolution = f"{self.config.resolution} x {self.config.resolution} pixels"
         replacements = {
             "[FUR_COLOR]": self._fur_text(combo.fur),
-            "[LEFT_EYE_COLOR]": self._eye_text(combo.eye_left),
-            "[RIGHT_EYE_COLOR]": self._eye_text(combo.eye_right),
-            "[STYLE]": combo.style.name_en,
+            "[EYE_COLOR]": self._eye_text(combo),
             "[OUTFIT]": combo.style.outfit,
-            "[HEADWEAR]": combo.style.headwear,
-            "[HELD_OBJECT]": combo.held_object,
+            "[HEADWEAR]": self._headwear_text(combo.style),
+            "[SHOES]": shoe_description(combo.style),
+            "[OBJECT]": object_phrase(combo.held_object),
             "[RESOLUTION]": resolution,
         }
         prompt = self._template_for(combo)

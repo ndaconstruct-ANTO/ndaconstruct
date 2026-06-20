@@ -1,19 +1,17 @@
-Premium ultra-realistic 3D collectible anthropomorphic baby lion cub, full body always visible from the top of the head down to the feet, standing perfectly upright and centered in the EXACT SAME neutral, symmetrical, frontal pose on every single image: body facing straight to the camera, head looking directly at the camera, both arms relaxed and hanging straight down along the sides of the body, both feet flat on the ground and parallel. The pose, stance, body rotation, scale and placement must be strictly identical for every character.
+Use the official master lion cub as an immutable character reference. Reproduce exactly the same lion cub identity, facial structure, head shape, muzzle, ears, eye placement, eye size, nose shape, body morphology, body proportions, height, width, arm length, leg length, paw size, upright frontal posture, camera angle, framing, scale, position and spacing.
 
-Compact childlike feline morphology with a rounded feline head that is only slightly larger than the body and stays well-proportioned and natural (NOT oversized, not a bobblehead, not a giant head), short soft muzzle, large rounded ears, dense highly detailed realistic fur, short sturdy body, short arms, short legs, large feline paws, absolutely no human hands, no human fingers, no visible tail, no adult mane.
+The lion cub is standing perfectly upright, facing directly forward and looking directly at the camera, body straight, head straight, shoulders level, legs slightly and identically apart, both feet at the same ground level, arms placed the same way along the body. Full body visible from the top of the head to the bottom of the shoes. The character occupies exactly the same area of the image as the official master reference and stays perfectly centered with identical margins.
 
-The character must preserve the exact same anatomy, facial structure, head-to-body proportions, height, scale, camera angle, posture and placement as the official master lion cub reference.
+The lion cub has [FUR_COLOR] and [EYE_COLOR].
 
-Fur color: [FUR_COLOR].
-Left eye color: [LEFT_EYE_COLOR].
-Right eye color: [RIGHT_EYE_COLOR].
-Character style: [STYLE].
-Outfit: [OUTFIT].
-Headwear: [HEADWEAR].
-Footwear: the lion cub ALWAYS wears shoes or boots that clearly match the [STYLE] outfit and profession, original and generic design, absolutely no brand and no logo, never barefoot.
-The lion cub holds exactly one object: [HELD_OBJECT].
-No second held object.
+The lion cub wears [OUTFIT], [HEADWEAR] and mandatory [SHOES].
 
-Perfectly centered composition, strict front view, camera at torso height, full character entirely inside the image with identical margins around the body, top of head near 8 percent from the upper border, feet near 92 percent of the image height.
+The lion cub holds exactly one [OBJECT] in its anatomical right paw, located on the viewer's left side of the image. The anatomical left paw, on the viewer's right side, remains completely empty.
 
-Pure uniform white #FFFFFF studio background only, completely white, no scenery, no decoration, no gradient, no colored background, no grey background, no metallic background, no text, no frame, no dramatic effects. Soft neutral studio lighting, extremely detailed fur, realistic fabric, realistic leather, realistic metal, precise stitching, premium collectible figure quality, sharp focus, clean professional NFT asset, square 1:1 composition, [RESOLUTION].
+Both upper limbs must remain realistic furry feline lion paws. Absolutely no human hands, no human fingers, no human thumb, no human skin and no human anatomy. The paw holding the object stays a real lion cub paw.
+
+Premium ultra-realistic 3D collectible character, extremely detailed individual fur strands, realistic fabric, realistic stitching, realistic leather, realistic metal, physically accurate materials, professional soft studio lighting, sharp focus, rich colors, high-end NFT collection quality. No flat 2D drawing, no cartoon, no coloring-book style, no plastic texture, no plush toy texture.
+
+Strict square 1:1 format, pure uniform white background only, identical framing, identical character scale, identical margins, identical camera distance, identical frontal pose, full body visible, subtle identical neutral contact shadow beneath the shoes, [RESOLUTION].
+
+Do not alter the master character's face, anatomy, proportions, pose, height, body shape, limb position or placement in the image.

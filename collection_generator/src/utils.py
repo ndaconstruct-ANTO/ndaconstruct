@@ -48,6 +48,7 @@ class Style:
     palette: tuple = ()
     forbidden: tuple = ()
     rarity: str = "Common"
+    footwear: str = ""  # description de chaussures adaptées (optionnel)
 
 
 @dataclass(frozen=True)
@@ -132,6 +133,7 @@ def _style_list(raw: list) -> list:
                 palette=tuple(item.get("palette", []) or []),
                 forbidden=tuple(item.get("forbidden", []) or []),
                 rarity=item.get("rarity", "Common"),
+                footwear=item.get("footwear", ""),
             )
         )
     return out

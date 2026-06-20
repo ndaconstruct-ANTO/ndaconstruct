@@ -41,6 +41,12 @@ composition:
 master_model:
   locked: true
   species: "Lion cub"
+  # IMAGE MAÎTRE OFFICIELLE : référence visuelle IMMUABLE de toute la collection.
+  # Remplacez ce fichier par VOTRE illustration officielle (même nom/chemin).
+  reference_image: "reference/master_lion.png"
+  # Si true ET que l'image existe, la génération réelle part de cette image
+  # (édition basée référence) pour garder exactement le même lionceau.
+  use_reference_image: true
   identity: >
     Premium ultra-realistic 3D collectible anthropomorphic baby lion cub with a
     compact childlike feline morphology, oversized round feline head, short soft

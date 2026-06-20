@@ -64,10 +64,12 @@ class CollectionTests(unittest.TestCase):
         p1 = builder.build(c)["positive"]
         p2 = builder.build(c)["positive"]
         self.assertEqual(p1, p2, "le prompt doit être déterministe")
-        # Les éléments fixes essentiels doivent être présents.
-        for token in ("anthropomorphic baby lion cub", "no visible tail",
-                      "no human hands", "white #FFFFFF studio background"):
+        # Les éléments fixes essentiels (verrouillage) doivent être présents.
+        for token in ("master lion cub", "right paw", "no human hands",
+                      "pure uniform white background", "mandatory"):
             self.assertIn(token, p1)
+        # L'objet doit être annoncé dans la patte droite (gauche de l'image).
+        self.assertIn("viewer's left side", p1)
         # Aucun emplacement non résolu ne doit subsister.
         self.assertNotIn("[", p1)
 
