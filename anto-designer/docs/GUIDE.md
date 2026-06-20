@@ -58,6 +58,27 @@ Choisissez le **nombre d'images**. Le logiciel :
 - Les métadonnées sont dans `output/metadata`.
 - Vous pouvez **exporter** une collection (dossier portable) pour la déplacer.
 
+## 10 bis. Créer TA vraie collection (par clics)
+
+1. Accueil → **« Nouvelle collection »** → donne un nom + la taille (ex. 2048).
+2. Prépare un dossier de **calques** sur ton PC, un sous-dossier par catégorie,
+   **numéroté** pour l'ordre d'empilement :
+   ```
+   mes_calques/
+     1_Fur/      blanc.png  noir.png  or.png ...
+     2_Eyes/     bleu.png   vert.png ...
+     3_Style/    docteur.png  samourai.png ...
+     4_Shoes/    bottes.png  baskets.png ...
+     5_Objet (opt)/  livre.png  katana.png
+   ```
+   - Tous les PNG doivent être **transparents** et **de la même taille** que la
+     collection (ceux d'une autre taille sont ignorés et listés).
+   - « (opt) » dans le nom = catégorie **facultative**.
+3. Dans la fenêtre de la collection → **« Importer des calques (dossier) »** →
+   choisis `mes_calques`.
+4. **« Générer la collection »** → choisis le nombre d'images → **OK**.
+5. **« Ouvrir le dossier de sortie »** pour voir tes images + métadonnées.
+
 ## 11. En cas de problème
 - Cliquez sur **« Copier le rapport de diagnostic »** dans l'accueil.
 - Collez-le pour demander de l'aide (aucune donnée privée inutile).

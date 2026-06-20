@@ -7,7 +7,7 @@ from pathlib import Path
 
 from anto_designer import (
     combination, database, dedup, layer_engine, metadata, pnglib, project,
-    store, validation,
+    service, store, validation,
 )
 from demo.build_demo import build_demo
 
@@ -120,6 +120,67 @@ class EngineTests(unittest.TestCase):
         self.assertNotEqual(imported.id, col.id)
         cats = store.list_categories(self.conn, imported.id)
         self.assertEqual(len(cats), 3)
+
+
+class ServiceTests(unittest.TestCase):
+    def test_import_folder_and_generate(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+        conn = database.connect(root / "s.db")
+        self.addCleanup(conn.close)
+
+        size = 48
+        layers_root = root / "calques"
+        spec = [("1_Fur", ["white", "black"]), ("2_Eyes", ["blue", "green"]),
+                ("3_Objet (opt)", ["book"])]
+        palette = {"white": (240, 240, 240, 255), "black": (20, 20, 20, 255),
+                   "blue": (0, 0, 255, 255), "green": (0, 200, 0, 255),
+                   "book": (150, 90, 20, 255)}
+
+        def _slot_png(path, color, slot):
+            # Chaque catégorie occupe une zone distincte -> composites différents.
+            buf = pnglib.new_canvas(size, size, (0, 0, 0, 0))
+            x0, y0 = slot * 12 + 2, slot * 12 + 2
+            for y in range(y0, y0 + 10):
+                for x in range(x0, x0 + 10):
+                    o = (y * size + x) * 4
+                    buf[o], buf[o + 1], buf[o + 2], buf[o + 3] = color
+            pnglib.write_rgba(path, size, size, buf)
+
+        for slot, (cat, names) in enumerate(spec):
+            d = layers_root / cat
+            d.mkdir(parents=True)
+            for nm in names:
+                _slot_png(d / f"{nm}.png", palette[nm], slot)
+
+        col = service.new_collection(conn, "Imported", size, size)
+        rep = service.import_layers_from_folder(conn, col, layers_root)
+        self.assertEqual(rep["categories"], 3)
+        self.assertEqual(rep["layers"], 5)
+
+        ov = service.collection_overview(conn, col)
+        self.assertEqual(len(ov["categories"]), 3)
+        # 3e catégorie optionnelle.
+        self.assertFalse(ov["categories"][2]["required"])
+
+        out = root / "out"
+        summary = service.generate(conn, col, 4, out, seed=1)
+        self.assertGreaterEqual(summary["generated"], 4)
+
+    def test_import_skips_wrong_size(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+        conn = database.connect(root / "s2.db")
+        self.addCleanup(conn.close)
+        d = root / "lay" / "1_Fur"; d.mkdir(parents=True)
+        _make_layer_png(d / "ok.png", 64, (1, 2, 3, 255))
+        _make_layer_png(d / "bad.png", 32, (1, 2, 3, 255))
+        col = service.new_collection(conn, "Sz", 64, 64)
+        rep = service.import_layers_from_folder(conn, col, root / "lay")
+        self.assertEqual(rep["layers"], 1)
+        self.assertEqual(len(rep["skipped"]), 1)
 
 
 class DemoPipelineTests(unittest.TestCase):

@@ -27,6 +27,16 @@ def read_rgba(path: Path):
     return read_rgba_bytes(Path(path).read_bytes())
 
 
+def read_size(path: Path):
+    """Lit uniquement les dimensions (largeur, hauteur) via l'en-tête IHDR."""
+    raw = Path(path).read_bytes()
+    if raw[:8] != b"\x89PNG\r\n\x1a\n":
+        raise ValueError("Fichier non-PNG")
+    # IHDR commence à l'octet 16 : width(4) height(4)
+    w, h = struct.unpack(">II", raw[16:24])
+    return w, h
+
+
 def read_rgba_bytes(raw: bytes):
     """Décode des octets PNG et retourne (width, height, bytearray RGBA)."""
     if raw[:8] != b"\x89PNG\r\n\x1a\n":

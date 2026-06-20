@@ -11,9 +11,11 @@ from PySide6.QtWidgets import (
 
 from .. import __version__
 from ..branding import BRANDING
-from .. import config
+from .. import config, database, service, store
 from ..logging_setup import diagnostic_report, setup_logging
 from ..resources import icon_path
+from .collection_window import CollectionWindow
+from .dialogs import NewCollectionDialog
 
 
 class MainWindow(QMainWindow):
@@ -21,6 +23,8 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.paths = config.ensure_dirs()
         self.logger = setup_logging(self.paths["logs"])
+        self.conn = database.connect(self.paths["db"])
+        self._open_windows = []  # garde les références (évite la fermeture auto)
         self.setWindowTitle(BRANDING.full_name)
         ico = icon_path()
         if ico:
@@ -47,11 +51,11 @@ class MainWindow(QMainWindow):
         # Cartes d'actions.
         grid = QGridLayout(); grid.setSpacing(16)
         actions = [
-            ("➕ Nouvelle collection", self._todo),
-            ("📂 Ouvrir une collection", self._todo),
+            ("➕ Nouvelle collection", self._new_collection),
+            ("📂 Ouvrir une collection", self._open_collection),
             ("🧪 Lancer la démo", self._run_demo),
-            ("🖼️ Bibliothèque de calques", self._todo),
-            ("⚙️ Générer une collection", self._todo),
+            ("🖼️ Bibliothèque de calques", self._open_collection),
+            ("⚙️ Générer une collection", self._open_collection),
             ("ℹ️ À propos", self._about),
         ]
         for i, (label, handler) in enumerate(actions):
@@ -75,12 +79,37 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(central)
 
     # -- handlers -------------------------------------------------------------
-    def _todo(self) -> None:
-        QMessageBox.information(
-            self, BRANDING.app_name,
-            "Écran en cours de construction dans cette première version.\n"
-            "Le moteur (calques, génération, rareté, métadonnées) est déjà "
-            "fonctionnel et testé — voir la démo.")
+    def _open_window(self, collection) -> None:
+        win = CollectionWindow(self.conn, collection, self.paths)
+        self._open_windows.append(win)
+        win.show()
+
+    def _new_collection(self) -> None:
+        dlg = NewCollectionDialog(self)
+        if not dlg.exec():
+            return
+        name, size = dlg.values()
+        try:
+            collection = service.new_collection(self.conn, name, size, size)
+        except Exception as exc:  # noqa: BLE001
+            QMessageBox.warning(self, "Nouvelle collection", f"Échec : {exc}")
+            return
+        self._open_window(collection)
+
+    def _open_collection(self) -> None:
+        cols = store.list_collections(self.conn)
+        if not cols:
+            QMessageBox.information(
+                self, "Ouvrir une collection",
+                "Aucune collection pour l'instant.\nCliquez « Nouvelle collection ».")
+            return
+        from PySide6.QtWidgets import QInputDialog
+        names = [f"{c.name}  ({c.width}×{c.height})" for c in cols]
+        choice, ok = QInputDialog.getItem(
+            self, "Ouvrir une collection", "Collection :", names, 0, False)
+        if not ok:
+            return
+        self._open_window(cols[names.index(choice)])
 
     def _run_demo(self) -> None:
         try:
