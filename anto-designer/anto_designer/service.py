@@ -10,7 +10,28 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from . import generator, pnglib, store
+from . import generator, imageops, pnglib, store
+
+# Palettes par défaut (recoloration gratuite).
+DEFAULT_FUR_COLORS = {
+    "Blanc": "#F2F2F2", "Bleu Ice": "#BFE6F2", "Noir": "#2A2A2A",
+    "Vert": "#3FA66A", "Mauve": "#7A4FB0", "Gris": "#9AA0A6",
+    "Or": "#E6B422", "Rouge": "#C0392B", "Brun Clair": "#C9A36A",
+}
+DEFAULT_EYE_COLORS = {
+    "Bleu": "#2563EB", "Bleu Ice": "#A8D8EA", "Turquoise": "#1ABC9C",
+    "Vert": "#2ECC71", "Vert Émeraude": "#1E8449", "Jaune": "#F1C40F",
+    "Ambre": "#FFBF00", "Orange": "#E67E22", "Rouge": "#E74C3C",
+    "Rose": "#FF6FAE", "Violet": "#8E44AD", "Doré": "#D4AF37",
+    "Argent": "#C0C0C0", "Noir": "#2C3E50", "Cosmique": "#6C5CE7",
+    "Givre": "#D6F5FF", "Flamme": "#FF7043", "Citron": "#9ACD32",
+    "Nuit": "#1E2A78", "Électrique": "#39FF14",
+}
+
+
+def _hex_rgb(h: str):
+    h = h.lstrip("#")
+    return (int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16))
 
 
 def new_collection(conn, name: str, width: int, height: int, **kwargs):
@@ -152,6 +173,36 @@ def add_layer_file(conn, collection, category_name: str, image_path, *,
                             str(image_path), weight=weight, rarity_tier=rarity_tier,
                             trait_value=stem.title())
     return {"category": match.name, "layer": layer.name}
+
+
+def generate_color_variants(conn, collection, base_image_path, category_name,
+                            colors: dict, *, strength=0.85) -> dict:
+    """Crée GRATUITEMENT des calques recolorés depuis une image de base.
+
+    Pour chaque (nom -> couleur hex), recolore l'image de base en conservant les
+    ombres, enregistre le PNG et ajoute le calque à la catégorie.
+    Idéal pour les 9 pelages et les couleurs d'yeux (aucun coût).
+    """
+    base = Path(base_image_path)
+    w, h, buf = pnglib.read_rgba(base)
+    if (w, h) != (collection.width, collection.height):
+        raise ValueError(
+            f"Image de base {w}x{h} != collection "
+            f"{collection.width}x{collection.height}")
+
+    assets = Path("")  # déterminé par add_layer_file via chemin fourni
+    out_dir = base.parent / f"_variants_{_slug(category_name)}"
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    made = []
+    for name, hexcol in colors.items():
+        variant = bytearray(buf)  # copie
+        imageops.recolor(variant, w, h, _hex_rgb(hexcol), strength=strength)
+        out = out_dir / f"{_slug(category_name)}_{_slug(name)}.png"
+        pnglib.write_rgba(out, w, h, variant)
+        add_layer_file(conn, collection, category_name, out, name=name)
+        made.append(name)
+    return {"category": category_name, "created": made}
 
 
 def generate(conn, collection, count: int, out_dir, *, seed=None,

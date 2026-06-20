@@ -76,6 +76,69 @@ def erase_circle(rgba: bytearray, w: int, h: int, cx: int, cy: int, r: int) -> N
                 rgba[_idx(x, y, w) + 3] = 0
 
 
+def _rgb_to_hsl(r, g, b):
+    r, g, b = r / 255, g / 255, b / 255
+    mx, mn = max(r, g, b), min(r, g, b)
+    l = (mx + mn) / 2
+    if mx == mn:
+        return 0.0, 0.0, l
+    d = mx - mn
+    s = d / (2 - mx - mn) if l > 0.5 else d / (mx + mn)
+    if mx == r:
+        h = (g - b) / d + (6 if g < b else 0)
+    elif mx == g:
+        h = (b - r) / d + 2
+    else:
+        h = (r - g) / d + 4
+    return h / 6, s, l
+
+
+def _hue(p, q, t):
+    if t < 0:
+        t += 1
+    if t > 1:
+        t -= 1
+    if t < 1 / 6:
+        return p + (q - p) * 6 * t
+    if t < 1 / 2:
+        return q
+    if t < 2 / 3:
+        return p + (q - p) * (2 / 3 - t) * 6
+    return p
+
+
+def _hsl_to_rgb(h, s, l):
+    if s == 0:
+        v = int(l * 255)
+        return v, v, v
+    q = l * (1 + s) if l < 0.5 else l + s - l * s
+    p = 2 * l - q
+    return (int(_hue(p, q, h + 1 / 3) * 255),
+            int(_hue(p, q, h) * 255),
+            int(_hue(p, q, h - 1 / 3) * 255))
+
+
+def recolor(rgba: bytearray, w: int, h: int, target_rgb, strength: float = 0.85) -> None:
+    """Recolore un calque vers ``target_rgb`` en CONSERVANT les ombres/lumières.
+
+    Prend la teinte et la saturation de la couleur cible, garde la luminosité de
+    chaque pixel (donc le relief de la fourrure reste réaliste). ``strength``
+    mélange entre couleur d'origine et couleur recolorée. Modifie en place.
+    """
+    th, ts, _ = _rgb_to_hsl(*target_rgb)
+    for i in range(0, len(rgba), 4):
+        if rgba[i + 3] == 0:
+            continue
+        _, _, l = _rgb_to_hsl(rgba[i], rgba[i + 1], rgba[i + 2])
+        nr, ng, nb = _hsl_to_rgb(th, ts, l)
+        if strength >= 1.0:
+            rgba[i], rgba[i + 1], rgba[i + 2] = nr, ng, nb
+        else:
+            rgba[i] = int(rgba[i] * (1 - strength) + nr * strength)
+            rgba[i + 1] = int(rgba[i + 1] * (1 - strength) + ng * strength)
+            rgba[i + 2] = int(rgba[i + 2] * (1 - strength) + nb * strength)
+
+
 def fit_to_canvas(src: bytearray, sw: int, sh: int, dw: int, dh: int,
                   scale: float = 1.0) -> bytearray:
     """Redimensionne (plus proche voisin) en gardant le ratio, centre sur un

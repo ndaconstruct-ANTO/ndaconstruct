@@ -208,6 +208,36 @@ class ImageOpsTests(unittest.TestCase):
         self.assertEqual(len(dst), 32 * 32 * 4)
 
 
+class RecolorTests(unittest.TestCase):
+    def test_recolor_preserves_shading_changes_hue(self):
+        w = h = 8
+        buf = pnglib.new_canvas(w, h, (128, 128, 128, 255))  # gris moyen
+        imageops.recolor(buf, w, h, (255, 0, 0), strength=1.0)  # -> rouge
+        o = 0
+        self.assertGreater(buf[o], buf[o + 1])   # r > g
+        self.assertGreater(buf[o], buf[o + 2])   # r > b
+        self.assertEqual(buf[o + 3], 255)        # alpha conservé
+
+    def test_recolor_skips_transparent(self):
+        w = h = 4
+        buf = pnglib.new_canvas(w, h, (0, 0, 0, 0))
+        imageops.recolor(buf, w, h, (255, 0, 0))
+        self.assertEqual(sum(buf), 0)            # rien changé (tout transparent)
+
+    def test_generate_color_variants(self):
+        tmp = tempfile.TemporaryDirectory(); self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+        conn = database.connect(root / "t.db"); self.addCleanup(conn.close)
+        col = service.new_collection(conn, "Var", 16, 16)
+        base = root / "body.png"; _make_layer_png(base, 16, (150, 150, 150, 255))
+        res = service.generate_color_variants(
+            conn, col, base, "Fur", {"Rouge": "#FF0000", "Bleu": "#0000FF"})
+        self.assertEqual(len(res["created"]), 2)
+        cats = store.list_categories(conn, col.id)
+        fur = next(c for c in cats if c.name == "Fur")
+        self.assertEqual(len(store.list_layers(conn, fur.id)), 2)
+
+
 class TemplateServiceTests(unittest.TestCase):
     def test_example_template_importable(self):
         tmp = tempfile.TemporaryDirectory(); self.addCleanup(tmp.cleanup)
