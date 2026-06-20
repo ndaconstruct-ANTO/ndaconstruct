@@ -179,6 +179,44 @@ def recolor(rgba: bytearray, w: int, h: int, target_rgb, strength: float = 0.85)
             rgba[i + 2] = int(rgba[i + 2] * (1 - strength) + nb * strength)
 
 
+def keep_largest_component(rgba: bytearray, w: int, h: int,
+                           min_keep_ratio: float = 0.02) -> int:
+    """Ne garde que le sujet principal : efface les morceaux opaques DÉTACHÉS
+    (volutes, taches, résidus) qui ne sont pas reliés à la plus grande forme.
+
+    On conserve la plus grande composante connectée + toute composante d'au
+    moins ``min_keep_ratio`` de sa taille (au cas où). Retourne les px effacés.
+    """
+    n = w * h
+    label = bytearray(n)  # 0 = non visité
+    comps = []            # liste de (pixels)
+    for start in range(n):
+        if label[start] or rgba[start * 4 + 3] == 0:
+            continue
+        comp = []
+        dq = deque([start]); label[start] = 1
+        while dq:
+            p = dq.popleft(); comp.append(p)
+            x = p % w; y = p // w
+            for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
+                if 0 <= nx < w and 0 <= ny < h:
+                    q = ny * w + nx
+                    if not label[q] and rgba[q * 4 + 3] != 0:
+                        label[q] = 1; dq.append(q)
+        comps.append(comp)
+    if not comps:
+        return 0
+    largest = max(len(c) for c in comps)
+    threshold = largest * min_keep_ratio
+    cleared = 0
+    for comp in comps:
+        if len(comp) < threshold:        # morceau détaché trop petit -> efface
+            for p in comp:
+                rgba[p * 4 + 3] = 0
+            cleared += len(comp)
+    return cleared
+
+
 def normalize_margins(rgba: bytearray, w: int, h: int, margin_ratio: float = 0.08):
     """Recadre le sujet (zone non transparente) et le recentre avec une MARGE
     uniforme tout autour (≈ ``margin_ratio`` de l'image). Garantit un bord

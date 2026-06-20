@@ -31,6 +31,7 @@ def recut():
         w, h, buf = pnglib.read_rgba(p)
         imageops.remove_background(buf, w, h, tolerance=TOL,
                                    remove_enclosed=True, max_hole_ratio=0.06)
+        imageops.keep_largest_component(buf, w, h)  # enlève volutes/morceaux détachés
         buf = imageops.normalize_margins(buf, w, h, margin_ratio=MARGIN)
         pnglib.write_rgba(TRANSP / os.path.basename(p), w, h, buf)
         if i % 10 == 0:
