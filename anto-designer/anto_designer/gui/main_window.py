@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from PySide6.QtCore import Qt
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (
     QFrame, QGridLayout, QHBoxLayout, QLabel, QMainWindow, QMessageBox,
     QPushButton, QVBoxLayout, QWidget,
@@ -12,6 +13,7 @@ from .. import __version__
 from ..branding import BRANDING
 from .. import config
 from ..logging_setup import diagnostic_report, setup_logging
+from ..resources import icon_path
 
 
 class MainWindow(QMainWindow):
@@ -20,6 +22,9 @@ class MainWindow(QMainWindow):
         self.paths = config.ensure_dirs()
         self.logger = setup_logging(self.paths["logs"])
         self.setWindowTitle(BRANDING.full_name)
+        ico = icon_path()
+        if ico:
+            self.setWindowIcon(QIcon(ico))
         self.resize(1100, 720)
         self._build_home()
 

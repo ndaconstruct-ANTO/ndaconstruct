@@ -8,10 +8,10 @@ demo/_workspace/
 output/
 exports/
 
-# Build Windows
+# Build Windows (artefacts générés ; le .spec source est conservé)
 build/
 dist/
-*.spec
+installer/Output/
 
 # Python
 __pycache__/

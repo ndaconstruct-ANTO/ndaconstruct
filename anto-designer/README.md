@@ -67,7 +67,15 @@ python -m unittest discover -s tests -v
 - Module **IA local optionnel** (création de vêtements/accessoires) — selon GPU.
 - Installateur Windows + icône + `AntoDesigner.exe`.
 
+## 🪟 Créer l'application Windows (icône + double-clic, sans terminal)
+1. Double-cliquez `tools\build_windows.bat` → crée `dist\AntoDesigner\AntoDesigner.exe`.
+2. (Optionnel) Avec **Inno Setup**, compilez `installer\AntoDesigner.iss` → installateur
+   `AntoDesigner-Setup.exe` (raccourci Bureau + menu Démarrer + désinstallation propre).
+
+Guide détaillé : `docs/INSTALL_WINDOWS.md`.
+
 ## Documentation
 - `docs/AUDIT.md` — audit de faisabilité et verdict.
 - `docs/GUIDE.md` — guide pas-à-pas pour débutant.
+- `docs/INSTALL_WINDOWS.md` — créer l'exe et l'installateur Windows.
 - `LICENSES.md` — licences et usage commercial.
