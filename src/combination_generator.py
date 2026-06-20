@@ -93,18 +93,40 @@ class Character:
     index: int
     id: str
     fur: Dict[str, Any]
-    eyes: Dict[str, Any]
+    eyes: Dict[str, Any]                       # œil gauche (et droit si homochromie)
     style: Dict[str, Any]
     obj: Dict[str, Any]
     seed: int
+    eyes_right: Optional[Dict[str, Any]] = None  # œil droit si hétérochromie (§7)
     rarity: Optional[Dict[str, Any]] = None
     rarity_score: Optional[float] = None
     extra: Dict[str, Any] = field(default_factory=dict)
 
     @property
+    def left_eye(self) -> Dict[str, Any]:
+        return self.eyes
+
+    @property
+    def right_eye(self) -> Dict[str, Any]:
+        """Œil droit : identique au gauche sauf hétérochromie explicite."""
+        return self.eyes_right or self.eyes
+
+    @property
+    def heterochromia(self) -> bool:
+        """Vrai si les deux yeux ont des couleurs différentes (§7)."""
+        return self.eyes_right is not None and self.eyes_right["key"] != self.eyes["key"]
+
+    @property
     def combo_key(self) -> str:
-        """Clé d'unicité d'une combinaison (sans la rareté, qui en découle)."""
-        return f"{self.fur['key']}|{self.eyes['key']}|{self.style['key']}|{self.obj['key']}"
+        """Clé d'unicité d'une combinaison (sans la rareté, qui en découle).
+
+        Reste identique à l'historique quand les deux yeux sont de même couleur ;
+        n'inclut l'œil droit que lorsqu'il diffère (hétérochromie).
+        """
+        eyes_key = self.eyes["key"]
+        if self.heterochromia:
+            eyes_key = f"{self.eyes['key']}+{self.right_eye['key']}"
+        return f"{self.fur['key']}|{eyes_key}|{self.style['key']}|{self.obj['key']}"
 
     def trait_dict(self) -> Dict[str, str]:
         """Dictionnaire simple {trait: clé} pour les règles interdites/rares."""
@@ -163,6 +185,9 @@ class CombinationGenerator:
         self.master_seed = int(gen_cfg.get("master_seed", 0))
         self.enforce_unique = bool(gen_cfg.get("enforce_unique_combinations", True))
         self.max_attempts = int(gen_cfg.get("max_attempts_per_image", 2000))
+        # Probabilité qu'un personnage ait deux yeux de couleurs différentes (§7).
+        # 0.0 par défaut => collection homochromatique, séquence aléatoire inchangée.
+        self.heterochromia_chance = float(gen_cfg.get("heterochromia_chance", 0.0))
         self.id_width = 4
 
     def max_unique_combinations(self) -> int:
@@ -242,6 +267,17 @@ class CombinationGenerator:
         style = _weighted_choice(rng, self.bundle.styles)
         obj = _pick_object(rng, style)
 
+        # Hétérochromie optionnelle (§7). Le court-circuit garantit qu'avec une
+        # probabilité de 0 (défaut) aucun tirage supplémentaire n'est consommé :
+        # la séquence aléatoire — donc toute la collection — reste inchangée.
+        eyes_right = None
+        if self.heterochromia_chance > 0 and rng.random() < self.heterochromia_chance:
+            for _ in range(8):
+                candidate = _weighted_choice(rng, self.bundle.eye_colors)
+                if candidate["key"] != eyes["key"]:
+                    eyes_right = candidate
+                    break
+
         seed = utils.derive_seed(
             self.master_seed, fur["key"], eyes["key"], style["key"], obj["key"], index
         )
@@ -250,6 +286,7 @@ class CombinationGenerator:
             id=utils.format_id(index, self.id_width),
             fur=fur,
             eyes=eyes,
+            eyes_right=eyes_right,
             style=style,
             obj=obj,
             seed=seed,

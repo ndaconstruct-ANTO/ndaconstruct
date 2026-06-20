@@ -93,9 +93,17 @@ class PromptBuilder:
         style = character.style
         headwear = style.get("headwear")
         shoes = style.get("shoes") or self.default_shoes
+        # Yeux : description unique en homochromie, gauche/droite en hétérochromie (§7).
+        if character.heterochromia:
+            eyes_prompt = (
+                f"heterochromia, left eye {character.left_eye['prompt']}, "
+                f"right eye {character.right_eye['prompt']}"
+            )
+        else:
+            eyes_prompt = character.eyes["prompt"]
         fields = {
             "fur": character.fur["prompt"],
-            "eyes": character.eyes["prompt"],
+            "eyes": eyes_prompt,
             "style": style["outfit_prompt"],
             "object": character.obj["prompt"],
             "headwear": headwear if headwear else "no headwear",

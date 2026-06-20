@@ -28,11 +28,49 @@ class MetadataGenerator:
         self.base_uri = self.collection_cfg.get("base_image_uri", "")
         self.name = self.collection_cfg.get("name", "Lion")
         self.description = self.collection_cfg.get("description", "")
+        # Champs de métadonnées normalisés (§13) et nommage strict (§14).
+        self.id_prefix = self.collection_cfg.get("id_prefix", "LION")
+        self.nft_collection_name = self.collection_cfg.get(
+            "nft_collection_name", "LIONCEAUX NFT"
+        )
+        self.species = self.collection_cfg.get("species", "Lion cub")
+        self.prompt_version = self.collection_cfg.get("prompt_version", "1.0")
+        self.camera = self.collection_cfg.get("camera", "Front view")
+        self.image_cfg = bundle.collection["image"]
+        # Libellé lisible du fond actif (verrouillé pour toute la collection).
+        bg = bundle.collection.get("background", {})
+        active = bg.get("active", "white")
+        self.background_label = bg.get("presets", {}).get(active, {}).get(
+            "name", "Pure white"
+        )
+
+    # -- identifiants et noms de fichiers ----------------------------------
+    def nft_id(self, character: Character) -> str:
+        """Identifiant normalisé, ex: 'LION-0001' (§13)."""
+        return f"{self.id_prefix}-{character.id}"
+
+    def _eyes_token(self, character: Character) -> str:
+        """Jeton 'yeux' pour le nom de fichier (gère l'hétérochromie)."""
+        left = character.left_eye["key"].upper()
+        if character.heterochromia:
+            return f"{left}-{character.right_eye['key'].upper()}"
+        return left
+
+    def image_filename_for(self, character: Character) -> str:
+        """Nommage strict §14 : LION_0001_FUR-BLACK_EYES-GREEN_STYLE-GANGSTER.png."""
+        fmt = self.image_cfg.get("format", "png")
+        return (
+            f"{self.id_prefix}_{character.id}"
+            f"_FUR-{character.fur['key'].upper()}"
+            f"_EYES-{self._eyes_token(character)}"
+            f"_STYLE-{character.style['key'].upper()}.{fmt}"
+        )
+
+    def metadata_filename_for(self, character: Character) -> str:
+        """Nommage strict §14 : LION_0001_METADATA.json."""
+        return f"{self.id_prefix}_{character.id}_METADATA.json"
 
     # -- métadonnées par personnage ----------------------------------------
-    def image_filename_for(self, character: Character) -> str:
-        return self.image_filename.format(id=character.id)
-
     def build_metadata(self, character: Character) -> Dict[str, Any]:
         image_ref = self.base_uri + self.image_filename_for(character)
         attributes = [
@@ -45,23 +83,42 @@ class MetadataGenerator:
             attributes.append(
                 {"trait_type": "Rareté", "value": character.rarity["name"]}
             )
+        headwear = character.style.get("headwear") or "None"
         return {
             "name": f"{self.name} #{character.id}",
             "description": self.description,
             "image": image_ref,
+            # --- Structure normalisée demandée au §13 ---
+            "id": self.nft_id(character),
+            "collection": self.nft_collection_name,
+            "species": self.species,
+            "fur_color": character.fur["name"],
+            "eye_color_left": character.left_eye["name"],
+            "eye_color_right": character.right_eye["name"],
+            "style": character.style["name"],
+            "outfit": character.style.get("outfit_prompt", ""),
+            "headwear": headwear,
+            "held_object": character.obj["name"],
+            "background": self.background_label,
+            "camera": self.camera,
+            "format": self.image_cfg.get("aspect_ratio", "1:1"),
+            "rarity": (character.rarity or {}).get("name", "To be calculated"),
+            "prompt_version": self.prompt_version,
+            # --- Standard marketplace (OpenSea) ---
             "attributes": attributes,
-            # Champs hors-standard utiles à la reproductibilité (sous "properties").
+            # --- Champs utiles à la reproductibilité ---
             "properties": {
                 "id": character.id,
                 "seed": character.seed,
                 "combo_key": character.combo_key,
                 "rarity_score": character.rarity_score,
+                "heterochromia": character.heterochromia,
             },
         }
 
     def write_metadata(self, character: Character) -> str:
         meta = self.build_metadata(character)
-        path = f"{self.output_cfg['metadata']}/{character.id}.json"
+        path = f"{self.output_cfg['metadata']}/{self.metadata_filename_for(character)}"
         utils.save_json(path, meta)
         return path
 

@@ -16,7 +16,15 @@ collection:
   # Exemple : "ipfs://CID/" ou "https://moncdn.com/images/"
   base_image_uri: ""
   # Format du nom de fichier image. {id} est remplace par 0001, 0002, ...
+  # (conserve pour compatibilite ; le nommage reel suit le standard strict §14 :
+  #  LION_0001_FUR-BLACK_EYES-GREEN_STYLE-GANGSTER.png)
   image_filename: "{id}.png"
+  # --- Identite normalisee des metadonnees (§13) ---
+  id_prefix: "LION"                 # identifiants LION-0001, fichiers LION_0001_...
+  nft_collection_name: "LIONCEAUX NFT"
+  species: "Lion cub"
+  camera: "Front view"             # cadrage verrouille pour toute la collection
+  prompt_version: "1.0"
 
 # -----------------------------------------------------------------------------
 # Parametres techniques de l'image (FIXES pour toute la collection)
@@ -63,6 +71,9 @@ generation:
   provider: "simulation"
   # Mode test : si true, force le fournisseur "simulation" quel que soit le reglage.
   test_mode: true
+  # Heterochromie (§7) : probabilite qu'un lionceau ait deux yeux de couleurs
+  # differentes (0.0 = collection homochromatique). Ex: 0.08 => ~8% des sujets.
+  heterochromia_chance: 0.0
 
 # -----------------------------------------------------------------------------
 # Traits autorises (laisser vide => tous les traits du fichier correspondant)
