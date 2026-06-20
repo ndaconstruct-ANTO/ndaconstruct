@@ -1,0 +1,69 @@
+# =============================================================================
+# Couleurs de pelage - EXACTEMENT 9 grandes couleurs
+# =============================================================================
+# Chaque couleur a une definition precise et figee pour rester identique d'une
+# image a l'autre. Le rendu doit toujours rester realiste, dense, propre,
+# detaille. Ne supprimez pas de couleur : le projet attend les 9 cles ci-dessous.
+#
+# Champs :
+#   key         : identifiant technique (ne pas changer)
+#   name        : nom affiche dans les metadonnees NFT
+#   prompt      : description injectee dans le prompt image
+#   hex         : couleur indicative (pour previsualisation / documentation)
+#   rarity_weight : poids relatif de tirage (plus grand = plus frequent)
+# =============================================================================
+
+fur_colors:
+  - key: white
+    name: "Blanc"
+    prompt: "pure pearly white fur, slightly nacreous sheen, dense clean and detailed"
+    hex: "#F7F4EF"
+    rarity_weight: 12
+
+  - key: blue_ice
+    name: "Bleu Ice"
+    prompt: "very light icy glacial blue fur, cold frosty tone, dense clean and detailed"
+    hex: "#BFE3F2"
+    rarity_weight: 10
+
+  - key: black
+    name: "Noir"
+    prompt: "deep profound black fur with clearly visible fur detail and texture, dense and clean"
+    hex: "#1A1A1A"
+    rarity_weight: 11
+
+  - key: green
+    name: "Vert"
+    prompt: "rich but natural-looking green fur, believable organic rendering, dense clean and detailed"
+    hex: "#3F8F4F"
+    rarity_weight: 9
+
+  - key: mauve
+    name: "Mauve"
+    prompt: "deep mauve purple fur, saturated yet natural, dense clean and detailed"
+    hex: "#8A5FB0"
+    rarity_weight: 8
+
+  - key: gray
+    name: "Gris"
+    prompt: "silvery grey fur, soft metallic sheen, dense clean and detailed"
+    hex: "#9AA0A6"
+    rarity_weight: 11
+
+  - key: gold
+    name: "Or"
+    prompt: "shiny golden fur, luminous metallic gold tone, dense clean and detailed"
+    hex: "#D4AF37"
+    rarity_weight: 6
+
+  - key: red
+    name: "Rouge"
+    prompt: "intense vivid red fur, bold saturated tone, dense clean and detailed"
+    hex: "#C0392B"
+    rarity_weight: 8
+
+  - key: light_brown
+    name: "Brun Clair"
+    prompt: "luminous light beige-brown fur, warm natural tone, dense clean and detailed"
+    hex: "#C8A878"
+    rarity_weight: 13

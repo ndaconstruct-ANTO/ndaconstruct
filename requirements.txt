@@ -1,0 +1,19 @@
+# Dépendances du générateur de collection NFT de lionceaux
+# ----------------------------------------------------------
+# Le mode SIMULATION (par défaut) ne nécessite que PyYAML.
+
+PyYAML>=6.0          # lecture des fichiers de configuration .yaml
+
+# --- Outils de développement (facultatif) ---
+pytest>=7.0          # lancement des tests automatisés
+
+# --- Facultatif : contrôle qualité des images réelles ---
+# Pillow permet de vérifier les dimensions des PNG générés.
+Pillow>=10.0
+
+# --- Facultatif : interface web locale ---
+# streamlit>=1.30    # décommentez pour l'interface graphique (python -m streamlit run web/app.py)
+
+# --- Facultatif : fournisseurs d'images réels (à activer plus tard) ---
+# openai>=1.0        # fournisseur OpenAI
+# requests>=2.31     # fournisseurs HTTP (Stable Diffusion, Flux, ComfyUI)

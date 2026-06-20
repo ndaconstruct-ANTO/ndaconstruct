@@ -1,0 +1,133 @@
+# =============================================================================
+# Configuration principale de la collection
+# =============================================================================
+# Ce fichier contient TOUS les paramètres globaux de la collection.
+# Les règles de cohérence du personnage (morphologie, cadrage, fond, lumière)
+# sont verrouillées dans prompts/base_prompt.txt et ne doivent PAS varier.
+# =============================================================================
+
+collection:
+  # Nom affiche dans les metadonnees NFT (le numero #0001 est ajoute automatiquement)
+  name: "Lion"
+  description: "Collection de lionceaux uniques - cohérence visuelle stricte."
+  # Symbole / ticker optionnel de la collection
+  symbol: "LIONCUB"
+  # URL de base ou seront heberges les fichiers images (optionnel, pour les metadonnees)
+  # Exemple : "ipfs://CID/" ou "https://moncdn.com/images/"
+  base_image_uri: ""
+  # Format du nom de fichier image. {id} est remplace par 0001, 0002, ...
+  image_filename: "{id}.png"
+
+# -----------------------------------------------------------------------------
+# Parametres techniques de l'image (FIXES pour toute la collection)
+# -----------------------------------------------------------------------------
+image:
+  width: 2048          # largeur en pixels
+  height: 2048         # hauteur en pixels (doit etre egale a la largeur => format 1:1)
+  format: "png"        # format de fichier de sortie
+  aspect_ratio: "1:1"  # format strict carre
+
+# -----------------------------------------------------------------------------
+# Fond de la collection
+# -----------------------------------------------------------------------------
+# active = "white" par defaut. Pour utiliser plus tard UN autre fond unique
+# pour toute la collection, changez "active" par une autre cle definie ci-dessous.
+# Le cadrage du personnage n'est JAMAIS modifie par ce reglage.
+background:
+  active: "white"
+  presets:
+    white:
+      name: "Blanc immaculé"
+      prompt: "pure immaculate solid white studio background, seamless, no decor"
+    studio_grey:
+      name: "Gris studio neutre"
+      prompt: "uniform neutral light grey studio background, seamless, no decor"
+    soft_gradient:
+      name: "Dégradé doux clair"
+      prompt: "very soft light grey to white vertical gradient background, seamless, no decor"
+
+# -----------------------------------------------------------------------------
+# Generation
+# -----------------------------------------------------------------------------
+generation:
+  # Nombre d'images par defaut (surchargé par --count en ligne de commande)
+  count: 100
+  # Seed globale : garantit la reproductibilite complete de la collection.
+  master_seed: 20260620
+  # Empeche deux personnages d'avoir exactement la meme combinaison de traits.
+  enforce_unique_combinations: true
+  # Nombre maximum de tentatives pour trouver une combinaison unique avant abandon.
+  max_attempts_per_image: 2000
+  # Fournisseur d'images par defaut : "simulation" ne depense rien et ne contacte
+  # aucune API. Voir config providers ci-dessous.
+  provider: "simulation"
+  # Mode test : si true, force le fournisseur "simulation" quel que soit le reglage.
+  test_mode: true
+
+# -----------------------------------------------------------------------------
+# Traits autorises (laisser vide => tous les traits du fichier correspondant)
+# -----------------------------------------------------------------------------
+# Renseignez ici des listes de cles (ex: ["white", "gold"]) pour restreindre.
+allowed_traits:
+  fur_colors: []   # vide = les 9 couleurs de pelage
+  eye_colors: []   # vide = toutes les couleurs d'yeux
+  styles: []       # vide = tous les styles
+
+# -----------------------------------------------------------------------------
+# Dossiers de sortie
+# -----------------------------------------------------------------------------
+output:
+  root: "output"
+  images: "output/images"
+  metadata: "output/metadata"
+  prompts: "output/prompts"
+  reports: "output/reports"
+  csv: "output/collection.csv"
+  registries: "output/registries"
+
+# -----------------------------------------------------------------------------
+# Fichiers de configuration des traits
+# -----------------------------------------------------------------------------
+config_files:
+  fur_colors: "config/fur_colors.yaml"
+  eye_colors: "config/eye_colors.yaml"
+  styles: "config/styles.yaml"
+  rarity: "config/rarity.yaml"
+  forbidden_combinations: "config/forbidden_combinations.yaml"
+
+# -----------------------------------------------------------------------------
+# Fichiers de prompt
+# -----------------------------------------------------------------------------
+prompt_files:
+  base: "prompts/base_prompt.txt"
+  negative: "prompts/negative_prompt.txt"
+
+# -----------------------------------------------------------------------------
+# Fournisseurs d'images (l'implementation reelle est dans src/image_provider.py)
+# -----------------------------------------------------------------------------
+# Aucune cle n'est stockee ici : elles proviennent des variables d'environnement
+# (voir .env.example). La cle "active" est surchargée par generation.provider.
+providers:
+  simulation:
+    type: "simulation"
+    description: "Mode simulation : aucune image generee, aucune depense."
+  openai:
+    type: "openai"
+    model: "gpt-image-1"
+    size: "2048x2048"
+    api_key_env: "OPENAI_API_KEY"
+  stable_diffusion:
+    type: "stable_diffusion"
+    model: "stable-diffusion-xl"
+    steps: 30
+    cfg_scale: 7.0
+    api_url_env: "SD_API_URL"
+    api_key_env: "SD_API_KEY"
+  flux:
+    type: "flux"
+    model: "flux-1.1-pro"
+    api_key_env: "FLUX_API_KEY"
+  comfyui:
+    type: "comfyui"
+    workflow: "config/comfy_workflow.json"
+    api_url_env: "COMFYUI_API_URL"

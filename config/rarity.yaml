@@ -1,0 +1,41 @@
+# =============================================================================
+# Niveaux de rarete
+# =============================================================================
+# La rarete finale d'un personnage est calculee par src/rarity_engine.py a partir
+# d'un "score de rarete" agrege depuis les poids de tirage du pelage, des yeux et
+# du style (plus un trait est rare, plus il pousse le personnage vers un palier
+# eleve). Le score est ensuite mappe vers l'un des paliers ci-dessous.
+#
+# Champs :
+#   key        : identifiant technique
+#   name       : nom affiche dans les metadonnees ("Rareté")
+#   max_score  : seuil maximum de score (inclus) pour appartenir a ce palier.
+#                Les paliers sont evalues du plus petit max_score au plus grand.
+#   order      : ordre croissant de rarete (0 = le plus commun)
+# =============================================================================
+
+rarity:
+  tiers:
+    - { key: common,    name: "Commun",     order: 0, max_score: 0.45 }
+    - { key: uncommon,  name: "Peu Commun", order: 1, max_score: 0.65 }
+    - { key: rare,      name: "Rare",       order: 2, max_score: 0.80 }
+    - { key: epic,      name: "Épique",     order: 3, max_score: 0.92 }
+    - { key: legendary, name: "Légendaire", order: 4, max_score: 1.01 }
+
+  # Ponderation de chaque trait dans le calcul du score de rarete (somme = 1.0).
+  score_weights:
+    fur: 0.25
+    eyes: 0.40
+    style: 0.35
+
+  # Combinaisons rares : forcent un palier MINIMUM si la combinaison correspond.
+  # Chaque regle est un sous-ensemble de traits a matcher + le palier minimum.
+  rare_combinations:
+    - match: { fur: gold, style: king }
+      min_tier: legendary
+    - match: { eyes: galaxy_iris }
+      min_tier: epic
+    - match: { eyes: molten_gold }
+      min_tier: epic
+    - match: { fur: gold, eyes: golden }
+      min_tier: epic

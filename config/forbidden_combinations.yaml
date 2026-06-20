@@ -1,0 +1,26 @@
+# =============================================================================
+# Combinaisons interdites
+# =============================================================================
+# Chaque regle decrit un sous-ensemble de traits qui, lorsqu'ils apparaissent
+# ENSEMBLE, rendent la combinaison invalide. Le moteur ignore alors cette
+# combinaison et en tire une autre.
+#
+# Une regle = un bloc "match" listant les traits a interdire conjointement.
+# Cles utilisables dans "match" : fur, eyes, style.
+#
+# Exemple : interdire les pompiers au pelage rouge :
+#   - match: { fur: red, style: pompier }
+#
+# Ce fichier peut rester vide (forbidden: []) si vous n'avez aucune interdiction.
+# =============================================================================
+
+forbidden:
+  # Exemple : on evite un lionceau au pelage noir avec des yeux noirs brillants
+  # (manque de lisibilite du visage).
+  - match: { fur: black, eyes: glossy_black }
+    reason: "Visage peu lisible : pelage noir + yeux noirs brillants."
+
+  # Exemple : un astronaute au pelage or doit rester exceptionnel ; ici on le
+  # reserve plutot et on interdit la version yeux roses pour garder la coherence.
+  - match: { style: astronaut, eyes: pink }
+    reason: "Incoherence stylistique choisie pour l'exemple."

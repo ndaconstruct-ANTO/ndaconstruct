@@ -1,0 +1,34 @@
+／／ PROMPT DE BASE VERROUILLÉ — NE PAS MODIFIER SANS JUSTIFICATION ／／
+／／ Ce bloc garantit la COHÉRENCE ABSOLUE du personnage entre toutes les images.
+／／ Les traits variables (pelage, yeux, style, objet) sont injectés par le code
+／／ aux emplacements {fur}, {eyes}, {style}, {object}, {headwear}, {shoes},
+／／ {background}. Ne touchez PAS aux phrases de morphologie/cadrage/caméra.
+
+[SUBJECT — MASTER MODEL, LOCKED]
+A single cute baby lion cub character, anthropomorphic, standing upright on two legs in a natural relaxed posture, full body visible from head to feet, facing the camera directly with the gaze looking straight into the camera.
+
+[MORPHOLOGY — LOCKED, IDENTICAL ON EVERY IMAGE]
+Compact childlike body, head slightly larger than the body, soft yet expressive face, identical rounded ears, identical short muzzle, identical shoulder width, identical arm length and identical leg length, straight and natural posture, lion cub paws instead of hands, plantigrade little feet placed exactly at the same spot at the bottom center of the frame. Same head-to-body proportions on every image. No perspective change, no zoom change, no camera angle change.
+
+[FRAMING — LOCKED]
+Centered subject, full-length head-to-toe shot, identical equal margin all around the character, character occupying the same image area on every render, eye level camera, straight frontal view, no crop, never cut off.
+
+[BACKGROUND — LOCKED]
+{background}. Flat even background, no decor, no scenery, no extra props, no objects placed around the character, no strong cast shadow, only a very subtle soft contact shadow under the feet.
+
+[LIGHTING & QUALITY — LOCKED]
+Soft even studio lighting, neutral white balance, high detail, clean crisp rendering, consistent graphic quality, professional collectible character render, sharp focus on the whole body.
+
+[VARIABLE TRAITS — INJECTED PER CHARACTER]
+Fur: {fur}.
+Eyes: {eyes}, both eyes looking at the camera.
+Outfit / role: {style}.
+Headwear: {headwear}.
+Footwear: {shoes}.
+Held object: {object}.
+
+[OBJECT RULE — LOCKED]
+The character holds at most ONE single object, and only the object listed above, held in ONE paw; the other paw stays empty and natural. Never two objects, never one object per paw, never floating objects.
+
+[OUTPUT]
+Square 1:1 composition.

@@ -1,0 +1,19 @@
+／／ PROMPT NÉGATIF VERROUILLÉ — éléments à exclure systématiquement ／／
+／／ Ces interdits protègent la cohérence et appliquent les règles de la mission.
+
+human hands, human fingers, realistic human anatomy hands,
+visible tail, lion tail, any tail,
+two held objects, multiple held objects, an object in each paw, dual wielding,
+multiple weapons, several weapons, gun together with another object, money and weapon together,
+floating objects, hovering items, objects around the character, extra props on the ground, props on floor, clutter,
+brand logo, real brand, trademark, sponsor logo, Nike, Adidas, Puma, recognizable brand,
+text, letters, words, captions, signature, watermark, timestamp,
+background decor, scenery, landscape, room, furniture, patterned background, gradient background mess,
+strong shadow, harsh shadow, dramatic shadow,
+cropped, out of frame, cut off, partial body, close-up, zoomed in, extreme close up,
+extra limbs, extra arms, extra legs, deformed, mutated, disfigured, asymmetric body, bad anatomy,
+multiple characters, second character, duplicate,
+side view, profile view, back view, three-quarter view, looking away,
+blurry, low quality, jpeg artifacts, noise, lowres,
+adult lion, full grown lion, realistic wild lion photo,
+non-square aspect, portrait orientation, landscape orientation, borders, frame.

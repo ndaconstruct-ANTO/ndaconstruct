@@ -1,0 +1,14 @@
+／／ MODÈLE DE PROMPT FINAL (assemblage) ／／
+／／ Le construit reel est realise par src/prompt_builder.py. Ce fichier sert
+／／ uniquement de reference lisible montrant l'ordre d'assemblage des blocs.
+
+{base_prompt}
+
+[CHARACTER ID]
+{collection_name} #{id}
+
+[TECHNICAL]
+Resolution: {width}x{height}, aspect ratio {aspect_ratio}, format {format}.
+
+[NEGATIVE]
+{negative_prompt}

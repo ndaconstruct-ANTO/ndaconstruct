@@ -1,0 +1,1029 @@
+# =============================================================================
+# Bibliotheque de STYLES / METIERS - extensible a l'infini
+# =============================================================================
+# Pour ajouter un style : copiez un bloc, changez la cle et les champs. Aucun
+# code a modifier. Le moteur sait gerer des centaines de styles.
+#
+# Champs par style :
+#   key          : identifiant technique unique (lettres/chiffres/underscore)
+#   name         : nom affiche dans les metadonnees ("Style")
+#   description  : description vestimentaire precise (documentation FR)
+#   outfit_prompt: description du vetement injectee dans le prompt image (EN)
+#   palette      : couleurs indicatives de la tenue
+#   headwear     : couvre-chef eventuel (prompt EN) ou null
+#   shoes        : chaussures GENERIQUES sans marque (prompt EN)
+#   objects      : liste d'objets possibles. UN SEUL est choisi par personnage.
+#                  chaque objet : { key, name, prompt }  (le prompt impose
+#                  "single object held in one paw, other paw empty").
+#   forbidden    : elements interdits propres au style
+#   rarity_weight: poids de tirage (plus grand = plus frequent)
+#
+# REGLE OBJET UNIQUE : un personnage tient au maximum UN objet, choisi dans
+# "objects", et toujours coherent avec le style. La seconde patte reste vide.
+# =============================================================================
+
+# Elements interdits communs a TOUS les styles (appliques en plus de "forbidden").
+common_forbidden:
+  - "human hands"
+  - "visible tail"
+  - "second held object"
+  - "two items in hands"
+  - "floating objects"
+  - "extra props on the ground"
+  - "brand logo"
+  - "real trademark"
+  - "text"
+  - "watermark"
+
+# Chaussures generiques par defaut si un style ne precise rien.
+default_shoes: "generic plain shoes without any brand or logo"
+
+styles:
+  - key: mafia
+    name: "Mafia"
+    description: "Costume rayé sombre, chemise et cravate, allure de parrain."
+    outfit_prompt: "wearing a dark pinstripe three-piece mafia suit with shirt and tie"
+    palette: ["#1B1B22", "#2E2E3A", "#8B0000"]
+    headwear: "black fedora hat"
+    shoes: "generic black leather dress shoes without brand"
+    objects:
+      - { key: cigar, name: "Cigare", prompt: "holding a single lit cigar in one paw" }
+      - { key: cane,  name: "Canne",  prompt: "holding a single elegant wooden cane in one paw" }
+    forbidden: ["gun together with cigar", "two objects"]
+    rarity_weight: 5
+
+  - key: gangster
+    name: "Gangster"
+    description: "Survêtement urbain, chaîne épaisse, casquette."
+    outfit_prompt: "wearing an urban tracksuit with a thick chain"
+    palette: ["#222222", "#C0392B", "#D4AF37"]
+    headwear: "backwards cap"
+    shoes: "generic high-top sneakers without brand"
+    objects:
+      - { key: bat,        name: "Batte",          prompt: "holding a single baseball bat in one paw" }
+      - { key: spray_can,  name: "Bombe de peinture", prompt: "holding a single spray paint can in one paw" }
+    forbidden: ["multiple weapons", "money and weapon together"]
+    rarity_weight: 6
+
+  - key: samurai
+    name: "Samouraï"
+    description: "Armure et kimono de samouraï traditionnel."
+    outfit_prompt: "wearing traditional samurai armor over a kimono"
+    palette: ["#3A1F1F", "#B22222", "#1C1C1C"]
+    headwear: "samurai kabuto helmet"
+    shoes: "traditional tabi boots"
+    objects:
+      - { key: katana, name: "Katana", prompt: "holding a single sheathed katana in one paw" }
+    forbidden: ["two swords", "firearm"]
+    rarity_weight: 4
+
+  - key: street_gang
+    name: "Street Gang"
+    description: "Hoodie, bandana, look de rue."
+    outfit_prompt: "wearing a hoodie and a bandana, street style"
+    palette: ["#2C3E50", "#7F8C8D", "#E74C3C"]
+    headwear: "bandana"
+    shoes: "generic canvas sneakers without brand"
+    objects:
+      - { key: skateboard, name: "Skateboard", prompt: "holding a single skateboard upright in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: priest
+    name: "Curé"
+    description: "Soutane noire avec col blanc ecclésiastique."
+    outfit_prompt: "wearing a black priest cassock with a white clerical collar"
+    palette: ["#111111", "#FFFFFF", "#C9A227"]
+    headwear: null
+    shoes: "generic black leather shoes without brand"
+    objects:
+      - { key: bible, name: "Bible", prompt: "holding a single closed bible in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: doctor
+    name: "Docteur"
+    description: "Blouse blanche de médecin."
+    outfit_prompt: "wearing a white doctor coat over a shirt"
+    palette: ["#FFFFFF", "#5DADE2", "#2C3E50"]
+    headwear: null
+    shoes: "generic white clinic shoes without brand"
+    objects:
+      - { key: stethoscope, name: "Stéthoscope", prompt: "holding a single stethoscope in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 7
+
+  - key: surgeon
+    name: "Chirurgien"
+    description: "Tenue de bloc opératoire, masque et calot."
+    outfit_prompt: "wearing surgical scrubs with a cap and a lowered surgical mask"
+    palette: ["#2E8B8B", "#1F6F6F", "#FFFFFF"]
+    headwear: "surgical cap"
+    shoes: "generic clinic clogs without brand"
+    objects:
+      - { key: scalpel, name: "Scalpel", prompt: "holding a single scalpel in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: mason
+    name: "Maçon"
+    description: "Salopette de travail et gilet haute visibilité."
+    outfit_prompt: "wearing work overalls and a high-visibility vest"
+    palette: ["#E67E22", "#7F8C8D", "#2C3E50"]
+    headwear: "construction helmet"
+    shoes: "generic work boots without brand"
+    objects:
+      - { key: trowel, name: "Truelle", prompt: "holding a single mason trowel in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 7
+
+  - key: roofer
+    name: "Couvreur"
+    description: "Tenue de chantier avec harnais de toiture."
+    outfit_prompt: "wearing roofing work clothes with a safety harness"
+    palette: ["#8B4513", "#E67E22", "#2C3E50"]
+    headwear: "construction helmet"
+    shoes: "generic work boots without brand"
+    objects:
+      - { key: hammer, name: "Marteau", prompt: "holding a single hammer in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: architect
+    name: "Architecte"
+    description: "Chemise élégante, lunettes, allure créative."
+    outfit_prompt: "wearing a smart shirt with rolled sleeves, modern creative look"
+    palette: ["#34495E", "#FFFFFF", "#E67E22"]
+    headwear: null
+    shoes: "generic leather loafers without brand"
+    objects:
+      - { key: blueprint, name: "Plan", prompt: "holding a single rolled blueprint in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: teacher
+    name: "Professeur"
+    description: "Veste en tweed, chemise et nœud."
+    outfit_prompt: "wearing a tweed jacket over a shirt with a bow tie"
+    palette: ["#7B6143", "#FFFFFF", "#5D4037"]
+    headwear: null
+    shoes: "generic leather shoes without brand"
+    objects:
+      - { key: book, name: "Livre", prompt: "holding a single book in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 7
+
+  - key: mad_scientist
+    name: "Savant Fou"
+    description: "Blouse froissée, cheveux ébouriffés, lunettes de labo."
+    outfit_prompt: "wearing a messy lab coat and lab goggles, wild expression"
+    palette: ["#FFFFFF", "#27AE60", "#8E44AD"]
+    headwear: "lab goggles on forehead"
+    shoes: "generic lab shoes without brand"
+    objects:
+      - { key: flask, name: "Fiole", prompt: "holding a single glowing chemistry flask in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 4
+
+  - key: scientist
+    name: "Scientifique"
+    description: "Blouse de laboratoire propre."
+    outfit_prompt: "wearing a clean white lab coat over a shirt"
+    palette: ["#FFFFFF", "#3498DB", "#2C3E50"]
+    headwear: null
+    shoes: "generic lab shoes without brand"
+    objects:
+      - { key: test_tube, name: "Éprouvette", prompt: "holding a single test tube in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 7
+
+  - key: lawyer
+    name: "Avocat"
+    description: "Costume sombre et robe d'avocat."
+    outfit_prompt: "wearing a dark formal suit under a lawyer robe"
+    palette: ["#1C1C1C", "#FFFFFF", "#7F8C8D"]
+    headwear: null
+    shoes: "generic black dress shoes without brand"
+    objects:
+      - { key: folder, name: "Dossier", prompt: "holding a single document folder in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: judge
+    name: "Juge"
+    description: "Robe de juge et col blanc."
+    outfit_prompt: "wearing a black judge robe with a white collar"
+    palette: ["#111111", "#FFFFFF", "#C9A227"]
+    headwear: null
+    shoes: "generic black dress shoes without brand"
+    objects:
+      - { key: gavel, name: "Marteau de Juge", prompt: "holding a single judge gavel in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 4
+
+  - key: police
+    name: "Policier"
+    description: "Uniforme de police bleu avec badge."
+    outfit_prompt: "wearing a blue police uniform with a badge"
+    palette: ["#1F3A93", "#FFFFFF", "#C0C0C0"]
+    headwear: "police cap"
+    shoes: "generic black duty boots without brand"
+    objects:
+      - { key: handcuffs, name: "Menottes", prompt: "holding a single pair of handcuffs in one paw" }
+    forbidden: ["multiple weapons"]
+    rarity_weight: 6
+
+  - key: firefighter
+    name: "Pompier"
+    description: "Veste de pompier avec bandes réfléchissantes."
+    outfit_prompt: "wearing a firefighter jacket with reflective stripes"
+    palette: ["#C0392B", "#F1C40F", "#2C3E50"]
+    headwear: "firefighter helmet"
+    shoes: "generic fireproof boots without brand"
+    objects:
+      - { key: axe, name: "Hache", prompt: "holding a single firefighter axe in one paw" }
+    forbidden: ["firearm"]
+    rarity_weight: 6
+
+  - key: soldier
+    name: "Militaire"
+    description: "Tenue de camouflage militaire."
+    outfit_prompt: "wearing a military camouflage uniform"
+    palette: ["#4B5320", "#6B6B47", "#2C3E50"]
+    headwear: "military beret"
+    shoes: "generic combat boots without brand"
+    objects:
+      - { key: binoculars, name: "Jumelles", prompt: "holding a single pair of binoculars in one paw" }
+    forbidden: ["multiple weapons"]
+    rarity_weight: 5
+
+  - key: pilot
+    name: "Pilote"
+    description: "Uniforme de pilote de ligne avec casquette."
+    outfit_prompt: "wearing an airline pilot uniform with epaulettes"
+    palette: ["#1C2833", "#FFFFFF", "#C9A227"]
+    headwear: "pilot cap"
+    shoes: "generic black dress shoes without brand"
+    objects:
+      - { key: aviator_glasses, name: "Lunettes Aviateur", prompt: "holding a single pair of aviator sunglasses in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: astronaut
+    name: "Astronaute"
+    description: "Combinaison spatiale blanche."
+    outfit_prompt: "wearing a white astronaut space suit (helmet off)"
+    palette: ["#FFFFFF", "#C0C0C0", "#1F3A93"]
+    headwear: null
+    shoes: "integrated white space boots"
+    objects:
+      - { key: helmet, name: "Casque Spatial", prompt: "holding a single space helmet in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 3
+
+  - key: mechanic
+    name: "Mécanicien"
+    description: "Combinaison de garage tachée de cambouis."
+    outfit_prompt: "wearing a grease-stained mechanic jumpsuit"
+    palette: ["#2C3E50", "#7F8C8D", "#C0392B"]
+    headwear: null
+    shoes: "generic work boots without brand"
+    objects:
+      - { key: wrench, name: "Clé à Molette", prompt: "holding a single adjustable wrench in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 7
+
+  - key: blacksmith
+    name: "Forgeron"
+    description: "Tablier de cuir et chemise robuste."
+    outfit_prompt: "wearing a leather blacksmith apron over a rugged shirt"
+    palette: ["#5D4037", "#7F8C8D", "#C0392B"]
+    headwear: null
+    shoes: "generic leather work boots without brand"
+    objects:
+      - { key: smith_hammer, name: "Marteau", prompt: "holding a single blacksmith hammer in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: king
+    name: "Roi"
+    description: "Manteau royal de velours et hermine."
+    outfit_prompt: "wearing a royal velvet and ermine robe"
+    palette: ["#7D0A0A", "#D4AF37", "#FFFFFF"]
+    headwear: "golden crown"
+    shoes: "royal velvet shoes"
+    objects:
+      - { key: scepter, name: "Sceptre", prompt: "holding a single royal scepter in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 2
+
+  - key: knight
+    name: "Chevalier"
+    description: "Armure de plaques médiévale."
+    outfit_prompt: "wearing full medieval plate armor"
+    palette: ["#A9A9A9", "#C0C0C0", "#1C1C1C"]
+    headwear: "knight helmet under arm look (worn open)"
+    shoes: "armored sabaton boots"
+    objects:
+      - { key: shield, name: "Bouclier", prompt: "holding a single heraldic shield in one paw" }
+      - { key: sword,  name: "Épée",     prompt: "holding a single sword in one paw" }
+    forbidden: ["two weapons"]
+    rarity_weight: 4
+
+  - key: ninja
+    name: "Ninja"
+    description: "Tenue noire de ninja avec masque."
+    outfit_prompt: "wearing a black ninja outfit with a face wrap"
+    palette: ["#0E0E0E", "#2C3E50", "#7F8C8D"]
+    headwear: "ninja hood"
+    shoes: "ninja tabi boots"
+    objects:
+      - { key: shuriken, name: "Shuriken", prompt: "holding a single shuriken in one paw" }
+    forbidden: ["multiple weapons"]
+    rarity_weight: 4
+
+  - key: pirate
+    name: "Pirate"
+    description: "Manteau de capitaine pirate et tricorne."
+    outfit_prompt: "wearing a pirate captain coat with a sash"
+    palette: ["#4B2E2E", "#C0392B", "#D4AF37"]
+    headwear: "pirate tricorn hat"
+    shoes: "tall leather pirate boots"
+    objects:
+      - { key: cutlass, name: "Sabre", prompt: "holding a single pirate cutlass in one paw" }
+    forbidden: ["two swords", "firearm"]
+    rarity_weight: 5
+
+  - key: sailor
+    name: "Marin"
+    description: "Marinière rayée et col marin."
+    outfit_prompt: "wearing a striped sailor shirt with a navy collar"
+    palette: ["#FFFFFF", "#1F3A93", "#C0392B"]
+    headwear: "sailor cap"
+    shoes: "generic deck shoes without brand"
+    objects:
+      - { key: rope, name: "Cordage", prompt: "holding a single coiled rope in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: boxer
+    name: "Boxeur"
+    description: "Short de boxe et gants, torse en débardeur."
+    outfit_prompt: "wearing boxing shorts and a tank top with boxing gloves on"
+    palette: ["#C0392B", "#D4AF37", "#1C1C1C"]
+    headwear: null
+    shoes: "generic boxing boots without brand"
+    objects:
+      - { key: belt, name: "Ceinture de Champion", prompt: "holding a single championship belt in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: mma_fighter
+    name: "Combattant MMA"
+    description: "Short de MMA et gants ouverts."
+    outfit_prompt: "wearing MMA fight shorts with open-finger gloves, bare-chested"
+    palette: ["#2C3E50", "#C0392B", "#1C1C1C"]
+    headwear: null
+    shoes: "barefoot"
+    objects:
+      - { key: mouthguard, name: "Protège-Dents", prompt: "holding a single mouthguard in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: footballer
+    name: "Footballeur"
+    description: "Maillot et short de football générique."
+    outfit_prompt: "wearing a generic football jersey and shorts without any brand"
+    palette: ["#27AE60", "#FFFFFF", "#1C1C1C"]
+    headwear: null
+    shoes: "generic football cleats without brand"
+    objects:
+      - { key: football, name: "Ballon de Foot", prompt: "holding a single football (soccer ball) in one paw" }
+    forbidden: ["weapons", "brand logo"]
+    rarity_weight: 6
+
+  - key: basketballer
+    name: "Basketteur"
+    description: "Maillot de basket générique."
+    outfit_prompt: "wearing a generic basketball jersey and shorts without any brand"
+    palette: ["#E67E22", "#FFFFFF", "#1C1C1C"]
+    headwear: null
+    shoes: "generic basketball sneakers without brand"
+    objects:
+      - { key: basketball, name: "Ballon de Basket", prompt: "holding a single basketball in one paw" }
+    forbidden: ["weapons", "brand logo"]
+    rarity_weight: 6
+
+  - key: rapper
+    name: "Rappeur"
+    description: "Veste oversize, lunettes, chaîne dorée."
+    outfit_prompt: "wearing an oversized jacket with a gold chain and sunglasses"
+    palette: ["#1C1C1C", "#D4AF37", "#8E44AD"]
+    headwear: "snapback cap"
+    shoes: "generic high-top sneakers without brand"
+    objects:
+      - { key: microphone, name: "Micro", prompt: "holding a single microphone in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: dj
+    name: "DJ"
+    description: "Tenue de scène avec casque audio."
+    outfit_prompt: "wearing a trendy stage outfit with headphones around the neck"
+    palette: ["#1C1C1C", "#1ABC9C", "#8E44AD"]
+    headwear: "headphones"
+    shoes: "generic sneakers without brand"
+    objects:
+      - { key: vinyl, name: "Vinyle", prompt: "holding a single vinyl record in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: rocker
+    name: "Rockeur"
+    description: "Veste en cuir cloutée, t-shirt de groupe générique."
+    outfit_prompt: "wearing a studded leather jacket over a plain band tee"
+    palette: ["#1C1C1C", "#C0392B", "#7F8C8D"]
+    headwear: null
+    shoes: "generic leather boots without brand"
+    objects:
+      - { key: guitar, name: "Guitare", prompt: "holding a single electric guitar in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: chef
+    name: "Chef Cuisinier"
+    description: "Veste de chef blanche et toque."
+    outfit_prompt: "wearing a white chef jacket"
+    palette: ["#FFFFFF", "#1C1C1C", "#C0392B"]
+    headwear: "chef toque hat"
+    shoes: "generic kitchen clogs without brand"
+    objects:
+      - { key: chef_knife, name: "Couteau", prompt: "holding a single chef knife in one paw" }
+      - { key: pan,        name: "Poêle",   prompt: "holding a single frying pan in one paw" }
+    forbidden: ["two objects"]
+    rarity_weight: 6
+
+  - key: baker
+    name: "Boulanger"
+    description: "Tablier de boulanger et tricot."
+    outfit_prompt: "wearing a baker apron over a knit sweater, flour dust"
+    palette: ["#E8D9C0", "#FFFFFF", "#8B5A2B"]
+    headwear: null
+    shoes: "generic kitchen shoes without brand"
+    objects:
+      - { key: baguette, name: "Baguette", prompt: "holding a single baguette in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: butcher
+    name: "Boucher"
+    description: "Tablier de boucher rayé."
+    outfit_prompt: "wearing a striped butcher apron over a shirt"
+    palette: ["#FFFFFF", "#1F3A93", "#C0392B"]
+    headwear: null
+    shoes: "generic work shoes without brand"
+    objects:
+      - { key: cleaver, name: "Couperet", prompt: "holding a single butcher cleaver in one paw" }
+    forbidden: ["weapons used as weapon"]
+    rarity_weight: 5
+
+  - key: farmer
+    name: "Fermier"
+    description: "Salopette en jean et chemise à carreaux."
+    outfit_prompt: "wearing denim overalls over a plaid shirt"
+    palette: ["#34495E", "#C0392B", "#8B5A2B"]
+    headwear: "straw hat"
+    shoes: "generic rubber boots without brand"
+    objects:
+      - { key: pitchfork, name: "Fourche", prompt: "holding a single pitchfork in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: gardener
+    name: "Jardinier"
+    description: "Tablier de jardinage et gants."
+    outfit_prompt: "wearing a gardening apron with gloves"
+    palette: ["#27AE60", "#8B5A2B", "#FFFFFF"]
+    headwear: "sun hat"
+    shoes: "generic rubber boots without brand"
+    objects:
+      - { key: watering_can, name: "Arrosoir", prompt: "holding a single watering can in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: photographer
+    name: "Photographe"
+    description: "Veste de reporter à poches multiples."
+    outfit_prompt: "wearing a multi-pocket photographer vest over a shirt"
+    palette: ["#34495E", "#1C1C1C", "#7F8C8D"]
+    headwear: null
+    shoes: "generic sneakers without brand"
+    objects:
+      - { key: camera, name: "Appareil Photo", prompt: "holding a single camera in one paw" }
+    forbidden: ["weapons", "brand logo"]
+    rarity_weight: 6
+
+  - key: painter
+    name: "Peintre"
+    description: "Blouse d'artiste tachée de peinture."
+    outfit_prompt: "wearing a paint-stained artist smock"
+    palette: ["#FFFFFF", "#E67E22", "#8E44AD"]
+    headwear: "beret"
+    shoes: "generic canvas shoes without brand"
+    objects:
+      - { key: palette, name: "Palette", prompt: "holding a single painter palette in one paw" }
+      - { key: brush,   name: "Pinceau",  prompt: "holding a single paint brush in one paw" }
+    forbidden: ["two objects"]
+    rarity_weight: 5
+
+  - key: graffiti_artist
+    name: "Graffeur"
+    description: "Hoodie et masque anti-poussière sur le front."
+    outfit_prompt: "wearing a hoodie with a dust mask on the forehead, urban look"
+    palette: ["#1C1C1C", "#39FF14", "#E91E63"]
+    headwear: "beanie"
+    shoes: "generic canvas sneakers without brand"
+    objects:
+      - { key: spray_can, name: "Bombe", prompt: "holding a single spray paint can in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: developer
+    name: "Développeur Informatique"
+    description: "Hoodie décontracté et t-shirt uni."
+    outfit_prompt: "wearing a casual hoodie over a plain tee, relaxed geek look"
+    palette: ["#2C3E50", "#1ABC9C", "#FFFFFF"]
+    headwear: null
+    shoes: "generic sneakers without brand"
+    objects:
+      - { key: laptop, name: "Ordinateur Portable", prompt: "holding a single laptop in one paw" }
+    forbidden: ["weapons", "brand logo"]
+    rarity_weight: 6
+
+  - key: hacker
+    name: "Hacker Futuriste"
+    description: "Veste technologique à capuche avec néons."
+    outfit_prompt: "wearing a futuristic hooded techwear jacket with subtle neon trims"
+    palette: ["#0E0E0E", "#39FF14", "#1F6FEB"]
+    headwear: "techwear hood"
+    shoes: "futuristic generic sneakers without brand"
+    objects:
+      - { key: tablet, name: "Tablette", prompt: "holding a single glowing tablet in one paw" }
+    forbidden: ["weapons", "brand logo"]
+    rarity_weight: 4
+
+  - key: secret_agent
+    name: "Agent Secret"
+    description: "Smoking noir impeccable et oreillette."
+    outfit_prompt: "wearing a sharp black tuxedo with an earpiece"
+    palette: ["#1C1C1C", "#FFFFFF", "#7F8C8D"]
+    headwear: null
+    shoes: "generic black dress shoes without brand"
+    objects:
+      - { key: briefcase, name: "Mallette", prompt: "holding a single sleek briefcase in one paw" }
+    forbidden: ["multiple weapons"]
+    rarity_weight: 4
+
+  - key: detective
+    name: "Détective"
+    description: "Trench-coat beige et loupe."
+    outfit_prompt: "wearing a beige trench coat over a shirt and tie"
+    palette: ["#C8A878", "#5D4037", "#1C1C1C"]
+    headwear: "detective fedora"
+    shoes: "generic leather shoes without brand"
+    objects:
+      - { key: magnifier, name: "Loupe", prompt: "holding a single magnifying glass in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: cowboy
+    name: "Cow-boy"
+    description: "Gilet en cuir, chemise et bandana."
+    outfit_prompt: "wearing a leather vest over a shirt with a bandana"
+    palette: ["#8B5A2B", "#C8A878", "#C0392B"]
+    headwear: "cowboy hat"
+    shoes: "cowboy boots with spurs"
+    objects:
+      - { key: lasso, name: "Lasso", prompt: "holding a single coiled lasso in one paw" }
+    forbidden: ["firearm"]
+    rarity_weight: 5
+
+  - key: sheriff
+    name: "Shérif"
+    description: "Gilet à étoile de shérif."
+    outfit_prompt: "wearing a sheriff vest with a star badge over a western shirt"
+    palette: ["#8B5A2B", "#D4AF37", "#1C1C1C"]
+    headwear: "sheriff hat"
+    shoes: "cowboy boots without brand"
+    objects:
+      - { key: sheriff_badge, name: "Étoile de Shérif", prompt: "holding a single sheriff star badge in one paw" }
+    forbidden: ["multiple weapons"]
+    rarity_weight: 4
+
+  - key: magician
+    name: "Magicien"
+    description: "Cape et nœud papillon de prestidigitateur."
+    outfit_prompt: "wearing a stage magician cape over a vest with a bow tie"
+    palette: ["#1C1C1C", "#7D0A0A", "#D4AF37"]
+    headwear: "top hat"
+    shoes: "generic black dress shoes without brand"
+    objects:
+      - { key: wand, name: "Baguette Magique", prompt: "holding a single magic wand in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 4
+
+  - key: wizard
+    name: "Sorcier"
+    description: "Longue robe d'enchanteur étoilée."
+    outfit_prompt: "wearing a long star-patterned wizard robe"
+    palette: ["#34137A", "#D4AF37", "#1C1C1C"]
+    headwear: "pointed wizard hat"
+    shoes: "pointed cloth shoes"
+    objects:
+      - { key: staff, name: "Bâton Magique", prompt: "holding a single glowing wizard staff in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 3
+
+  - key: vampire
+    name: "Vampire"
+    description: "Cape noire à doublure rouge et col haut."
+    outfit_prompt: "wearing a black cape with red lining and a high collar"
+    palette: ["#0E0E0E", "#7D0A0A", "#FFFFFF"]
+    headwear: null
+    shoes: "generic black dress shoes without brand"
+    objects:
+      - { key: goblet, name: "Calice", prompt: "holding a single ornate goblet in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 3
+
+  - key: monster_hunter
+    name: "Chasseur de Monstres"
+    description: "Manteau de cuir renforcé et ceinturon."
+    outfit_prompt: "wearing a reinforced leather coat with a utility belt"
+    palette: ["#3A2A1A", "#7F8C8D", "#C0392B"]
+    headwear: null
+    shoes: "rugged leather boots without brand"
+    objects:
+      - { key: crossbow, name: "Arbalète", prompt: "holding a single crossbow in one paw" }
+    forbidden: ["multiple weapons"]
+    rarity_weight: 4
+
+  - key: monk
+    name: "Moine"
+    description: "Robe de bure simple et ceinture de corde."
+    outfit_prompt: "wearing a simple monk robe with a rope belt"
+    palette: ["#8B5A2B", "#5D4037", "#C8A878"]
+    headwear: null
+    shoes: "simple sandals"
+    objects:
+      - { key: prayer_beads, name: "Chapelet", prompt: "holding a single string of prayer beads in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: pharaoh
+    name: "Pharaon"
+    description: "Pagne doré et collier égyptien."
+    outfit_prompt: "wearing a golden egyptian kilt and a broad ornate collar"
+    palette: ["#D4AF37", "#1F6FEB", "#FFFFFF"]
+    headwear: "nemes pharaoh headdress"
+    shoes: "golden sandals"
+    objects:
+      - { key: ankh, name: "Ankh", prompt: "holding a single golden ankh in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 2
+
+  - key: gladiator
+    name: "Gladiateur"
+    description: "Armure de cuir et plastron de gladiateur."
+    outfit_prompt: "wearing gladiator leather armor with a shoulder guard"
+    palette: ["#8B5A2B", "#C0C0C0", "#C0392B"]
+    headwear: "gladiator helmet"
+    shoes: "gladiator sandals"
+    objects:
+      - { key: gladius, name: "Glaive", prompt: "holding a single gladius in one paw" }
+    forbidden: ["two weapons"]
+    rarity_weight: 3
+
+  - key: roman_emperor
+    name: "Empereur Romain"
+    description: "Toge blanche bordée de pourpre et laurier."
+    outfit_prompt: "wearing a white toga with a purple border"
+    palette: ["#FFFFFF", "#7D0A0A", "#D4AF37"]
+    headwear: "golden laurel wreath"
+    shoes: "roman sandals"
+    objects:
+      - { key: scroll, name: "Parchemin", prompt: "holding a single rolled scroll in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 2
+
+  - key: viking
+    name: "Viking"
+    description: "Armure de fourrure et tunique nordique."
+    outfit_prompt: "wearing fur-trimmed viking armor over a tunic"
+    palette: ["#5D4037", "#7F8C8D", "#C0392B"]
+    headwear: "horned-free viking helmet"
+    shoes: "fur-wrapped leather boots"
+    objects:
+      - { key: viking_axe, name: "Hache Viking", prompt: "holding a single viking axe in one paw" }
+    forbidden: ["two weapons"]
+    rarity_weight: 4
+
+  - key: medieval_warrior
+    name: "Guerrier Médiéval"
+    description: "Cotte de mailles et surcot."
+    outfit_prompt: "wearing chainmail under a surcoat"
+    palette: ["#7F8C8D", "#1F3A93", "#C0C0C0"]
+    headwear: "chainmail coif"
+    shoes: "leather war boots"
+    objects:
+      - { key: mace, name: "Masse d'Armes", prompt: "holding a single mace in one paw" }
+    forbidden: ["two weapons"]
+    rarity_weight: 4
+
+  - key: cyberpunk_warrior
+    name: "Guerrier Cyberpunk"
+    description: "Armure technologique à néons."
+    outfit_prompt: "wearing sleek cyberpunk armor with glowing neon accents"
+    palette: ["#0E0E0E", "#E91E63", "#1F6FEB"]
+    headwear: "cyber visor"
+    shoes: "futuristic armored boots without brand"
+    objects:
+      - { key: energy_blade, name: "Lame Énergétique", prompt: "holding a single glowing energy blade in one paw" }
+    forbidden: ["multiple weapons"]
+    rarity_weight: 3
+
+  - key: punk
+    name: "Punk"
+    description: "Veste en cuir cloutée et épingles."
+    outfit_prompt: "wearing a studded leather jacket with safety pins and patches"
+    palette: ["#1C1C1C", "#E91E63", "#39FF14"]
+    headwear: "colorful mohawk"
+    shoes: "generic combat boots without brand"
+    objects:
+      - { key: boombox, name: "Boombox", prompt: "holding a single boombox in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: biker
+    name: "Biker"
+    description: "Veste de motard en cuir et gants."
+    outfit_prompt: "wearing a leather biker jacket with gloves"
+    palette: ["#1C1C1C", "#7F8C8D", "#C0392B"]
+    headwear: "biker bandana"
+    shoes: "generic leather riding boots without brand"
+    objects:
+      - { key: helmet_moto, name: "Casque Moto", prompt: "holding a single motorcycle helmet in one paw" }
+    forbidden: ["weapons", "brand logo"]
+    rarity_weight: 5
+
+  - key: businessman
+    name: "Homme d'Affaires"
+    description: "Costume cravate classique et montre."
+    outfit_prompt: "wearing a classic business suit and tie"
+    palette: ["#1C2833", "#FFFFFF", "#1F3A93"]
+    headwear: null
+    shoes: "generic black dress shoes without brand"
+    objects:
+      - { key: briefcase, name: "Mallette", prompt: "holding a single briefcase in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 7
+
+  - key: trader
+    name: "Trader"
+    description: "Chemise aux manches retroussées, bretelles."
+    outfit_prompt: "wearing a shirt with rolled sleeves and suspenders"
+    palette: ["#FFFFFF", "#1C2833", "#27AE60"]
+    headwear: null
+    shoes: "generic leather shoes without brand"
+    objects:
+      - { key: phone, name: "Téléphone", prompt: "holding a single smartphone in one paw" }
+    forbidden: ["weapons", "brand logo"]
+    rarity_weight: 6
+
+  - key: banker
+    name: "Banquier"
+    description: "Costume sombre et pochette."
+    outfit_prompt: "wearing a dark formal suit with a pocket square"
+    palette: ["#1C1C1C", "#FFFFFF", "#D4AF37"]
+    headwear: null
+    shoes: "generic black dress shoes without brand"
+    objects:
+      - { key: gold_bar, name: "Lingot d'Or", prompt: "holding a single gold bar in one paw" }
+    forbidden: ["weapons", "money and weapon together"]
+    rarity_weight: 5
+
+  - key: miner
+    name: "Mineur"
+    description: "Combinaison de mine et lampe frontale."
+    outfit_prompt: "wearing a dusty mining jumpsuit with a head lamp"
+    palette: ["#4B4B4B", "#E67E22", "#1C1C1C"]
+    headwear: "mining helmet with lamp"
+    shoes: "generic work boots without brand"
+    objects:
+      - { key: pickaxe, name: "Pioche", prompt: "holding a single pickaxe in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: electrician
+    name: "Électricien"
+    description: "Combinaison de travail isolante."
+    outfit_prompt: "wearing an insulated electrician work uniform with a tool belt"
+    palette: ["#F1C40F", "#2C3E50", "#FFFFFF"]
+    headwear: null
+    shoes: "generic insulated boots without brand"
+    objects:
+      - { key: pliers, name: "Pince", prompt: "holding a single pair of insulated pliers in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: plumber
+    name: "Plombier"
+    description: "Salopette et ceinture à outils."
+    outfit_prompt: "wearing work overalls with a tool belt"
+    palette: ["#1F6FEB", "#7F8C8D", "#C0392B"]
+    headwear: "work cap"
+    shoes: "generic work boots without brand"
+    objects:
+      - { key: pipe_wrench, name: "Clé à Tube", prompt: "holding a single pipe wrench in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: carpenter
+    name: "Menuisier"
+    description: "Tablier d'atelier et crayon sur l'oreille."
+    outfit_prompt: "wearing a carpenter apron over a shirt, pencil behind the ear"
+    palette: ["#8B5A2B", "#C8A878", "#2C3E50"]
+    headwear: null
+    shoes: "generic work boots without brand"
+    objects:
+      - { key: saw, name: "Scie", prompt: "holding a single hand saw in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: tiler
+    name: "Carreleur"
+    description: "Tenue de chantier et genouillères."
+    outfit_prompt: "wearing work clothes with knee pads"
+    palette: ["#7F8C8D", "#E67E22", "#2C3E50"]
+    headwear: null
+    shoes: "generic work boots without brand"
+    objects:
+      - { key: tile_trowel, name: "Truelle Crantée", prompt: "holding a single notched tiling trowel in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: welder
+    name: "Soudeur"
+    description: "Tablier de cuir et masque de soudure relevé."
+    outfit_prompt: "wearing a leather welding apron with a welding mask lifted up"
+    palette: ["#4B4B4B", "#E67E22", "#1C1C1C"]
+    headwear: "welding mask lifted up"
+    shoes: "generic work boots without brand"
+    objects:
+      - { key: welding_torch, name: "Chalumeau", prompt: "holding a single welding torch in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: delivery
+    name: "Livreur"
+    description: "Polo et casquette de livreur, sac à dos isotherme."
+    outfit_prompt: "wearing a delivery polo and cap with a thermal backpack"
+    palette: ["#C0392B", "#FFFFFF", "#1C1C1C"]
+    headwear: "delivery cap"
+    shoes: "generic sneakers without brand"
+    objects:
+      - { key: parcel, name: "Colis", prompt: "holding a single cardboard parcel in one paw" }
+    forbidden: ["weapons", "brand logo"]
+    rarity_weight: 6
+
+  - key: waiter
+    name: "Serveur"
+    description: "Gilet noir, chemise blanche et tablier long."
+    outfit_prompt: "wearing a black waistcoat, white shirt and a long apron"
+    palette: ["#1C1C1C", "#FFFFFF", "#7F8C8D"]
+    headwear: null
+    shoes: "generic black shoes without brand"
+    objects:
+      - { key: tray, name: "Plateau", prompt: "holding a single serving tray in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: hairdresser
+    name: "Coiffeur"
+    description: "Tablier de coiffeur et peigne."
+    outfit_prompt: "wearing a stylish hairdresser apron over a shirt"
+    palette: ["#1C1C1C", "#FFFFFF", "#E91E63"]
+    headwear: null
+    shoes: "generic shoes without brand"
+    objects:
+      - { key: scissors, name: "Ciseaux", prompt: "holding a single pair of hair scissors in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: tattoo_artist
+    name: "Tatoueur"
+    description: "Débardeur, bras tatoués, tablier noir."
+    outfit_prompt: "wearing a tank top and a black apron, tattooed arms"
+    palette: ["#1C1C1C", "#7F8C8D", "#E91E63"]
+    headwear: null
+    shoes: "generic boots without brand"
+    objects:
+      - { key: tattoo_machine, name: "Dermographe", prompt: "holding a single tattoo machine in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: dentist
+    name: "Dentiste"
+    description: "Blouse clinique et masque relevé."
+    outfit_prompt: "wearing a clean dental clinic coat with a lifted mask"
+    palette: ["#FFFFFF", "#1ABC9C", "#2C3E50"]
+    headwear: null
+    shoes: "generic clinic shoes without brand"
+    objects:
+      - { key: dental_mirror, name: "Miroir Dentaire", prompt: "holding a single dental mirror in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: vet
+    name: "Vétérinaire"
+    description: "Blouse de vétérinaire et stéthoscope."
+    outfit_prompt: "wearing a veterinarian coat over a shirt"
+    palette: ["#FFFFFF", "#27AE60", "#2C3E50"]
+    headwear: null
+    shoes: "generic clinic shoes without brand"
+    objects:
+      - { key: vet_stethoscope, name: "Stéthoscope", prompt: "holding a single stethoscope in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: sport_coach
+    name: "Professeur de Sport"
+    description: "Survêtement de coach et sifflet."
+    outfit_prompt: "wearing a sports coach tracksuit with a whistle"
+    palette: ["#1F3A93", "#FFFFFF", "#C0392B"]
+    headwear: "sport cap"
+    shoes: "generic sport shoes without brand"
+    objects:
+      - { key: whistle, name: "Sifflet", prompt: "holding a single whistle in one paw" }
+    forbidden: ["weapons", "brand logo"]
+    rarity_weight: 6
+
+  - key: lifeguard
+    name: "Sauveteur"
+    description: "Débardeur rouge de maître-nageur."
+    outfit_prompt: "wearing a red lifeguard tank top and shorts"
+    palette: ["#C0392B", "#FFFFFF", "#F1C40F"]
+    headwear: null
+    shoes: "barefoot"
+    objects:
+      - { key: rescue_buoy, name: "Bouée", prompt: "holding a single rescue buoy in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: fisherman
+    name: "Pêcheur"
+    description: "Ciré jaune de pêcheur."
+    outfit_prompt: "wearing a yellow fisherman raincoat"
+    palette: ["#F1C40F", "#2C3E50", "#FFFFFF"]
+    headwear: "fisherman rain hat"
+    shoes: "rubber boots"
+    objects:
+      - { key: fishing_rod, name: "Canne à Pêche", prompt: "holding a single fishing rod in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 6
+
+  - key: explorer
+    name: "Explorateur"
+    description: "Tenue de safari et veste à poches."
+    outfit_prompt: "wearing a khaki explorer outfit with a multi-pocket jacket"
+    palette: ["#7B6143", "#C8A878", "#2C3E50"]
+    headwear: "explorer pith hat"
+    shoes: "generic hiking boots without brand"
+    objects:
+      - { key: map, name: "Carte", prompt: "holding a single rolled map in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: climber
+    name: "Alpiniste"
+    description: "Veste technique et baudrier."
+    outfit_prompt: "wearing a technical mountaineering jacket with a harness"
+    palette: ["#E67E22", "#2C3E50", "#FFFFFF"]
+    headwear: "climbing helmet"
+    shoes: "generic climbing boots without brand"
+    objects:
+      - { key: ice_axe, name: "Piolet", prompt: "holding a single ice axe in one paw" }
+    forbidden: ["weapons"]
+    rarity_weight: 5
+
+  - key: adventurer
+    name: "Aventurier"
+    description: "Veste de cuir, sacoche et fouet enroulé."
+    outfit_prompt: "wearing a rugged leather adventurer jacket with a satchel"
+    palette: ["#5D4037", "#C8A878", "#2C3E50"]
+    headwear: "adventurer fedora"
+    shoes: "generic leather boots without brand"
+    objects:
+      - { key: torch, name: "Torche", prompt: "holding a single lit torch in one paw" }
+    forbidden: ["firearm"]
+    rarity_weight: 5

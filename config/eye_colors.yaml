@@ -1,0 +1,39 @@
+# =============================================================================
+# Couleurs des yeux - bibliotheque extensible
+# =============================================================================
+# Vous pouvez ajouter AUTANT de couleurs que vous voulez : il suffit d'ajouter
+# un bloc ci-dessous. Aucun code a modifier. Toute couleur ajoutee est
+# automatiquement combinable avec les 9 couleurs de pelage.
+#
+# Champs :
+#   key           : identifiant technique unique
+#   name          : nom affiche dans les metadonnees
+#   prompt        : description injectee dans le prompt image
+#   hex           : couleur indicative
+#   rarity_weight : poids de tirage (plus grand = plus frequent)
+#   bicolor       : true si iris a deux teintes (optionnel)
+#   energetic     : true pour un leger effet energetique lumineux (optionnel)
+#   rare_iris     : true pour un iris rare special (optionnel)
+# =============================================================================
+
+eye_colors:
+  - { key: sky_blue,      name: "Bleu Ciel",        prompt: "sky blue eyes",                              hex: "#87CEEB", rarity_weight: 12 }
+  - { key: electric_blue, name: "Bleu Électrique",  prompt: "electric blue glowing eyes",                 hex: "#1F6FEB", rarity_weight: 7,  energetic: true }
+  - { key: glacier_blue,  name: "Bleu Glacier",     prompt: "pale glacier blue eyes",                     hex: "#A6D8E7", rarity_weight: 8 }
+  - { key: emerald_green, name: "Vert Émeraude",    prompt: "emerald green eyes",                         hex: "#2ECC71", rarity_weight: 9 }
+  - { key: neon_green,    name: "Vert Néon",        prompt: "neon green glowing eyes",                    hex: "#39FF14", rarity_weight: 5,  energetic: true }
+  - { key: yellow,        name: "Jaune",            prompt: "bright yellow eyes",                         hex: "#F1C40F", rarity_weight: 10 }
+  - { key: amber,         name: "Ambre",            prompt: "warm amber eyes",                            hex: "#FFBF00", rarity_weight: 11 }
+  - { key: orange,        name: "Orange",           prompt: "vivid orange eyes",                          hex: "#E67E22", rarity_weight: 8 }
+  - { key: red,           name: "Rouge",            prompt: "intense red eyes",                           hex: "#E74C3C", rarity_weight: 6 }
+  - { key: violet,        name: "Violet",           prompt: "violet purple eyes",                         hex: "#8E44AD", rarity_weight: 6 }
+  - { key: pink,          name: "Rose",             prompt: "soft pink eyes",                             hex: "#FF6FA5", rarity_weight: 5 }
+  - { key: turquoise,     name: "Turquoise",        prompt: "turquoise eyes",                             hex: "#1ABC9C", rarity_weight: 7 }
+  - { key: silver_grey,   name: "Gris Argent",      prompt: "silver grey eyes",                           hex: "#C0C0C0", rarity_weight: 7 }
+  - { key: luminous_white,name: "Blanc Lumineux",   prompt: "luminous glowing white eyes",                hex: "#FFFFFF", rarity_weight: 3,  energetic: true }
+  - { key: glossy_black,  name: "Noir Brillant",    prompt: "glossy deep black eyes",                     hex: "#101010", rarity_weight: 8 }
+  - { key: golden,        name: "Doré",             prompt: "shiny golden eyes",                          hex: "#D4AF37", rarity_weight: 5 }
+  - { key: bicolor_blue_green, name: "Bicolore Bleu-Vert", prompt: "heterochromia eyes, one blue and one green", hex: "#3AA6B9", rarity_weight: 2, bicolor: true, rare_iris: true }
+  - { key: bicolor_gold_violet,name: "Bicolore Or-Violet", prompt: "heterochromia eyes, one golden and one violet", hex: "#9B7BB8", rarity_weight: 2, bicolor: true, rare_iris: true }
+  - { key: galaxy_iris,   name: "Iris Galaxie",     prompt: "rare galaxy nebula iris eyes with tiny sparkles", hex: "#5B3A7E", rarity_weight: 1, energetic: true, rare_iris: true }
+  - { key: molten_gold,   name: "Or en Fusion",     prompt: "rare molten glowing gold iris eyes",         hex: "#FFB300", rarity_weight: 1, energetic: true, rare_iris: true }

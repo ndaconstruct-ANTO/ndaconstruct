@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Secrets
+.env
+
+# Sorties générées (on garde la structure de dossiers via .gitkeep)
+output/images/*
+output/metadata/*
+output/prompts/*
+output/reports/*
+output/registries/*
+output/collection.csv
+!output/**/.gitkeep
+
+# Divers
+.pytest_cache/
+.DS_Store
