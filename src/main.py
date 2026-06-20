@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 from . import __version__
-from .generator import generate_ndas
+from .generator import FORMATS, generate_ndas
 from .providers import PROVIDERS, ProviderError, get_provider
 
 
@@ -42,6 +42,12 @@ def _build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Call the real provider API. Without this flag a free offline "
         "mock provider is used (no API key required).",
+    )
+    gen.add_argument(
+        "--format",
+        choices=FORMATS,
+        default="txt",
+        help="Output format: 'txt' (default) or 'png' image.",
     )
     gen.add_argument(
         "--output-dir",
@@ -76,6 +82,7 @@ def _cmd_generate(args: argparse.Namespace) -> int:
             count=args.count,
             output_dir=args.output_dir,
             seed=args.seed,
+            fmt=args.format,
         )
     except (ProviderError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)

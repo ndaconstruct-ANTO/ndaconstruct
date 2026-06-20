@@ -8,6 +8,10 @@ from pathlib import Path
 
 from .models import NDARequest
 from .providers import Provider
+from .render import render_text_to_png
+
+#: Output formats supported by the generator.
+FORMATS = ("txt", "png")
 
 
 @dataclass
@@ -25,13 +29,17 @@ def generate_ndas(
     output_dir: Path,
     *,
     seed: int | None = None,
+    fmt: str = "txt",
 ) -> list[GenerationResult]:
     """Generate ``count`` NDAs using ``provider`` and write them to ``output_dir``.
 
-    Returns a list of :class:`GenerationResult` describing what was written.
+    ``fmt`` selects the on-disk format: ``"txt"`` for plain text or ``"png"`` for
+    a rendered image. Returns a list of :class:`GenerationResult`.
     """
     if count < 1:
         raise ValueError("count must be at least 1")
+    if fmt not in FORMATS:
+        raise ValueError(f"unknown format '{fmt}'. Choose from: {', '.join(FORMATS)}")
 
     output_dir.mkdir(parents=True, exist_ok=True)
     rng = random.Random(seed)
@@ -41,9 +49,12 @@ def generate_ndas(
         request = NDARequest.random(index=i, rng=rng)
         text = provider.generate(request)
 
-        filename = f"nda_{i:03d}.txt"
-        path = output_dir / filename
-        path.write_text(text, encoding="utf-8")
+        if fmt == "png":
+            path = output_dir / f"nda_{i:03d}.png"
+            render_text_to_png(text, path)
+        else:
+            path = output_dir / f"nda_{i:03d}.txt"
+            path.write_text(text, encoding="utf-8")
 
         results.append(GenerationResult(index=i, request=request, path=path))
 
