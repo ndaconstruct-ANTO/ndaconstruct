@@ -176,6 +176,56 @@ class OpenAIProvider(_RealProviderBase):
             )
         return text
 
+    # Point de terminaison REST utilisé en l'absence du SDK officiel.
+    _API_URL = "https://api.openai.com/v1/images/generations"
+
+    @staticmethod
+    def _call_openai(*, api_key: str, model: str, prompt: str, size: str, quality: str) -> str:
+        """Appelle l'API Images d'OpenAI et renvoie l'image encodée en base64.
+
+        Utilise le SDK officiel `openai` s'il est installé ; sinon, retombe sur
+        un appel HTTP direct (urllib, sans dépendance externe) vers l'API REST.
+        Les deux chemins renvoient la chaîne base64 (`b64_json`) de l'image.
+        """
+        try:
+            from openai import OpenAI  # SDK officiel si disponible
+        except ImportError:
+            return OpenAIProvider._call_openai_http(
+                api_key=api_key, model=model, prompt=prompt, size=size, quality=quality
+            )
+        client = OpenAI(api_key=api_key)
+        response = client.images.generate(
+            model=model, prompt=prompt, size=size, quality=quality, n=1
+        )
+        return response.data[0].b64_json
+
+    @staticmethod
+    def _call_openai_http(*, api_key: str, model: str, prompt: str, size: str, quality: str) -> str:
+        """Appel HTTP direct à l'API Images (repli quand le SDK est absent)."""
+        import json
+        import urllib.error
+        import urllib.request
+
+        payload = json.dumps(
+            {"model": model, "prompt": prompt, "size": size, "quality": quality, "n": 1}
+        ).encode("utf-8")
+        req = urllib.request.Request(
+            OpenAIProvider._API_URL,
+            data=payload,
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=300) as resp:
+                body = json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:  # message d'erreur lisible côté API
+            detail = exc.read().decode("utf-8", "replace")
+            raise RuntimeError(f"HTTP {exc.code} : {detail}") from exc
+        return body["data"][0]["b64_json"]
+
     def generate(self, prompt: BuiltPrompt, *, filename: str) -> GenerationResult:
         api_key = self._require_env(self.config.get("api_key_env", "OPENAI_API_KEY"))
         request = self.build_request(prompt)
@@ -185,25 +235,16 @@ class OpenAIProvider(_RealProviderBase):
             "gpt-image-1 ne gère ni seed ni negative_prompt ; négatif replié dans le texte."
         )
 
-        try:
-            from openai import OpenAI  # import paresseux : dépendance optionnelle
-        except ImportError as exc:  # pragma: no cover - dépend de l'environnement
-            raise RuntimeError(
-                "[openai] Le paquet 'openai' n'est pas installé. "
-                "Lancez : pip install openai"
-            ) from exc
-
-        client = OpenAI(api_key=api_key)
         model = self.config.get("model", "gpt-image-1")
         quality = self.config.get("quality", "high")
 
         try:
-            response = client.images.generate(
+            image_b64 = self._call_openai(
+                api_key=api_key,
                 model=model,
                 prompt=self._compose_prompt(prompt),
                 size=size,
                 quality=quality,
-                n=1,
             )
         except Exception as exc:  # pragma: no cover - dépend du réseau/API
             return GenerationResult(
@@ -217,7 +258,6 @@ class OpenAIProvider(_RealProviderBase):
                 error=f"Échec de l'appel OpenAI : {exc}",
             )
 
-        image_b64 = response.data[0].b64_json
         image_bytes = base64.b64decode(image_b64)
 
         target_size = (prompt.width, prompt.height)

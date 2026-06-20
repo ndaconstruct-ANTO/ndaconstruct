@@ -184,6 +184,20 @@ def _write_outputs(
 def _print_preview(result: PipelineResult, limit: int = 10) -> None:
     print(f"\nFournisseur : {result.provider_name}")
     print(f"Personnages générés : {len(result.characters)}")
+
+    # Bilan des images réelles : ne jamais masquer un échec d'appel API.
+    errors = [r for r in result.results if r.error]
+    written = [r for r in result.results if r.image_path and not r.error]
+    if any(not r.simulated for r in result.results):
+        print(
+            f"Images écrites : {len(written)} | Échecs : {len(errors)}"
+        )
+        if errors:
+            print(
+                f"⚠ {len(errors)} image(s) NON générée(s). "
+                f"Première erreur : {errors[0].error}"
+            )
+
     qc_summary = summarize(result.qc)
     print(f"Contrôle qualité : {qc_summary}")
     print("\n--- Aperçu des combinaisons ---")
