@@ -95,4 +95,13 @@ class PromptBuilder:
         for placeholder, value in replacements.items():
             prompt = prompt.replace(placeholder, value)
 
+        # Texte autorisé sur un accessoire (marque "FLIPPERZ", slogan…).
+        if combo.style.text:
+            prompt += (
+                f"\n\nOn the {combo.style.text_on}, clearly display the exact text "
+                f"\"{combo.style.text}\" in clean bold legible lettering, correctly "
+                f"spelled, well integrated on the fabric/surface. No other text or "
+                f"writing anywhere else on the image."
+            )
+
         return {"positive": prompt, "negative": self.negative_prompt}

@@ -32,8 +32,10 @@ styles:
     headwear: "Snapback cap (no logo)"
     held_object: "Single revolver"
     palette: ["#222222", "#B8860B", "#5A5A5A"]
-    forbidden: ["second object", "second weapon", "brand logo"]
+    forbidden: ["second object", "second weapon", "real brand logo"]
     rarity: "Uncommon"
+    text: "FLIPPERZ"
+    text_on: "snapback cap"
 
   - code: STREETGANG
     name_en: "Street Gang"
@@ -41,6 +43,8 @@ styles:
     outfit: "hooded sweatshirt, ripped jeans, bandana around the neck"
     headwear: "Hood up"
     held_object: "Single baseball bat"
+    text: "FLIPPERZ"
+    text_on: "hoodie front"
     palette: ["#2C2C2C", "#C0392B", "#ECF0F1"]
     forbidden: ["weapon", "second object"]
     rarity: "Uncommon"
@@ -414,6 +418,8 @@ styles:
     palette: ["#27AE60", "#E74C3C", "#2C3E50"]
     forbidden: ["two cans", "second object"]
     rarity: "Uncommon"
+    text: "SPRAY COLOR"
+    text_on: "spray can label"
 
   - code: MUSICIAN
     name_en: "Musician"
@@ -774,6 +780,8 @@ styles:
     palette: ["#2C3E50", "#E67E22", "#FFFFFF"]
     forbidden: ["second object"]
     rarity: "Common"
+    text: "LETS GO"
+    text_on: "t-shirt front"
 
   - code: SCUBA
     name_en: "Scuba Diver"

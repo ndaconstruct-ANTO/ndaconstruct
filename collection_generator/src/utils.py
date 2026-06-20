@@ -49,6 +49,8 @@ class Style:
     forbidden: tuple = ()
     rarity: str = "Common"
     footwear: str = ""  # description de chaussures adaptées (optionnel)
+    text: str = ""      # texte affiché sur un accessoire (ex. "FLIPPERZ")
+    text_on: str = "garment"  # support du texte (cap, hoodie, t-shirt, spray can…)
 
 
 @dataclass(frozen=True)
@@ -134,6 +136,8 @@ def _style_list(raw: list) -> list:
                 forbidden=tuple(item.get("forbidden", []) or []),
                 rarity=item.get("rarity", "Common"),
                 footwear=item.get("footwear", ""),
+                text=item.get("text", ""),
+                text_on=item.get("text_on", "garment"),
             )
         )
     return out
