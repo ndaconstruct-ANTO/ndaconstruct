@@ -12,6 +12,7 @@ from pathlib import Path
 
 from . import __version__
 from .generator import FORMATS, generate_ndas
+from .image_generator import DEFAULT_PROMPT, generate_images
 from .providers import PROVIDERS, ProviderError, get_provider
 
 
@@ -63,6 +64,39 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     gen.set_defaults(func=_cmd_generate)
 
+    img = subparsers.add_parser("image", help="Generate AI images with OpenAI.")
+    img.add_argument(
+        "--count", type=int, default=1, help="Number of images to generate (default: 1)."
+    )
+    img.add_argument(
+        "--prompt",
+        default=DEFAULT_PROMPT,
+        help="Image description. Defaults to a cute 3D lion cub on white.",
+    )
+    img.add_argument(
+        "--provider",
+        choices=["openai"],
+        default="openai",
+        help="Image provider (default: openai).",
+    )
+    img.add_argument(
+        "--real",
+        action="store_true",
+        help="Required to call the real OpenAI image API (avoids accidental charges).",
+    )
+    img.add_argument(
+        "--size",
+        default="1024x1024",
+        help="Image size, e.g. 1024x1024 (default), 1024x1536, 1536x1024.",
+    )
+    img.add_argument(
+        "--output-dir",
+        type=Path,
+        default=Path("output"),
+        help="Directory to write generated images into (default: ./output).",
+    )
+    img.set_defaults(func=_cmd_image)
+
     return parser
 
 
@@ -97,6 +131,36 @@ def _cmd_generate(args: argparse.Namespace) -> int:
         )
 
     print(f"\nDone. Wrote {len(results)} file(s) to {args.output_dir}/")
+    return 0
+
+
+def _cmd_image(args: argparse.Namespace) -> int:
+    if not args.real:
+        print(
+            "error: image generation requires the real API. Re-run with --real "
+            "(uses OPENAI_API_KEY and may incur charges).",
+            file=sys.stderr,
+        )
+        return 1
+
+    print(f"Generating {args.count} image(s) via OpenAI at {args.size}")
+    print(f"Prompt: {args.prompt}")
+
+    try:
+        results = generate_images(
+            count=args.count,
+            output_dir=args.output_dir,
+            prompt=args.prompt,
+            size=args.size,
+        )
+    except (ProviderError, ValueError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+
+    for result in results:
+        print(f"  [{result.index:>3}] {result.path}")
+
+    print(f"\nDone. Wrote {len(results)} image(s) to {args.output_dir}/")
     return 0
 
 
