@@ -81,17 +81,27 @@ def make_background(path: Path, size: int, center, edge, glitter=False, seed=7):
 
 
 def assign_background(fur_en: str, rarity: str) -> str:
-    """Attribue un fond selon la rareté puis la couleur de pelage."""
-    if rarity == "Legendary" or fur_en == "Gold":
-        return "or_legendary"
-    mapping = {
-        "Green": "vert",
-        "Ice Blue": "bleu", "Purple": "bleu",
-        "Red": "rouge",
-        "Pure White": "gris_argent", "Deep Black": "gris_argent",
-        "Silver Grey": "gris_argent", "Light Tan": "gris_argent",
+    """Attribue un fond CONTRASTANT (jamais ton sur ton).
+
+    Le fond est choisi pour faire ressortir le lionceau (couleur opposée /
+    complémentaire), jamais la même teinte que le pelage. Les légendaires vont
+    sur le fond OR (sauf pelage or, qui serait ton sur ton -> fond contrastant).
+    """
+    if rarity == "Legendary":
+        return "or_legendary" if fur_en != "Gold" else "bleu"
+
+    contrast = {
+        "Green": "rouge",          # vert -> rouge (complémentaire)
+        "Red": "vert",             # rouge -> vert (complémentaire)
+        "Ice Blue": "rouge",       # bleu clair -> rouge (fort contraste)
+        "Purple": "vert",          # mauve -> vert
+        "Pure White": "bleu",      # blanc -> bleu (pas de blanc/gris ton sur ton)
+        "Deep Black": "gris_argent",  # noir -> argent clair (fort contraste)
+        "Silver Grey": "bleu",     # gris -> bleu (évite gris sur gris)
+        "Gold": "bleu",            # or -> bleu (évite or sur or)
+        "Light Tan": "vert",       # brun clair -> vert
     }
-    return mapping.get(fur_en, "gris_argent")
+    return contrast.get(fur_en, "bleu")
 
 
 def _token_id(filename: str) -> str:
