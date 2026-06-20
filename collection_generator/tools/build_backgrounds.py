@@ -28,7 +28,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "anto-designer"))
-from anto_designer import pnglib  # noqa: E402
+from anto_designer import imageops, pnglib  # noqa: E402
+
+MARGIN = 0.08  # bord constant autour du personnage
 
 ROOT = Path(__file__).resolve().parent.parent          # collection_generator/
 TRANSP_SRC = ROOT / "output" / "transparent"
@@ -117,10 +119,13 @@ def build():
     size = pnglib.read_size(transp[0])[0]
 
     # 1) Réserve : copie des transparents (originaux intacts).
+    # Réserve = transparents normalisés (marge constante), toujours synchronisée.
     reserve = OUT / "collection_transparente"
     reserve.mkdir(parents=True, exist_ok=True)
     for p in transp:
-        shutil.copy2(p, reserve / p.name)  # réserve toujours synchronisée
+        w, h, buf = pnglib.read_rgba(p)
+        buf = imageops.normalize_margins(buf, w, h, margin_ratio=MARGIN)
+        pnglib.write_rgba(reserve / p.name, w, h, buf)
 
     # 2) Les 5 fonds officiels (régénérés à chaque build, fichiers indépendants).
     for key in BG_FOLDERS:
@@ -153,8 +158,8 @@ def build():
 
         fw, fh, fbuf = bg_cache[bg]
         canvas = bytearray(fbuf)            # copie du fond
-        lw, lh, lbuf = pnglib.read_rgba(p)
-        pnglib.alpha_over(canvas, lbuf)     # lionceau par-dessus, cadrage inchangé
+        lw, lh, lbuf = pnglib.read_rgba(reserve / p.name)  # transparent normalisé
+        pnglib.alpha_over(canvas, lbuf)     # lionceau par-dessus, marge constante
         dest_dir = OUT / "collection_avec_fonds" / bg
         dest_dir.mkdir(parents=True, exist_ok=True)
         pnglib.write_rgba(dest_dir / p.name, fw, fh, canvas)

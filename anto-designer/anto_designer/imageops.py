@@ -179,6 +179,47 @@ def recolor(rgba: bytearray, w: int, h: int, target_rgb, strength: float = 0.85)
             rgba[i + 2] = int(rgba[i + 2] * (1 - strength) + nb * strength)
 
 
+def defringe(rgba: bytearray, w: int, h: int, tolerance: int = 60,
+             iterations: int = 2) -> int:
+    """Érode le fin liseré clair de bord (halo / anti-crénelage), notamment sous
+    les pieds : rend transparents les pixels ~couleur fond situés AU BORD du
+    sujet (ayant un voisin déjà transparent). Retourne le nombre de px effacés.
+    """
+    corners = [(0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1)]
+    rs = gs = bs = 0
+    for (cx, cy) in corners:
+        o = _idx(cx, cy, w)
+        rs += rgba[o]; gs += rgba[o + 1]; bs += rgba[o + 2]
+    br, bg, bb = rs // 4, gs // 4, bs // 4
+    tol2 = tolerance * tolerance * 3
+    cleared = 0
+    for _ in range(iterations):
+        to_clear = []
+        for y in range(h):
+            row = y * w
+            for x in range(w):
+                p = row + x
+                o = p * 4
+                if rgba[o + 3] == 0:
+                    continue
+                dr = rgba[o] - br; dg = rgba[o + 1] - bg; db = rgba[o + 2] - bb
+                if dr * dr + dg * dg + db * db > tol2:
+                    continue  # pas assez clair -> vrai sujet, on garde
+                # bord = a au moins un voisin transparent
+                edge = ((x > 0 and rgba[(p - 1) * 4 + 3] == 0) or
+                        (x < w - 1 and rgba[(p + 1) * 4 + 3] == 0) or
+                        (y > 0 and rgba[(p - w) * 4 + 3] == 0) or
+                        (y < h - 1 and rgba[(p + w) * 4 + 3] == 0))
+                if edge:
+                    to_clear.append(o)
+        for o in to_clear:
+            rgba[o + 3] = 0
+        cleared += len(to_clear)
+        if not to_clear:
+            break
+    return cleared
+
+
 def keep_largest_component(rgba: bytearray, w: int, h: int,
                            min_keep_ratio: float = 0.02) -> int:
     """Ne garde que le sujet principal : efface les morceaux opaques DÉTACHÉS

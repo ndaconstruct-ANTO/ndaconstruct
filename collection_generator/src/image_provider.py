@@ -125,16 +125,19 @@ class OpenAIImageProvider(ImageProvider):
             raise ImageProviderError(f"Réponse OpenAI inattendue: {data}") from exc
 
     # -- API ------------------------------------------------------------------
-    def generate(self, positive, negative, *, size, seed, reference=None):
+    def generate(self, positive, negative, *, size, seed, reference=None,
+                 transparent=False):
         prompt = positive
         if negative:
             prompt += "\n\nStrictly avoid: " + negative
 
         if reference:
             # Édition basée référence : conserve le même lionceau maître.
+            fields = {"model": self._model, "prompt": prompt, "size": size, "n": "1"}
+            if transparent:
+                fields["background"] = "transparent"  # détourage 'scalpel' par l'IA
             data = self._post_multipart(
-                self._EDIT_URL,
-                fields={"model": self._model, "prompt": prompt, "size": size, "n": "1"},
+                self._EDIT_URL, fields=fields,
                 files={"image": ("master_lion.png", reference)},
             )
             return self._decode(data)
