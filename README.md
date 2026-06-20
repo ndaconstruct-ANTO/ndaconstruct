@@ -198,27 +198,44 @@ python -m src.main preview --count 3 --show-prompts
 ## 9. Activer plus tard une API d'image
 
 Le projet ne dépend **d'aucun fournisseur précis**. L'interface générique se
-trouve dans `src/image_provider.py` et plusieurs fournisseurs sont déjà prévus :
-`openai`, `stable_diffusion`, `flux`, `comfyui`.
+trouve dans `src/image_provider.py`. Le fournisseur **OpenAI (`gpt-image-1`) est
+déjà implémenté et fonctionnel** ; `stable_diffusion`, `flux` et `comfyui` sont
+prévus (emplacement `TODO` à compléter).
 
-Pour préparer un fournisseur réel :
+### Utiliser OpenAI (gpt-image-1)
 
-1. Copiez le fichier d'exemple d'environnement :
+1. Installez les paquets nécessaires :
+   ```bash
+   pip install openai Pillow
+   ```
+2. Copiez le fichier d'exemple d'environnement et renseignez votre clé :
    ```bash
    cp .env.example .env
+   # puis dans .env : OPENAI_API_KEY=sk-...
    ```
-2. Renseignez votre clé dans `.env` (ex. `OPENAI_API_KEY=...`).
-3. Implémentez l'appel réseau dans la classe correspondante de
-   `src/image_provider.py` (un emplacement `TODO` est prévu).
-4. Lancez la génération réelle **en le demandant explicitement** :
+3. Lancez la génération réelle **en le demandant explicitement** :
    ```bash
    python -m src.main generate --count 10 --provider openai --real
    ```
 
-> **Sécurité dépenses** : tant que vous n'ajoutez pas `--real` **et** un
-> fournisseur réel, le projet reste en simulation. Le `test_mode` de
-> `config/collection.yaml` force aussi la simulation. Aucune génération payante
-> n'a lieu sans votre autorisation explicite.
+**À savoir sur `gpt-image-1`** (le code s'en occupe automatiquement) :
+
+- Les tailles supportées sont `1024x1024`, `1536x1024`, `1024x1536`. Pour un
+  carré, l'image est demandée en `1024x1024` puis **agrandie** à la résolution
+  de `config/collection.yaml` (`image.width/height`, ex. 2048) via Pillow.
+  Réglez `providers.openai.upscale_to_target: false` pour garder le 1024 natif.
+- `gpt-image-1` n'a **pas** de paramètre `negative_prompt` : les interdits sont
+  automatiquement repliés dans le texte du prompt (« Strictly avoid: … »).
+- `gpt-image-1` n'a **pas** de paramètre `seed` : la seed reste enregistrée dans
+  les métadonnées, mais la reproductibilité pixel-parfaite n'est pas garantie
+  côté OpenAI.
+- Qualité réglable via `providers.openai.quality` (`low`/`medium`/`high`/`auto`).
+
+> **Sécurité dépenses** : tant que vous n'ajoutez pas `--real` **et**
+> `--provider openai`, le projet reste en simulation. Le `test_mode` de
+> `config/collection.yaml` force aussi la simulation. Sans clé `OPENAI_API_KEY`,
+> le fournisseur s'arrête avec un message clair. Aucune génération payante n'a
+> lieu sans votre autorisation explicite.
 
 ---
 

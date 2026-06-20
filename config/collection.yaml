@@ -114,7 +114,12 @@ providers:
   openai:
     type: "openai"
     model: "gpt-image-1"
-    size: "2048x2048"
+    # gpt-image-1 n'accepte que 1024x1024, 1536x1024, 1024x1536 ou "auto".
+    # "auto" => le fournisseur choisit la taille carrée supportée (1024x1024)
+    # puis agrandit jusqu'a image.width/height si upscale_to_target est vrai.
+    size: "auto"
+    quality: "high"          # low | medium | high | auto
+    upscale_to_target: true  # agrandit le 1024 vers la resolution configuree (Pillow)
     api_key_env: "OPENAI_API_KEY"
   stable_diffusion:
     type: "stable_diffusion"

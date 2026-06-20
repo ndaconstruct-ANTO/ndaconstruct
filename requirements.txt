@@ -15,5 +15,7 @@ Pillow>=10.0
 # streamlit>=1.30    # décommentez pour l'interface graphique (python -m streamlit run web/app.py)
 
 # --- Facultatif : fournisseurs d'images réels (à activer plus tard) ---
-# openai>=1.0        # fournisseur OpenAI
+# Le fournisseur OpenAI (gpt-image-1) est implémenté. Pour l'utiliser :
+#   pip install openai Pillow
+# openai>=1.0        # fournisseur OpenAI (gpt-image-1)
 # requests>=2.31     # fournisseurs HTTP (Stable Diffusion, Flux, ComfyUI)
