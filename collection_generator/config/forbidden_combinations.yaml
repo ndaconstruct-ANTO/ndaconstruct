@@ -1,0 +1,19 @@
+# =============================================================================
+# Combinaisons interdites.
+# Une combinaison (pelage + yeux + style) est REFUSÉE si elle correspond à
+# TOUTES les contraintes d'une règle. Une contrainte absente = "n'importe quoi".
+#   fur   : liste de codes de pelage concernés (optionnel)
+#   eye   : liste de codes d'yeux concernés (optionnel)
+#   style : liste de codes de style concernés (optionnel)
+# =============================================================================
+
+forbidden:
+  # Lisibilité : pelage noir + yeux noirs brillants = trop peu lisible.
+  - description: "Pelage noir profond avec yeux noirs brillants (illisible)"
+    fur: ["BLACK"]
+    eye: ["BLACKSHINE"]
+
+  # Exemple de règle de cohérence stylistique (modifiable librement).
+  - description: "Pelage or réservé : exclu du style maçon"
+    fur: ["GOLD"]
+    style: ["MASON"]

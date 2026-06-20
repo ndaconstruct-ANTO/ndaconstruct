@@ -1,0 +1,616 @@
+# =============================================================================
+# Bibliothèque de styles / métiers / univers (EXTENSIBLE).
+# Pour AJOUTER un style : copier une entrée et adapter les champs. Aucun code à
+# modifier. Règle absolue : un seul objet tenu en main (held_object).
+#
+#   code        : identifiant court unique (nom de fichier)
+#   name_en     : libellé anglais (prompt + métadonnées)
+#   name_fr     : libellé français (attributs / CSV)
+#   outfit      : description vestimentaire précise (anglais, pour le prompt)
+#   headwear    : couvre-chef ("None" si aucun)
+#   held_object : UNIQUE objet tenu ("None" si aucun) — voir règle de l'objet
+#   palette     : couleurs dominantes de la tenue (indicatif)
+#   forbidden   : éléments interdits propres au style
+#   rarity      : palier de base indicatif (Common..Legendary)
+# =============================================================================
+
+styles:
+  - code: MAFIA
+    name_en: "Mafia Boss"
+    name_fr: "Mafieux"
+    outfit: "sharp dark pinstripe three-piece suit, silk tie, leather gloves"
+    headwear: "Black fedora hat"
+    held_object: "Single cigar"
+    palette: ["#1B1B1B", "#3A2E1F", "#8B0000"]
+    forbidden: ["gun", "money stack", "second object"]
+    rarity: "Rare"
+
+  - code: GANGSTER
+    name_en: "Gangster"
+    name_fr: "Gangster"
+    outfit: "oversized streetwear jacket, baggy trousers, gold chain"
+    headwear: "Snapback cap (no logo)"
+    held_object: "Single spray paint can"
+    palette: ["#222222", "#B8860B", "#5A5A5A"]
+    forbidden: ["baseball bat together with can", "second object", "brand logo"]
+    rarity: "Uncommon"
+
+  - code: STREETGANG
+    name_en: "Street Gang"
+    name_fr: "Street gang"
+    outfit: "hooded sweatshirt, ripped jeans, bandana around the neck"
+    headwear: "Hood up"
+    held_object: "Single skateboard"
+    palette: ["#2C2C2C", "#C0392B", "#ECF0F1"]
+    forbidden: ["weapon", "second object"]
+    rarity: "Uncommon"
+
+  - code: SAMURAI
+    name_en: "Samurai"
+    name_fr: "Samouraï"
+    outfit: "traditional layered samurai armor with lacquered plates and silk cords"
+    headwear: "Samurai kabuto helmet"
+    held_object: "Single katana"
+    palette: ["#7B241C", "#1C2833", "#D4AC0D"]
+    forbidden: ["second sword", "shield", "second object"]
+    rarity: "Epic"
+
+  - code: NINJA
+    name_en: "Ninja"
+    name_fr: "Ninja"
+    outfit: "fitted black ninja garb with wrapped forearms and shin guards"
+    headwear: "Ninja mask and head wrap"
+    held_object: "Single kunai blade"
+    palette: ["#0B0B0B", "#34495E", "#7F8C8D"]
+    forbidden: ["second weapon", "shuriken plus blade", "second object"]
+    rarity: "Rare"
+
+  - code: KNIGHT
+    name_en: "Knight"
+    name_fr: "Chevalier"
+    outfit: "polished medieval plate armor with tabard"
+    headwear: "Steel knight helmet"
+    held_object: "Single sword"
+    palette: ["#BDC3C7", "#7F8C8D", "#922B21"]
+    forbidden: ["sword and shield together", "second object"]
+    rarity: "Epic"
+
+  - code: TEMPLAR
+    name_en: "Templar"
+    name_fr: "Templier"
+    outfit: "white surcoat with red cross over chainmail"
+    headwear: "Chainmail coif"
+    held_object: "Single longsword"
+    palette: ["#FDFEFE", "#C0392B", "#95A5A6"]
+    forbidden: ["second weapon", "shield together", "second object"]
+    rarity: "Epic"
+
+  - code: VIKING
+    name_en: "Viking Warrior"
+    name_fr: "Guerrier viking"
+    outfit: "fur-trimmed leather armor with iron studs"
+    headwear: "Horned-free iron viking helmet"
+    held_object: "Single battle axe"
+    palette: ["#5D4037", "#7F8C8D", "#A1887F"]
+    forbidden: ["axe and shield together", "second object"]
+    rarity: "Epic"
+
+  - code: KING
+    name_en: "King"
+    name_fr: "Roi"
+    outfit: "royal velvet robe with ermine trim and ornate embroidery"
+    headwear: "Golden crown"
+    held_object: "Single scepter"
+    palette: ["#6C3483", "#F1C40F", "#FFFFFF"]
+    forbidden: ["orb together with scepter", "second object"]
+    rarity: "Legendary"
+
+  - code: PRINCE
+    name_en: "Prince"
+    name_fr: "Prince"
+    outfit: "elegant royal coat with epaulettes and sash"
+    headwear: "Small royal circlet"
+    held_object: "Single ceremonial saber"
+    palette: ["#1A5276", "#F1C40F", "#FFFFFF"]
+    forbidden: ["second object"]
+    rarity: "Epic"
+
+  - code: PRIEST
+    name_en: "Priest"
+    name_fr: "Curé"
+    outfit: "black cassock with white clerical collar"
+    headwear: "None"
+    held_object: "Single bible"
+    palette: ["#161616", "#FFFFFF", "#7D6608"]
+    forbidden: ["cross plus bible together", "second object"]
+    rarity: "Uncommon"
+
+  - code: CARDINAL
+    name_en: "Cardinal"
+    name_fr: "Cardinal"
+    outfit: "scarlet cardinal robe with embroidered details"
+    headwear: "Red cardinal biretta"
+    held_object: "Single rosary"
+    palette: ["#C0392B", "#FFFFFF", "#D4AF37"]
+    forbidden: ["second object"]
+    rarity: "Rare"
+
+  - code: SHAMAN
+    name_en: "Shaman"
+    name_fr: "Chaman"
+    outfit: "tribal robe with bone beads and woven patterns"
+    headwear: "Feathered tribal headdress"
+    held_object: "Single wooden staff"
+    palette: ["#7E5109", "#196F3D", "#E59866"]
+    forbidden: ["staff plus skull together", "second object"]
+    rarity: "Rare"
+
+  - code: WIZARD
+    name_en: "Wizard"
+    name_fr: "Sorcier"
+    outfit: "long starry mage robe with rune embroidery"
+    headwear: "Pointed wizard hat"
+    held_object: "Single magic staff"
+    palette: ["#283747", "#5B2C6F", "#F4D03F"]
+    forbidden: ["wand plus staff together", "second object"]
+    rarity: "Epic"
+
+  - code: DOCTOR
+    name_en: "Doctor"
+    name_fr: "Médecin"
+    outfit: "white medical coat over a shirt"
+    headwear: "None"
+    held_object: "Single stethoscope"
+    palette: ["#FFFFFF", "#5DADE2", "#34495E"]
+    forbidden: ["syringe plus stethoscope together", "second object"]
+    rarity: "Common"
+
+  - code: SURGEON
+    name_en: "Surgeon"
+    name_fr: "Chirurgien"
+    outfit: "surgical scrubs with gown and gloves"
+    headwear: "Surgical cap and mask down on neck"
+    held_object: "Single scalpel"
+    palette: ["#48C9B0", "#1ABC9C", "#FFFFFF"]
+    forbidden: ["two instruments", "second object"]
+    rarity: "Uncommon"
+
+  - code: NURSE
+    name_en: "Nurse"
+    name_fr: "Infirmier"
+    outfit: "clean nurse uniform with small cross emblem"
+    headwear: "Nurse cap"
+    held_object: "Single clipboard"
+    palette: ["#FFFFFF", "#5DADE2", "#C0392B"]
+    forbidden: ["second object"]
+    rarity: "Common"
+
+  - code: MASON
+    name_en: "Mason"
+    name_fr: "Maçon"
+    outfit: "rugged work overalls with tool belt and high-visibility vest"
+    headwear: "Construction hard hat"
+    held_object: "Single trowel"
+    palette: ["#E67E22", "#F1C40F", "#7F8C8D"]
+    forbidden: ["trowel plus brick together", "second object"]
+    rarity: "Common"
+
+  - code: ROOFER
+    name_en: "Roofer"
+    name_fr: "Couvreur"
+    outfit: "work trousers with knee pads and safety harness"
+    headwear: "Hard hat"
+    held_object: "Single roofing hammer"
+    palette: ["#A04000", "#7F8C8D", "#F1C40F"]
+    forbidden: ["second object"]
+    rarity: "Common"
+
+  - code: HOUSEPAINTER
+    name_en: "House Painter"
+    name_fr: "Peintre en bâtiment"
+    outfit: "white painter coveralls with paint splatters"
+    headwear: "Paper painter cap"
+    held_object: "Single paint roller"
+    palette: ["#FFFFFF", "#5DADE2", "#7F8C8D"]
+    forbidden: ["brush plus roller together", "second object"]
+    rarity: "Common"
+
+  - code: CARPENTER
+    name_en: "Carpenter"
+    name_fr: "Menuisier"
+    outfit: "work apron over flannel shirt with tool pockets"
+    headwear: "None"
+    held_object: "Single handsaw"
+    palette: ["#8B5A2B", "#D2B48C", "#7F8C8D"]
+    forbidden: ["second tool", "second object"]
+    rarity: "Common"
+
+  - code: PLUMBER
+    name_en: "Plumber"
+    name_fr: "Plombier"
+    outfit: "blue work overalls with tool belt"
+    headwear: "None"
+    held_object: "Single pipe wrench"
+    palette: ["#2E86C1", "#5D6D7E", "#F1C40F"]
+    forbidden: ["second object"]
+    rarity: "Common"
+
+  - code: ELECTRICIAN
+    name_en: "Electrician"
+    name_fr: "Électricien"
+    outfit: "work jacket with insulated gloves and tool belt"
+    headwear: "Safety helmet"
+    held_object: "Single insulated screwdriver"
+    palette: ["#F1C40F", "#34495E", "#E67E22"]
+    forbidden: ["second object"]
+    rarity: "Common"
+
+  - code: ARCHITECT
+    name_en: "Architect"
+    name_fr: "Architecte"
+    outfit: "smart blazer with turtleneck and slim trousers"
+    headwear: "None"
+    held_object: "Single rolled blueprint"
+    palette: ["#34495E", "#FFFFFF", "#95A5A6"]
+    forbidden: ["second object"]
+    rarity: "Uncommon"
+
+  - code: PROFESSOR
+    name_en: "Professor"
+    name_fr: "Professeur"
+    outfit: "tweed jacket with elbow patches and bow tie"
+    headwear: "None"
+    held_object: "Single book"
+    palette: ["#7E5109", "#2C3E50", "#D5D8DC"]
+    forbidden: ["pointer plus book together", "second object"]
+    rarity: "Common"
+
+  - code: SCIENTIST
+    name_en: "Scientist"
+    name_fr: "Savant"
+    outfit: "white lab coat with safety glasses and gloves"
+    headwear: "None"
+    held_object: "Single test tube"
+    palette: ["#FFFFFF", "#16A085", "#34495E"]
+    forbidden: ["two flasks", "second object"]
+    rarity: "Uncommon"
+
+  - code: CHEMIST
+    name_en: "Chemist"
+    name_fr: "Chimiste"
+    outfit: "lab coat with apron and protective gloves"
+    headwear: "Safety goggles on forehead"
+    held_object: "Single erlenmeyer flask"
+    palette: ["#FFFFFF", "#8E44AD", "#1ABC9C"]
+    forbidden: ["second object"]
+    rarity: "Uncommon"
+
+  - code: ASTRONAUT
+    name_en: "Astronaut"
+    name_fr: "Astronaute"
+    outfit: "detailed white space suit with patches and chest controls"
+    headwear: "Space helmet held under arm is forbidden; integrated soft hood"
+    held_object: "Single space helmet"
+    palette: ["#FFFFFF", "#2C3E50", "#E67E22"]
+    forbidden: ["flag plus helmet together", "second object"]
+    rarity: "Epic"
+
+  - code: PILOT
+    name_en: "Pilot"
+    name_fr: "Pilote"
+    outfit: "airline pilot uniform with epaulettes and tie"
+    headwear: "Pilot cap"
+    held_object: "Single aviator sunglasses"
+    palette: ["#1B2631", "#FFFFFF", "#D4AF37"]
+    forbidden: ["second object"]
+    rarity: "Uncommon"
+
+  - code: FIREFIGHTER
+    name_en: "Firefighter"
+    name_fr: "Pompier"
+    outfit: "heavy firefighter turnout coat with reflective stripes"
+    headwear: "Firefighter helmet"
+    held_object: "Single fire axe"
+    palette: ["#C0392B", "#F1C40F", "#212F3D"]
+    forbidden: ["hose plus axe together", "second object"]
+    rarity: "Uncommon"
+
+  - code: POLICE
+    name_en: "Police Officer"
+    name_fr: "Policier"
+    outfit: "police uniform with badge and utility belt"
+    headwear: "Police cap"
+    held_object: "Single pair of handcuffs"
+    palette: ["#1F3A93", "#2C3E50", "#F1C40F"]
+    forbidden: ["baton plus handcuffs together", "second object"]
+    rarity: "Common"
+
+  - code: SOLDIER
+    name_en: "Soldier"
+    name_fr: "Militaire"
+    outfit: "camouflage combat uniform with tactical vest"
+    headwear: "Military helmet"
+    held_object: "Single field binoculars"
+    palette: ["#4D5320", "#7F8C8D", "#283747"]
+    forbidden: ["rifle plus binoculars together", "second object"]
+    rarity: "Uncommon"
+
+  - code: DETECTIVE
+    name_en: "Detective"
+    name_fr: "Détective"
+    outfit: "beige trench coat over a shirt and tie"
+    headwear: "Detective fedora"
+    held_object: "Single magnifying glass"
+    palette: ["#C9A36A", "#5D4037", "#2C3E50"]
+    forbidden: ["pipe plus magnifier together", "second object"]
+    rarity: "Rare"
+
+  - code: LAWYER
+    name_en: "Lawyer"
+    name_fr: "Avocat"
+    outfit: "formal black robe over a suit"
+    headwear: "None"
+    held_object: "Single legal folder"
+    palette: ["#161616", "#FFFFFF", "#7D6608"]
+    forbidden: ["second object"]
+    rarity: "Common"
+
+  - code: JUDGE
+    name_en: "Judge"
+    name_fr: "Juge"
+    outfit: "judicial robe with white collar bands"
+    headwear: "None"
+    held_object: "Single gavel"
+    palette: ["#161616", "#FFFFFF", "#8B0000"]
+    forbidden: ["scale plus gavel together", "second object"]
+    rarity: "Rare"
+
+  - code: BUSINESSMAN
+    name_en: "Businessman"
+    name_fr: "Homme d'affaires"
+    outfit: "tailored navy business suit with tie"
+    headwear: "None"
+    held_object: "Single briefcase"
+    palette: ["#1B2631", "#FFFFFF", "#5D6D7E"]
+    forbidden: ["phone plus briefcase together", "second object"]
+    rarity: "Common"
+
+  - code: BANKER
+    name_en: "Banker"
+    name_fr: "Banquier"
+    outfit: "pinstripe suit with vest and pocket square"
+    headwear: "None"
+    held_object: "Single ledger book"
+    palette: ["#212F3D", "#D4AF37", "#FFFFFF"]
+    forbidden: ["money plus ledger together", "second object"]
+    rarity: "Uncommon"
+
+  - code: TRADER
+    name_en: "Trader"
+    name_fr: "Trader"
+    outfit: "rolled-sleeve shirt with loosened tie and suspenders"
+    headwear: "None"
+    held_object: "Single tablet device"
+    palette: ["#2C3E50", "#27AE60", "#E74C3C"]
+    forbidden: ["two screens", "money plus device together", "second object"]
+    rarity: "Uncommon"
+
+  - code: RAPPER
+    name_en: "Rapper"
+    name_fr: "Rappeur"
+    outfit: "designer-free tracksuit with thick gold chain"
+    headwear: "Beanie"
+    held_object: "Single microphone"
+    palette: ["#1C1C1C", "#D4AF37", "#8E44AD"]
+    forbidden: ["two microphones", "second object", "brand logo"]
+    rarity: "Uncommon"
+
+  - code: GRAFFITI
+    name_en: "Graffiti Artist"
+    name_fr: "Graffeur"
+    outfit: "paint-stained hoodie with cargo pants and a dust mask on neck"
+    headwear: "Cap turned back"
+    held_object: "Single spray can"
+    palette: ["#27AE60", "#E74C3C", "#2C3E50"]
+    forbidden: ["two cans", "second object"]
+    rarity: "Uncommon"
+
+  - code: MUSICIAN
+    name_en: "Musician"
+    name_fr: "Musicien"
+    outfit: "smart casual jacket with patterned shirt"
+    headwear: "None"
+    held_object: "Single acoustic guitar"
+    palette: ["#5D4037", "#D2B48C", "#2C3E50"]
+    forbidden: ["second instrument", "second object"]
+    rarity: "Uncommon"
+
+  - code: ROCKER
+    name_en: "Rocker"
+    name_fr: "Rockeur"
+    outfit: "studded black leather jacket with ripped jeans"
+    headwear: "None"
+    held_object: "Single electric guitar"
+    palette: ["#0B0B0B", "#C0392B", "#7F8C8D"]
+    forbidden: ["two guitars", "second object"]
+    rarity: "Rare"
+
+  - code: RASTA
+    name_en: "Rasta"
+    name_fr: "Rasta"
+    outfit: "loose knitted vest with earthy colors"
+    headwear: "Large knitted rasta hat"
+    held_object: "Single djembe drum"
+    palette: ["#27AE60", "#F1C40F", "#C0392B"]
+    forbidden: ["second object"]
+    rarity: "Uncommon"
+
+  - code: BIKER
+    name_en: "Biker"
+    name_fr: "Biker"
+    outfit: "heavy leather biker jacket with patches and gloves"
+    headwear: "Open-face biker helmet"
+    held_object: "Single wrench"
+    palette: ["#161616", "#7F8C8D", "#C0392B"]
+    forbidden: ["second object"]
+    rarity: "Uncommon"
+
+  - code: PIRATE
+    name_en: "Pirate"
+    name_fr: "Pirate"
+    outfit: "long captain coat with sash and wide belt"
+    headwear: "Pirate tricorn hat"
+    held_object: "Single cutlass sabre"
+    palette: ["#5D4037", "#C0392B", "#D4AF37"]
+    forbidden: ["pistol plus sabre together", "second object"]
+    rarity: "Rare"
+
+  - code: SAILOR
+    name_en: "Sailor"
+    name_fr: "Marin"
+    outfit: "classic striped sailor shirt with navy jacket"
+    headwear: "Sailor cap"
+    held_object: "Single rope coil"
+    palette: ["#1B2631", "#FFFFFF", "#C0392B"]
+    forbidden: ["second object"]
+    rarity: "Common"
+
+  - code: FISHERMAN
+    name_en: "Fisherman"
+    name_fr: "Pêcheur"
+    outfit: "yellow waterproof raincoat with overalls"
+    headwear: "Fisherman rain hat"
+    held_object: "Single fishing rod"
+    palette: ["#F1C40F", "#2E86C1", "#5D6D7E"]
+    forbidden: ["net plus rod together", "second object"]
+    rarity: "Common"
+
+  - code: FARMER
+    name_en: "Farmer"
+    name_fr: "Fermier"
+    outfit: "denim overalls over a plaid shirt"
+    headwear: "Straw farmer hat"
+    held_object: "Single pitchfork"
+    palette: ["#7E5109", "#27AE60", "#D2B48C"]
+    forbidden: ["second tool", "second object"]
+    rarity: "Common"
+
+  - code: CHEF
+    name_en: "Chef"
+    name_fr: "Cuisinier"
+    outfit: "white double-breasted chef jacket with apron"
+    headwear: "Tall chef toque"
+    held_object: "Single chef knife"
+    palette: ["#FFFFFF", "#2C3E50", "#C0392B"]
+    forbidden: ["knife plus pan together", "second object"]
+    rarity: "Common"
+
+  - code: BAKER
+    name_en: "Baker"
+    name_fr: "Boulanger"
+    outfit: "flour-dusted apron over a rolled-sleeve shirt"
+    headwear: "Soft baker cap"
+    held_object: "Single baguette"
+    palette: ["#F5CBA7", "#FFFFFF", "#7E5109"]
+    forbidden: ["second object"]
+    rarity: "Common"
+
+  - code: MECHANIC
+    name_en: "Mechanic"
+    name_fr: "Mécanicien"
+    outfit: "greasy work overalls with name patch and rag"
+    headwear: "None"
+    held_object: "Single wrench"
+    palette: ["#34495E", "#E67E22", "#7F8C8D"]
+    forbidden: ["two tools", "second object"]
+    rarity: "Common"
+
+  - code: BOXER
+    name_en: "Boxer"
+    name_fr: "Boxeur"
+    outfit: "boxing shorts with hand wraps and a robe over the shoulders"
+    headwear: "None"
+    held_object: "Single pair of boxing gloves"
+    palette: ["#C0392B", "#F1C40F", "#1C1C1C"]
+    forbidden: ["second object"]
+    rarity: "Uncommon"
+
+  - code: FOOTBALLER
+    name_en: "Footballer"
+    name_fr: "Footballeur"
+    outfit: "generic football kit with shorts and socks, no team logo"
+    headwear: "None"
+    held_object: "Single football ball"
+    palette: ["#27AE60", "#FFFFFF", "#2C3E50"]
+    forbidden: ["team logo", "second object"]
+    rarity: "Common"
+
+  - code: CYBERPUNK
+    name_en: "Cyberpunk"
+    name_fr: "Cyberpunk"
+    outfit: "neon-trimmed techwear jacket with augmented panels"
+    headwear: "Cyber visor"
+    held_object: "Single holographic blade"
+    palette: ["#0B0B0B", "#8E44AD", "#1ABC9C"]
+    forbidden: ["two weapons", "second object"]
+    rarity: "Epic"
+
+  - code: FUTURISTIC
+    name_en: "Futuristic Hero"
+    name_fr: "Personnage futuriste"
+    outfit: "sleek white-and-chrome future armor with glowing seams"
+    headwear: "Smooth tech helmet (face visible)"
+    held_object: "Single energy orb"
+    palette: ["#FFFFFF", "#5DADE2", "#34495E"]
+    forbidden: ["second object"]
+    rarity: "Epic"
+
+  - code: ANGEL
+    name_en: "Angel"
+    name_fr: "Ange"
+    outfit: "flowing white robe with soft feathered wings"
+    headwear: "Glowing halo"
+    held_object: "Single golden harp"
+    palette: ["#FFFFFF", "#F9E79F", "#D4AF37"]
+    forbidden: ["second object"]
+    rarity: "Legendary"
+
+  - code: DEMON
+    name_en: "Fantasy Demon"
+    name_fr: "Démon fantastique"
+    outfit: "dark ornate armor with ember-glowing runes"
+    headwear: "Small curved horns headpiece"
+    held_object: "Single flaming trident"
+    palette: ["#1C0F0F", "#C0392B", "#E67E22"]
+    forbidden: ["two weapons", "second object"]
+    rarity: "Legendary"
+
+  - code: ICEHERO
+    name_en: "Ice Being"
+    name_fr: "Personnage de glace"
+    outfit: "crystalline frost armor with icy translucent details"
+    headwear: "Frozen crystal crown"
+    held_object: "Single ice shard staff"
+    palette: ["#D6F5FF", "#5DADE2", "#FFFFFF"]
+    forbidden: ["second object"]
+    rarity: "Epic"
+
+  - code: FIREHERO
+    name_en: "Fire Being"
+    name_fr: "Personnage de feu"
+    outfit: "molten-themed armor with ember details and heat-glow seams"
+    headwear: "Ember crown"
+    held_object: "Single flame sword"
+    palette: ["#1C0F0F", "#E67E22", "#F1C40F"]
+    forbidden: ["second object"]
+    rarity: "Epic"
+
+  - code: ELECTRICHERO
+    name_en: "Electric Being"
+    name_fr: "Personnage électrique"
+    outfit: "dark suit crossed with glowing electric-blue energy lines"
+    headwear: "Sparking energy crown"
+    held_object: "Single lightning rod"
+    palette: ["#0B0B0B", "#2563EB", "#39FF14"]
+    forbidden: ["second object"]
+    rarity: "Epic"

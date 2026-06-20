@@ -1,0 +1,27 @@
+# =============================================================================
+# Définition des niveaux de rareté et des combinaisons rares/forcées.
+# La rareté finale de chaque lionceau est calculée à partir de la fréquence
+# RÉELLE de ses traits dans la collection, puis classée dans un palier.
+# =============================================================================
+
+# Paliers ordonnés du plus commun au plus rare.
+# threshold = score de rareté minimal (0..100) pour atteindre le palier.
+tiers:
+  - { name: "Common",    name_fr: "Commun",    threshold: 0,  color: "#B0B0B0" }
+  - { name: "Uncommon",  name_fr: "Peu commun", threshold: 40, color: "#4CAF50" }
+  - { name: "Rare",      name_fr: "Rare",      threshold: 65, color: "#2196F3" }
+  - { name: "Epic",      name_fr: "Épique",    threshold: 82, color: "#9C27B0" }
+  - { name: "Legendary", name_fr: "Légendaire", threshold: 93, color: "#FF9800" }
+
+# Pondération de chaque trait dans le score de rareté (somme libre).
+weights:
+  fur: 1.0
+  eyes: 1.2
+  style: 1.6
+  heterochromia_bonus: 8.0   # points ajoutés si yeux différents (hétérochromie)
+
+# Combinaisons volontairement rares (forcées à un palier minimum si présentes).
+# Optionnel : utilisé seulement comme indication, n'empêche pas la génération.
+rare_combinations:
+  - { description: "Pelage or + yeux cosmiques", fur: ["GOLD"], eye: ["COSMIC"], min_tier: "Legendary" }
+  - { description: "Pelage noir + yeux flamme",  fur: ["BLACK"], eye: ["FLAME"],  min_tier: "Epic" }

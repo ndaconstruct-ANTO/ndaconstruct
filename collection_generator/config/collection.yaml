@@ -1,0 +1,58 @@
+# =============================================================================
+# Configuration générale de la collection.
+# Ces valeurs verrouillent le cadrage, le fond et le modèle maître.
+# NE PAS modifier sans justification : elles garantissent la cohérence.
+# =============================================================================
+
+collection:
+  name: "LIONCEAUX NFT"
+  description: "Collection de lionceaux uniques"
+  symbol: "LION"
+  prompt_version: "1.0"
+  total_supply_default: 100
+
+# --- Format et résolution (carré strict 1:1) ---------------------------------
+format:
+  aspect_ratio: "1:1"
+  resolution: 2048        # largeur = hauteur = resolution (pixels)
+  square: true
+
+# --- Fond officiel immuable --------------------------------------------------
+background:
+  mode: "white"           # extensible : un autre fond unique pourra être ajouté
+  color_hex: "#FFFFFF"
+  contact_shadow: true    # légère ombre de contact identique sous les pieds
+  # Tolérance utilisée par le contrôle qualité pour juger un fond "blanc".
+  white_min_channel: 240  # un pixel est "blanc" si R,G,B >= cette valeur
+  white_min_ratio: 0.45   # proportion minimale de pixels blancs dans l'image
+
+# --- Composition / gabarit verrouillé ----------------------------------------
+composition:
+  centered: true
+  head_top_pct: 8         # sommet de la tête ~8% du bord supérieur
+  feet_bottom_pct: 92     # dessous des pattes ~92% de la hauteur
+  camera: "strict front view, camera at torso height"
+  # Marge de tolérance (en % de la dimension) pour le contrôle de centrage.
+  center_tolerance_pct: 6
+  # Le sujet doit occuper au moins cette proportion verticale (anti-zoom-out).
+  subject_min_height_ratio: 0.60
+
+# --- Modèle maître verrouillé ------------------------------------------------
+master_model:
+  locked: true
+  species: "Lion cub"
+  identity: >
+    Premium ultra-realistic 3D collectible anthropomorphic baby lion cub with a
+    compact childlike feline morphology, oversized round feline head, short soft
+    muzzle, large rounded ears, dense detailed realistic fur, short sturdy body,
+    short arms and legs, large feline paws. No human hands, no human fingers,
+    no visible tail, no adult mane. Identical anatomy, proportions, scale,
+    camera angle, posture and placement on every image.
+
+# --- Paramètres de génération ------------------------------------------------
+generation:
+  global_seed: 20260620
+  allow_heterochromia: true
+  heterochromia_probability: 0.08   # 8% des lionceaux ont deux yeux différents
+  # Gabarit de nommage des fichiers (voir section 14 du cahier des charges).
+  naming_template: "LION_{id:04d}_FUR-{fur_code}_EYES-{eye_code}_STYLE-{style_code}"

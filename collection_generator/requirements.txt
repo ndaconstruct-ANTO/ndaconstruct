@@ -1,0 +1,16 @@
+# Dépendances du générateur de collection NFT.
+#
+# Le MODE SIMULATION (par défaut) et les TESTS fonctionnent avec la seule
+# bibliothèque standard de Python + PyYAML. Aucune autre dépendance n'est
+# requise pour valider la collection sans dépense.
+
+PyYAML>=6.0
+
+# --- Optionnel : interface web locale (non requise) --------------------------
+# streamlit>=1.30
+
+# --- Optionnel : génération d'images réelle ----------------------------------
+# Le fournisseur OpenAI intégré utilise uniquement la bibliothèque standard
+# (urllib), donc le paquet "openai" n'est PAS obligatoire. Installez-le seulement
+# si vous préférez utiliser le SDK officiel :
+# openai>=1.0

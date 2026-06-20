@@ -1,0 +1,28 @@
+# =============================================================================
+# Couleurs des yeux (extensible à l'infini).
+# Pour AJOUTER une couleur : copier une entrée, changer code/name/hex/prompt.
+# Aucune modification de code n'est nécessaire.
+#   effect: optionnel (cosmic / electric / ice / fire) -> léger effet énergétique
+# =============================================================================
+
+eye_colors:
+  - { code: SKYBLUE,     name_en: "Sky Blue",        name_fr: "Bleu ciel",       hex: "#87CEEB", rarity_weight: 12 }
+  - { code: ELECTRICBLUE, name_en: "Electric Blue",  name_fr: "Bleu électrique", hex: "#2563EB", rarity_weight: 9 }
+  - { code: ICEBLUE,     name_en: "Glacier Blue",    name_fr: "Bleu glacier",    hex: "#A8D8EA", rarity_weight: 9, effect: ice }
+  - { code: NIGHTBLUE,   name_en: "Night Blue",      name_fr: "Bleu nuit",       hex: "#1E2A78", rarity_weight: 8 }
+  - { code: TURQUOISE,   name_en: "Turquoise",       name_fr: "Turquoise",       hex: "#1ABC9C", rarity_weight: 8 }
+  - { code: EMERALD,     name_en: "Emerald Green",   name_fr: "Vert émeraude",   hex: "#2ECC71", rarity_weight: 9 }
+  - { code: NEONGREEN,   name_en: "Neon Green",      name_fr: "Vert néon",       hex: "#39FF14", rarity_weight: 5, effect: electric }
+  - { code: YELLOW,      name_en: "Yellow",          name_fr: "Jaune",           hex: "#F1C40F", rarity_weight: 10 }
+  - { code: AMBER,       name_en: "Amber",           name_fr: "Ambre",           hex: "#FFBF00", rarity_weight: 11 }
+  - { code: ORANGE,      name_en: "Orange",          name_fr: "Orange",          hex: "#E67E22", rarity_weight: 9 }
+  - { code: RED,         name_en: "Red",             name_fr: "Rouge",           hex: "#E74C3C", rarity_weight: 6 }
+  - { code: VIOLET,      name_en: "Violet",          name_fr: "Violet",          hex: "#8E44AD", rarity_weight: 6 }
+  - { code: PINK,        name_en: "Pink",            name_fr: "Rose",            hex: "#FF6FAE", rarity_weight: 6 }
+  - { code: SILVER,      name_en: "Silver",          name_fr: "Argent",          hex: "#C0C0C0", rarity_weight: 5 }
+  - { code: WHITEGLOW,   name_en: "Glowing White",   name_fr: "Blanc lumineux",  hex: "#FDFEFE", rarity_weight: 4, effect: cosmic }
+  - { code: BLACKSHINE,  name_en: "Shiny Black",     name_fr: "Noir brillant",   hex: "#2C3E50", rarity_weight: 7 }
+  - { code: GOLD,        name_en: "Gold",            name_fr: "Doré",            hex: "#D4AF37", rarity_weight: 4 }
+  - { code: COSMIC,      name_en: "Cosmic",          name_fr: "Cosmique",        hex: "#6C5CE7", rarity_weight: 3, effect: cosmic }
+  - { code: FROST,       name_en: "Frost",           name_fr: "Givre",           hex: "#D6F5FF", rarity_weight: 3, effect: ice }
+  - { code: FLAME,       name_en: "Flame",           name_fr: "Flamme",          hex: "#FF7043", rarity_weight: 3, effect: fire }

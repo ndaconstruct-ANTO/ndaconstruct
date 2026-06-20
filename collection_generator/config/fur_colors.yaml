@@ -1,0 +1,74 @@
+# =============================================================================
+# Les 9 couleurs de pelage officielles.
+# Chaque entrée est verrouillée pour rester identique d'une image à l'autre.
+#   code        : identifiant court (utilisé dans le nom de fichier)
+#   name_en     : libellé anglais (utilisé dans le prompt et les métadonnées EN)
+#   name_fr     : libellé français (affiché dans les attributs / CSV)
+#   hex         : couleur de référence
+#   prompt      : description injectée dans le prompt (rendu fourrure réaliste)
+#   rarity_weight : poids de tirage (plus grand = plus fréquent)
+# =============================================================================
+
+fur_colors:
+  - code: WHITE
+    name_en: "Pure White"
+    name_fr: "Blanc pur"
+    hex: "#F7F5F0"
+    prompt: "pure slightly pearlescent white fur, soft natural shading, fully detailed strands"
+    rarity_weight: 12
+
+  - code: ICE
+    name_en: "Ice Blue"
+    name_fr: "Bleu ice"
+    hex: "#BFE6F2"
+    prompt: "very light glacial icy blue fur, cool soft highlights, detailed undercoat"
+    rarity_weight: 10
+
+  - code: BLACK
+    name_en: "Deep Black"
+    name_fr: "Noir profond"
+    hex: "#1A1A1A"
+    prompt: "deep profound black fur with clearly visible detailed strands and soft rim light so the muzzle and ears stay readable"
+    rarity_weight: 10
+
+  - code: GREEN
+    name_en: "Green"
+    name_fr: "Vert"
+    hex: "#3FA66A"
+    prompt: "rich but natural green fur, realistic density, subtle darker shading"
+    rarity_weight: 9
+
+  - code: PURPLE
+    name_en: "Purple"
+    name_fr: "Mauve"
+    hex: "#7A4FB0"
+    prompt: "deep purple fur, realistic sheen, natural undercoat nuances"
+    rarity_weight: 9
+
+  - code: GREY
+    name_en: "Silver Grey"
+    name_fr: "Gris"
+    hex: "#9AA0A6"
+    prompt: "silvery grey fur, soft metallic-free shading, detailed texture"
+    rarity_weight: 11
+
+  - code: GOLD
+    name_en: "Gold"
+    name_fr: "Or"
+    hex: "#E6B422"
+    prompt: "shiny golden fur, warm luminous highlights, premium detailed texture"
+    rarity_weight: 8
+
+  - code: RED
+    name_en: "Red"
+    name_fr: "Rouge"
+    hex: "#C0392B"
+    prompt: "intense red fur, deep saturated tone, realistic detailed strands"
+    rarity_weight: 9
+
+  - code: TAN
+    name_en: "Light Tan"
+    name_fr: "Brun clair"
+    hex: "#C9A36A"
+    prompt: "luminous light beige-brown tan fur, natural lion cub tone, detailed soft texture"
+    rarity_weight: 12
