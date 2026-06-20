@@ -1,6 +1,8 @@
-Premium ultra-realistic 3D collectible anthropomorphic baby lion cub, full body visible from head to feet, standing perfectly upright in a neutral symmetrical frontal pose, looking directly at the camera. Compact childlike feline morphology, oversized round feline head, short soft muzzle, large rounded ears, dense highly detailed realistic fur, short sturdy body, short arms, short legs, large feline paws, absolutely no human hands, no human fingers, no visible tail, no adult mane.
+Premium ultra-realistic 3D collectible anthropomorphic baby lion cub, full body always visible from the top of the head down to the feet, standing perfectly upright and centered in the EXACT SAME neutral, symmetrical, frontal pose on every single image: body facing straight to the camera, head looking directly at the camera, both arms relaxed and hanging straight down along the sides of the body, both feet flat on the ground and parallel. The pose, stance, body rotation, scale and placement must be strictly identical for every character.
 
-The character must preserve the exact same anatomy, facial structure, body proportions, height, scale, camera angle, posture and placement as the official master lion cub reference.
+Compact childlike feline morphology with a rounded feline head that is only slightly larger than the body and stays well-proportioned and natural (NOT oversized, not a bobblehead, not a giant head), short soft muzzle, large rounded ears, dense highly detailed realistic fur, short sturdy body, short arms, short legs, large feline paws, absolutely no human hands, no human fingers, no visible tail, no adult mane.
+
+The character must preserve the exact same anatomy, facial structure, head-to-body proportions, height, scale, camera angle, posture and placement as the official master lion cub reference.
 
 Fur color: [FUR_COLOR].
 Left eye color: [LEFT_EYE_COLOR].
@@ -8,9 +10,10 @@ Right eye color: [RIGHT_EYE_COLOR].
 Character style: [STYLE].
 Outfit: [OUTFIT].
 Headwear: [HEADWEAR].
+Footwear: the lion cub ALWAYS wears shoes or boots that clearly match the [STYLE] outfit and profession, original and generic design, absolutely no brand and no logo, never barefoot.
 The lion cub holds exactly one object: [HELD_OBJECT].
 No second held object.
 
-Perfectly centered composition, strict front view, camera at torso height, full character entirely inside the image, identical margins around the body, top of head near 8 percent from the upper border, feet near 92 percent of the image height.
+Perfectly centered composition, strict front view, camera at torso height, full character entirely inside the image with identical margins around the body, top of head near 8 percent from the upper border, feet near 92 percent of the image height.
 
-Pure uniform white #FFFFFF studio background, no scenery, no decoration, no gradient, no colored background, no text, no frame, no dramatic effects. Soft neutral studio lighting, extremely detailed fur, realistic fabric, realistic leather, realistic metal, precise stitching, premium collectible figure quality, sharp focus, clean professional NFT asset, square 1:1 composition, [RESOLUTION].
+Pure uniform white #FFFFFF studio background only, completely white, no scenery, no decoration, no gradient, no colored background, no grey background, no metallic background, no text, no frame, no dramatic effects. Soft neutral studio lighting, extremely detailed fur, realistic fabric, realistic leather, realistic metal, precise stitching, premium collectible figure quality, sharp focus, clean professional NFT asset, square 1:1 composition, [RESOLUTION].
