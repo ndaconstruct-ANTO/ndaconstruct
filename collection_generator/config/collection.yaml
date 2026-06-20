@@ -24,7 +24,7 @@ background:
   contact_shadow: true    # légère ombre de contact identique sous les pieds
   # Tolérance utilisée par le contrôle qualité pour juger un fond "blanc".
   white_min_channel: 240  # un pixel est "blanc" si R,G,B >= cette valeur
-  white_min_ratio: 0.45   # proportion minimale de pixels blancs dans l'image
+  white_min_ratio: 0.22   # proportion minimale de pixels blancs (perso large = peu de blanc)
 
 # --- Composition / gabarit verrouillé ----------------------------------------
 composition:

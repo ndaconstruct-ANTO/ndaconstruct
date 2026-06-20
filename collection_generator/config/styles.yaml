@@ -614,3 +614,234 @@ styles:
     palette: ["#0B0B0B", "#2563EB", "#39FF14"]
     forbidden: ["second object"]
     rarity: "Epic"
+
+  - code: SUPERHERO
+    name_en: "Superhero"
+    name_fr: "Super-héros"
+    outfit: "fitted hero suit with emblem on the chest and a flowing cape"
+    headwear: "Domino eye mask"
+    held_object: "Single energy shield"
+    palette: ["#1F4E9C", "#C0392B", "#F1C40F"]
+    forbidden: ["second object", "real brand"]
+    rarity: "Epic"
+
+  - code: ALIEN
+    name_en: "Alien Visitor"
+    name_fr: "Alien"
+    outfit: "iridescent space suit with glowing alien tech panels"
+    headwear: "Transparent bubble helmet (face visible)"
+    held_object: "Single glowing ray gun"
+    palette: ["#1ABC9C", "#8E44AD", "#0B0B0B"]
+    forbidden: ["second object"]
+    rarity: "Legendary"
+
+  - code: ZOMBIE
+    name_en: "Zombie"
+    name_fr: "Zombie"
+    outfit: "torn ragged clothes with dusty stains"
+    headwear: "None"
+    held_object: "Single old lantern"
+    palette: ["#5D6D4E", "#3B2F2F", "#7F8C8D"]
+    forbidden: ["gore", "blood", "second object"]
+    rarity: "Rare"
+
+  - code: ROBOT
+    name_en: "Robot"
+    name_fr: "Robot"
+    outfit: "brushed-metal robotic body plates with glowing joints"
+    headwear: "Antenna headpiece"
+    held_object: "Single power core"
+    palette: ["#B0B7BF", "#34495E", "#1ABC9C"]
+    forbidden: ["second object"]
+    rarity: "Epic"
+
+  - code: VAMPIRE
+    name_en: "Vampire"
+    name_fr: "Vampire"
+    outfit: "elegant dark gothic suit with high-collared red-lined cape"
+    headwear: "None"
+    held_object: "Single ornate goblet"
+    palette: ["#0B0B0B", "#7B241C", "#FFFFFF"]
+    forbidden: ["blood", "second object"]
+    rarity: "Epic"
+
+  - code: MUMMY
+    name_en: "Mummy"
+    name_fr: "Momie"
+    outfit: "aged wrapping bandages with a few golden ornaments"
+    headwear: "Bandaged head wrap"
+    held_object: "Single ankh staff"
+    palette: ["#E8DCC0", "#C9A36A", "#7E5109"]
+    forbidden: ["second object"]
+    rarity: "Rare"
+
+  - code: GLADIATOR
+    name_en: "Gladiator"
+    name_fr: "Gladiateur"
+    outfit: "leather and bronze gladiator armor with shoulder guard"
+    headwear: "Crested gladiator helmet"
+    held_object: "Single short sword"
+    palette: ["#8B5A2B", "#B8860B", "#7F8C8D"]
+    forbidden: ["sword and shield together", "second object"]
+    rarity: "Epic"
+
+  - code: EMPEROR
+    name_en: "Roman Emperor"
+    name_fr: "Empereur romain"
+    outfit: "white toga with golden trim and royal red sash"
+    headwear: "Golden laurel wreath"
+    held_object: "Single golden scroll"
+    palette: ["#FFFFFF", "#D4AF37", "#7B241C"]
+    forbidden: ["second object"]
+    rarity: "Legendary"
+
+  - code: PHARAOH
+    name_en: "Pharaoh"
+    name_fr: "Pharaon"
+    outfit: "egyptian royal garb with golden collar and ornaments"
+    headwear: "Nemes pharaoh headdress"
+    held_object: "Single golden crook"
+    palette: ["#D4AF37", "#2C3E50", "#1ABC9C"]
+    forbidden: ["crook and flail together", "second object"]
+    rarity: "Legendary"
+
+  - code: COWBOY
+    name_en: "Cowboy"
+    name_fr: "Cowboy"
+    outfit: "denim shirt with leather vest, chaps and a bandana"
+    headwear: "Cowboy hat"
+    held_object: "Single lasso"
+    palette: ["#8B5A2B", "#C9A36A", "#7B241C"]
+    forbidden: ["revolver plus lasso together", "second object"]
+    rarity: "Uncommon"
+
+  - code: SHERIFF
+    name_en: "Sheriff"
+    name_fr: "Shérif"
+    outfit: "western lawman outfit with star badge and leather belt"
+    headwear: "Sheriff hat"
+    held_object: "Single sheriff badge"
+    palette: ["#7E5109", "#D4AF37", "#2C3E50"]
+    forbidden: ["second object"]
+    rarity: "Rare"
+
+  - code: SECRETAGENT
+    name_en: "Secret Agent"
+    name_fr: "Agent secret"
+    outfit: "sharp black tuxedo with bow tie"
+    headwear: "None"
+    held_object: "Single briefcase"
+    palette: ["#0B0B0B", "#FFFFFF", "#7F8C8D"]
+    forbidden: ["gun plus briefcase together", "second object"]
+    rarity: "Rare"
+
+  - code: DJ
+    name_en: "DJ"
+    name_fr: "DJ"
+    outfit: "streetwear hoodie with neon accents"
+    headwear: "Large DJ headphones"
+    held_object: "Single vinyl record"
+    palette: ["#0B0B0B", "#8E44AD", "#1ABC9C"]
+    forbidden: ["second object", "brand logo"]
+    rarity: "Uncommon"
+
+  - code: SURFER
+    name_en: "Surfer"
+    name_fr: "Surfeur"
+    outfit: "open hawaiian shirt with board shorts"
+    headwear: "None"
+    held_object: "Single surfboard"
+    palette: ["#1ABC9C", "#F1C40F", "#2E86C1"]
+    forbidden: ["second object"]
+    rarity: "Uncommon"
+
+  - code: RACER
+    name_en: "Race Driver"
+    name_fr: "Pilote de course"
+    outfit: "racing suit with generic sponsor-free patches"
+    headwear: "Racing helmet held style (worn, face visible)"
+    held_object: "Single racing helmet"
+    palette: ["#C0392B", "#0B0B0B", "#F1C40F"]
+    forbidden: ["brand logo", "second object"]
+    rarity: "Rare"
+
+  - code: SKATER
+    name_en: "Skater"
+    name_fr: "Skateur"
+    outfit: "baggy tee and shorts with knee pads"
+    headwear: "Cap turned back"
+    held_object: "Single skateboard"
+    palette: ["#2C3E50", "#E67E22", "#FFFFFF"]
+    forbidden: ["second object"]
+    rarity: "Common"
+
+  - code: SCUBA
+    name_en: "Scuba Diver"
+    name_fr: "Plongeur"
+    outfit: "black wetsuit with air tank harness"
+    headwear: "Diving mask on forehead"
+    held_object: "Single harpoon"
+    palette: ["#0B0B0B", "#2E86C1", "#F1C40F"]
+    forbidden: ["second object"]
+    rarity: "Uncommon"
+
+  - code: ARCHER
+    name_en: "Archer"
+    name_fr: "Archer"
+    outfit: "green ranger tunic with leather bracers and quiver"
+    headwear: "Hooded ranger cap"
+    held_object: "Single bow"
+    palette: ["#196F3D", "#7E5109", "#D2B48C"]
+    forbidden: ["bow and arrow drawn", "second object"]
+    rarity: "Rare"
+
+  - code: BARBARIAN
+    name_en: "Barbarian"
+    name_fr: "Barbare"
+    outfit: "fur-and-leather barbarian garb with bone ornaments"
+    headwear: "Fur hood"
+    held_object: "Single great axe"
+    palette: ["#5D4037", "#7F8C8D", "#A1887F"]
+    forbidden: ["two weapons", "second object"]
+    rarity: "Epic"
+
+  - code: MAGICIAN
+    name_en: "Stage Magician"
+    name_fr: "Magicien"
+    outfit: "elegant tailcoat with bow tie and cape"
+    headwear: "Top hat"
+    held_object: "Single magic wand"
+    palette: ["#0B0B0B", "#FFFFFF", "#7B241C"]
+    forbidden: ["wand plus hat-trick together", "second object"]
+    rarity: "Rare"
+
+  - code: ASSASSIN
+    name_en: "Hooded Assassin"
+    name_fr: "Assassin"
+    outfit: "hooded leather assassin garb with wrapped arms"
+    headwear: "Deep hood"
+    held_object: "Single dagger"
+    palette: ["#161616", "#FFFFFF", "#7F8C8D"]
+    forbidden: ["two blades", "second object"]
+    rarity: "Epic"
+
+  - code: GENERAL
+    name_en: "Army General"
+    name_fr: "Général"
+    outfit: "decorated military dress uniform with medals and epaulettes"
+    headwear: "General's peaked cap"
+    held_object: "Single command baton"
+    palette: ["#2E4053", "#D4AF37", "#7F8C8D"]
+    forbidden: ["second object"]
+    rarity: "Rare"
+
+  - code: EXPLORER
+    name_en: "Explorer"
+    name_fr: "Explorateur"
+    outfit: "safari jacket with utility belt and rolled map pouch"
+    headwear: "Explorer pith hat"
+    held_object: "Single compass"
+    palette: ["#C9A36A", "#7E5109", "#196F3D"]
+    forbidden: ["second object"]
+    rarity: "Uncommon"
+
