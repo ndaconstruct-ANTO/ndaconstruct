@@ -38,7 +38,7 @@ def main():
     from src.combination_generator import Combination
     king = cfg.style_by_code["KING"]
     special = Combination(
-        token_id=n + 1, uid=f"LION-{n + 1:04d}",
+        id=n + 1, uid=f"LION-{n + 1:04d}",
         fur=cfg.fur_by_code["WHITE"], eye_left=cfg.eye_by_code["GOLD"],
         eye_right=cfg.eye_by_code["GOLD"], style=king,
         held_object=king.held_object, seed=(seed * 7 + 101) & 0x7FFFFFFF,
