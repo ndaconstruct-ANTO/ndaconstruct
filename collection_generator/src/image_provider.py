@@ -63,6 +63,8 @@ class OpenAIImageProvider(ImageProvider):
                 "OPENAI_API_KEY absente. Renseignez-la dans .env pour la génération réelle."
             )
         self._model = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-1")
+        # Qualité : low / medium / high (défaut high pour des NFT).
+        self._quality = os.environ.get("OPENAI_IMAGE_QUALITY", "high")
 
     # -- HTTP : JSON (generations) -------------------------------------------
     def _post_json(self, url: str, body: dict) -> dict:
@@ -134,6 +136,8 @@ class OpenAIImageProvider(ImageProvider):
         if reference:
             # Édition basée référence : conserve le même lionceau maître.
             fields = {"model": self._model, "prompt": prompt, "size": size, "n": "1"}
+            if self._quality and self._model == "gpt-image-1":
+                fields["quality"] = self._quality      # high = NFT
             if transparent:
                 fields["background"] = "transparent"  # détourage 'scalpel' par l'IA
             data = self._post_multipart(

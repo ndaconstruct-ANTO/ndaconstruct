@@ -179,6 +179,37 @@ def recolor(rgba: bytearray, w: int, h: int, target_rgb, strength: float = 0.85)
             rgba[i + 2] = int(rgba[i + 2] * (1 - strength) + nb * strength)
 
 
+def upscale(src: bytearray, sw: int, sh: int, factor: int = 2) -> tuple:
+    """Agrandit d'un facteur entier par interpolation bilinéaire (RGBA).
+
+    Retourne (nouvelle_largeur, nouvelle_hauteur, tampon). Note : agrandit
+    proprement mais n'invente pas de détail (pour du vrai 4K IA, utiliser un
+    upscaler type Real-ESRGAN en local).
+    """
+    dw, dh = sw * factor, sh * factor
+    dst = bytearray(dw * dh * 4)
+    for dy in range(dh):
+        fy = (dy + 0.5) / factor - 0.5
+        y0 = int(fy) if fy >= 0 else 0
+        y1 = min(sh - 1, y0 + 1)
+        wy = fy - y0 if fy >= 0 else 0.0
+        for dx in range(dw):
+            fx = (dx + 0.5) / factor - 0.5
+            x0 = int(fx) if fx >= 0 else 0
+            x1 = min(sw - 1, x0 + 1)
+            wx = fx - x0 if fx >= 0 else 0.0
+            o00 = (y0 * sw + x0) * 4
+            o01 = (y0 * sw + x1) * 4
+            o10 = (y1 * sw + x0) * 4
+            o11 = (y1 * sw + x1) * 4
+            do = (dy * dw + dx) * 4
+            for c in range(4):
+                top = src[o00 + c] * (1 - wx) + src[o01 + c] * wx
+                bot = src[o10 + c] * (1 - wx) + src[o11 + c] * wx
+                dst[do + c] = int(top * (1 - wy) + bot * wy)
+    return dw, dh, dst
+
+
 def defringe(rgba: bytearray, w: int, h: int, tolerance: int = 60,
              iterations: int = 2) -> int:
     """Érode le fin liseré clair de bord (halo / anti-crénelage), notamment sous

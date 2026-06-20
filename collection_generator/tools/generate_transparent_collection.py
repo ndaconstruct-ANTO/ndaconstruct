@@ -33,6 +33,18 @@ def main():
     cfg.format["resolution"] = 1024  # sortie réelle de l'API (carré)
     combos = generate_combinations(cfg, n, seed=seed)
     assign_rarity(cfg, combos)
+
+    # +1 LÉGENDAIRE spécial garanti (Roi, fourrure blanche, yeux dorés) -> fond OR.
+    from src.combination_generator import Combination
+    king = cfg.style_by_code["KING"]
+    special = Combination(
+        token_id=n + 1, uid=f"LION-{n + 1:04d}",
+        fur=cfg.fur_by_code["WHITE"], eye_left=cfg.eye_by_code["GOLD"],
+        eye_right=cfg.eye_by_code["GOLD"], style=king,
+        held_object=king.held_object, seed=(seed * 7 + 101) & 0x7FFFFFFF,
+    )
+    special.rarity_tier = "Legendary"  # force le fond OR pailleté
+    combos.append(special)
     builder = PromptBuilder(cfg)
     provider = OpenAIImageProvider()
 
