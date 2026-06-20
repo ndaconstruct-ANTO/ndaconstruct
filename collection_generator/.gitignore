@@ -10,3 +10,7 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# Gros dossiers de livraison (images) - hors git
+livraison/collection_avec_fonds/
+livraison/collection_transparente/
