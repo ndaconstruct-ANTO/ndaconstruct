@@ -1,0 +1,17 @@
+# ANTO DESIGNER — dépendances
+#
+# Le CŒUR (moteur de calques, base SQLite, génération, métadonnées) et les TESTS
+# fonctionnent avec la SEULE bibliothèque standard de Python.
+#
+# Pour l'interface graphique et la vitesse en haute résolution :
+
+PySide6>=6.5          # interface graphique (licence LGPLv3 — usage commercial OK)
+Pillow>=10.0          # compositing rapide haute résolution (sans lui : repli stdlib)
+
+# --- Optionnel : packaging Windows en .exe -----------------------------------
+# pyinstaller>=6.0
+
+# --- Optionnel : module IA local (nécessite un GPU NVIDIA pour être utilisable)
+# Non installé par défaut. Le logiciel fonctionne sans.
+# torch
+# diffusers

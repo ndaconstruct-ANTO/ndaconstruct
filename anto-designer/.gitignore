@@ -1,0 +1,23 @@
+# Espace de travail de la démo (régénéré)
+demo/_workspace/
+
+# Données utilisateur / sorties
+*.db
+*.db-wal
+*.db-shm
+output/
+exports/
+
+# Build Windows
+build/
+dist/
+*.spec
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets / environnement
+.env
