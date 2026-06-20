@@ -148,7 +148,9 @@ def _cmd_generate(args: argparse.Namespace) -> int:
                     reference, args.max_retries,
                 )
                 if image_path is None:
-                    return 1
+                    # Erreur ponctuelle : on saute cette image et on continue.
+                    print(f"  ⚠️ {combo.uid} ignoré (erreur), on continue.")
+                    continue
         reports.append(build_report(combo, cfg, image_path))
 
     stats = trait_statistics(combos)
