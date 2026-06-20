@@ -1,0 +1,804 @@
+{
+  "mapping": [
+    {
+      "id": "0001",
+      "file": "LION_0001_FUR-WHITE_EYES-AMBER_STYLE-BUSINESSMAN.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "Businessman",
+      "rarity": "Common"
+    },
+    {
+      "id": "0002",
+      "file": "LION_0002_FUR-WHITE_EYES-ORANGE_STYLE-HOUSEPAINTER.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "House Painter",
+      "rarity": "Common"
+    },
+    {
+      "id": "0003",
+      "file": "LION_0003_FUR-RED_EYES-VIOLET_STYLE-GRAFFITI.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Graffiti Artist",
+      "rarity": "Common"
+    },
+    {
+      "id": "0004",
+      "file": "LION_0004_FUR-GOLD_EYES-NIGHTBLUE_STYLE-RASTA.png",
+      "background": "or_legendary",
+      "fur": "Gold",
+      "style": "Rasta",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0005",
+      "file": "LION_0005_FUR-WHITE_EYES-YELLOW_STYLE-FIREHERO.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "Fire Being",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0006",
+      "file": "LION_0006_FUR-GOLD_EYES-ICEBLUE_STYLE-FARMER.png",
+      "background": "or_legendary",
+      "fur": "Gold",
+      "style": "Farmer",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0007",
+      "file": "LION_0007_FUR-TAN_EYES-SILVER_STYLE-SKATER.png",
+      "background": "gris_argent",
+      "fur": "Light Tan",
+      "style": "Skater",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0008",
+      "file": "LION_0008_FUR-PURPLE_EYES-EMERALD_STYLE-CARDINAL.png",
+      "background": "bleu",
+      "fur": "Purple",
+      "style": "Cardinal",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0009",
+      "file": "LION_0009_FUR-GREY_EYES-VIOLET_STYLE-STREETGANG.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Street Gang",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0010",
+      "file": "LION_0010_FUR-GREEN_EYES-AMBER_STYLE-FIREFIGHTER.png",
+      "background": "vert",
+      "fur": "Green",
+      "style": "Firefighter",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0011",
+      "file": "LION_0011_FUR-WHITE_EYES-PINK_STYLE-BANKER.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "Banker",
+      "rarity": "Common"
+    },
+    {
+      "id": "0012",
+      "file": "LION_0012_FUR-PURPLE_EYES-NIGHTBLUE_STYLE-RACER.png",
+      "background": "bleu",
+      "fur": "Purple",
+      "style": "Race Driver",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0013",
+      "file": "LION_0013_FUR-TAN_EYES-AMBER_STYLE-JUDGE.png",
+      "background": "gris_argent",
+      "fur": "Light Tan",
+      "style": "Judge",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0014",
+      "file": "LION_0014_FUR-WHITE_EYES-VIOLET_STYLE-TEMPLAR.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "Templar",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0015",
+      "file": "LION_0015_FUR-WHITE_EYES-YELLOW_STYLE-SAILOR.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "Sailor",
+      "rarity": "Common"
+    },
+    {
+      "id": "0016",
+      "file": "LION_0016_FUR-ICE_EYES-ORANGE_STYLE-DJ.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "DJ",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0017",
+      "file": "LION_0017_FUR-PURPLE_EYES-FLAME_STYLE-SKATER.png",
+      "background": "bleu",
+      "fur": "Purple",
+      "style": "Skater",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0018",
+      "file": "LION_0018_FUR-GREY_EYES-TURQUOISE_STYLE-FARMER.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Farmer",
+      "rarity": "Common"
+    },
+    {
+      "id": "0019",
+      "file": "LION_0019_FUR-PURPLE_EYES-BLACKSHINE_STYLE-JUDGE.png",
+      "background": "bleu",
+      "fur": "Purple",
+      "style": "Judge",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0020",
+      "file": "LION_0020_FUR-BLACK_EYES-SKYBLUE_STYLE-PLUMBER.png",
+      "background": "gris_argent",
+      "fur": "Deep Black",
+      "style": "Plumber",
+      "rarity": "Common"
+    },
+    {
+      "id": "0021",
+      "file": "LION_0021_FUR-GREY_EYES-AMBER_STYLE-LAWYER.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Lawyer",
+      "rarity": "Common"
+    },
+    {
+      "id": "0022",
+      "file": "LION_0022_FUR-TAN_EYES-YELLOW_STYLE-PLUMBER.png",
+      "background": "gris_argent",
+      "fur": "Light Tan",
+      "style": "Plumber",
+      "rarity": "Common"
+    },
+    {
+      "id": "0023",
+      "file": "LION_0023_FUR-RED_EYES-AMBER_STYLE-FUTURISTIC.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Futuristic Hero",
+      "rarity": "Common"
+    },
+    {
+      "id": "0024",
+      "file": "LION_0024_FUR-RED_EYES-GOLD_STYLE-ARCHITECT.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Architect",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0025",
+      "file": "LION_0025_FUR-GOLD_EYES-AMBER_STYLE-FOOTBALLER.png",
+      "background": "or_legendary",
+      "fur": "Gold",
+      "style": "Footballer",
+      "rarity": "Common"
+    },
+    {
+      "id": "0026",
+      "file": "LION_0026_FUR-TAN_EYES-WHITEGLOW_STYLE-BARBARIAN.png",
+      "background": "gris_argent",
+      "fur": "Light Tan",
+      "style": "Barbarian",
+      "rarity": "Rare"
+    },
+    {
+      "id": "0027",
+      "file": "LION_0027_FUR-WHITE_EYES-YELLOW_STYLE-PLUMBER.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "Plumber",
+      "rarity": "Common"
+    },
+    {
+      "id": "0028",
+      "file": "LION_0028_FUR-GOLD_EYES-YELLOW_STYLE-POLICE.png",
+      "background": "or_legendary",
+      "fur": "Gold",
+      "style": "Police Officer",
+      "rarity": "Rare"
+    },
+    {
+      "id": "0029",
+      "file": "LION_0029_FUR-GREY_EYES-SKYBLUE_STYLE-SKATER.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Skater",
+      "rarity": "Common"
+    },
+    {
+      "id": "0030",
+      "file": "LION_0030_FUR-BLACK_EYES-PINK_STYLE-SAILOR.png",
+      "background": "gris_argent",
+      "fur": "Deep Black",
+      "style": "Sailor",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0031",
+      "file": "LION_0031_FUR-GREY_EYES-ICEBLUE_STYLE-SAILOR.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Sailor",
+      "rarity": "Common"
+    },
+    {
+      "id": "0032",
+      "file": "LION_0032_FUR-GREY_EYES-COSMIC_STYLE-BOXER.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Boxer",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0033",
+      "file": "LION_0033_FUR-GOLD_EYES-NIGHTBLUE_STYLE-NURSE.png",
+      "background": "or_legendary",
+      "fur": "Gold",
+      "style": "Nurse",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0034",
+      "file": "LION_0034_FUR-TAN_EYES-YELLOW_STYLE-SHERIFF.png",
+      "background": "gris_argent",
+      "fur": "Light Tan",
+      "style": "Sheriff",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0035",
+      "file": "LION_0035_FUR-GREY_EYES-PINK_STYLE-SKATER.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Skater",
+      "rarity": "Common"
+    },
+    {
+      "id": "0036",
+      "file": "LION_0036_FUR-BLACK_EYES-SILVER_STYLE-POLICE.png",
+      "background": "gris_argent",
+      "fur": "Deep Black",
+      "style": "Police Officer",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0037",
+      "file": "LION_0037_FUR-ICE_EYES-ELECTRICBLUE_STYLE-GANGSTER.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "Gangster",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0038",
+      "file": "LION_0038_FUR-WHITE_EYES-EMERALD_STYLE-PROFESSOR.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "Professor",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0039",
+      "file": "LION_0039_FUR-WHITE_EYES-TURQUOISE_STYLE-BANKER.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "Banker",
+      "rarity": "Common"
+    },
+    {
+      "id": "0040",
+      "file": "LION_0040_FUR-BLACK_EYES-COSMIC_STYLE-SURGEON.png",
+      "background": "gris_argent",
+      "fur": "Deep Black",
+      "style": "Surgeon",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0041",
+      "file": "LION_0041_FUR-RED_EYES-AMBER_STYLE-NURSE.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Nurse",
+      "rarity": "Common"
+    },
+    {
+      "id": "0042",
+      "file": "LION_0042_FUR-BLACK_EYES-RED_STYLE-BIKER.png",
+      "background": "gris_argent",
+      "fur": "Deep Black",
+      "style": "Biker",
+      "rarity": "Rare"
+    },
+    {
+      "id": "0043",
+      "file": "LION_0043_FUR-ICE_EYES-SKYBLUE_STYLE-SKATER.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "Skater",
+      "rarity": "Common"
+    },
+    {
+      "id": "0044",
+      "file": "LION_0044_FUR-RED_EYES-PINK_STYLE-LAWYER.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Lawyer",
+      "rarity": "Common"
+    },
+    {
+      "id": "0045",
+      "file": "LION_0045_FUR-GOLD_EYES-ELECTRICBLUE_STYLE-SECRETAGENT.png",
+      "background": "or_legendary",
+      "fur": "Gold",
+      "style": "Secret Agent",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0046",
+      "file": "LION_0046_FUR-RED_EYES-FROST_STYLE-BANKER.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Banker",
+      "rarity": "Common"
+    },
+    {
+      "id": "0047",
+      "file": "LION_0047_FUR-RED_EYES-NEONGREEN_STYLE-FIREFIGHTER.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Firefighter",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0048",
+      "file": "LION_0048_FUR-WHITE_EYES-EMERALD_STYLE-ELECTRICIAN.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "Electrician",
+      "rarity": "Common"
+    },
+    {
+      "id": "0049",
+      "file": "LION_0049_FUR-PURPLE_EYES-NEONGREEN_STYLE-FOOTBALLER.png",
+      "background": "bleu",
+      "fur": "Purple",
+      "style": "Footballer",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0050",
+      "file": "LION_0050_FUR-BLACK_EYES-ELECTRICBLUE_STYLE-BUSINESSMAN.png",
+      "background": "gris_argent",
+      "fur": "Deep Black",
+      "style": "Businessman",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0051",
+      "file": "LION_0051_FUR-RED_EYES-WHITEGLOW_STYLE-FIREHERO.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Fire Being",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0052",
+      "file": "LION_0052_FUR-TAN_EYES-ORANGE_STYLE-SECRETAGENT.png",
+      "background": "gris_argent",
+      "fur": "Light Tan",
+      "style": "Secret Agent",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0053",
+      "file": "LION_0053_FUR-RED_EYES-RED_STYLE-MUMMY.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Mummy",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0054",
+      "file": "LION_0054_FUR-BLACK_EYES-AMBER_STYLE-NURSE.png",
+      "background": "gris_argent",
+      "fur": "Deep Black",
+      "style": "Nurse",
+      "rarity": "Common"
+    },
+    {
+      "id": "0055",
+      "file": "LION_0055_FUR-PURPLE_EYES-VIOLET_STYLE-DOCTOR.png",
+      "background": "bleu",
+      "fur": "Purple",
+      "style": "Doctor",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0056",
+      "file": "LION_0056_FUR-GREY_EYES-TURQUOISE_STYLE-HOUSEPAINTER.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "House Painter",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0057",
+      "file": "LION_0057_FUR-GREY_EYES-NIGHTBLUE_STYLE-DOCTOR.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Doctor",
+      "rarity": "Common"
+    },
+    {
+      "id": "0058",
+      "file": "LION_0058_FUR-ICE_EYES-PINK_STYLE-FARMER.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "Farmer",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0059",
+      "file": "LION_0059_FUR-ICE_EYES-YELLOW_STYLE-SAILOR.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "Sailor",
+      "rarity": "Common"
+    },
+    {
+      "id": "0060",
+      "file": "LION_0060_FUR-RED_EYES-TURQUOISE_STYLE-ELECTRICIAN.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Electrician",
+      "rarity": "Common"
+    },
+    {
+      "id": "0061",
+      "file": "LION_0061_FUR-WHITE_EYES-BLACKSHINE_STYLE-POLICE.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "Police Officer",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0062",
+      "file": "LION_0062_FUR-GREEN_EYES-ELECTRICBLUE_STYLE-GANGSTER.png",
+      "background": "vert",
+      "fur": "Green",
+      "style": "Gangster",
+      "rarity": "Rare"
+    },
+    {
+      "id": "0063",
+      "file": "LION_0063_FUR-GOLD_EYES-COSMIC_STYLE-ROCKER.png",
+      "background": "or_legendary",
+      "fur": "Gold",
+      "style": "Rocker",
+      "rarity": "Legendary"
+    },
+    {
+      "id": "0064",
+      "file": "LION_0064_FUR-RED_EYES-ORANGE_STYLE-PIRATE.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Pirate",
+      "rarity": "Common"
+    },
+    {
+      "id": "0065",
+      "file": "LION_0065_FUR-TAN_EYES-ICEBLUE_STYLE-ARCHITECT.png",
+      "background": "gris_argent",
+      "fur": "Light Tan",
+      "style": "Architect",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0066",
+      "file": "LION_0066_FUR-TAN_EYES-RED_STYLE-SECRETAGENT.png",
+      "background": "gris_argent",
+      "fur": "Light Tan",
+      "style": "Secret Agent",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0067",
+      "file": "LION_0067_FUR-GOLD_EYES-EMERALD_STYLE-SKATER.png",
+      "background": "or_legendary",
+      "fur": "Gold",
+      "style": "Skater",
+      "rarity": "Common"
+    },
+    {
+      "id": "0068",
+      "file": "LION_0068_FUR-GREEN_EYES-NEONGREEN_STYLE-BAKER.png",
+      "background": "or_legendary",
+      "fur": "Green",
+      "style": "Baker",
+      "rarity": "Legendary"
+    },
+    {
+      "id": "0069",
+      "file": "LION_0069_FUR-BLACK_EYES-SILVER_STYLE-ARCHER.png",
+      "background": "gris_argent",
+      "fur": "Deep Black",
+      "style": "Archer",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0070",
+      "file": "LION_0070_FUR-RED_EYES-BLACKSHINE_STYLE-ARCHITECT.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Architect",
+      "rarity": "Common"
+    },
+    {
+      "id": "0071",
+      "file": "LION_0071_FUR-BLACK_EYES-VIOLET_STYLE-MUSICIAN.png",
+      "background": "gris_argent",
+      "fur": "Deep Black",
+      "style": "Musician",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0072",
+      "file": "LION_0072_FUR-GREY_EYES-ELECTRICBLUE_STYLE-DOCTOR.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Doctor",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0073",
+      "file": "LION_0073_FUR-GREY_EYES-SKYBLUE_STYLE-FISHERMAN.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Fisherman",
+      "rarity": "Common"
+    },
+    {
+      "id": "0074",
+      "file": "LION_0074_FUR-GREEN_EYES-NIGHTBLUE_STYLE-PILOT.png",
+      "background": "vert",
+      "fur": "Green",
+      "style": "Pilot",
+      "rarity": "Rare"
+    },
+    {
+      "id": "0075",
+      "file": "LION_0075_FUR-ICE_EYES-AMBER_STYLE-SURGEON.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "Surgeon",
+      "rarity": "Common"
+    },
+    {
+      "id": "0076",
+      "file": "LION_0076_FUR-TAN_EYES-EMERALD_STYLE-FARMER.png",
+      "background": "gris_argent",
+      "fur": "Light Tan",
+      "style": "Farmer",
+      "rarity": "Common"
+    },
+    {
+      "id": "0077",
+      "file": "LION_0077_FUR-ICE_EYES-NIGHTBLUE_STYLE-STREETGANG.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "Street Gang",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0078",
+      "file": "LION_0078_FUR-BLACK_EYES-COSMIC_STYLE-ARCHITECT.png",
+      "background": "gris_argent",
+      "fur": "Deep Black",
+      "style": "Architect",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0079",
+      "file": "LION_0079_FUR-RED_EYES-ORANGE_STYLE-GRAFFITI.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Graffiti Artist",
+      "rarity": "Common"
+    },
+    {
+      "id": "0080",
+      "file": "LION_0080_FUR-PURPLE_EYES-ORANGE_STYLE-PLUMBER.png",
+      "background": "bleu",
+      "fur": "Purple",
+      "style": "Plumber",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0081",
+      "file": "LION_0081_FUR-BLACK_EYES-SKYBLUE_STYLE-FISHERMAN.png",
+      "background": "gris_argent",
+      "fur": "Deep Black",
+      "style": "Fisherman",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0082",
+      "file": "LION_0082_FUR-PURPLE_EYES-RED_STYLE-MAGICIAN.png",
+      "background": "bleu",
+      "fur": "Purple",
+      "style": "Stage Magician",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0083",
+      "file": "LION_0083_FUR-TAN_EYES-EMERALD_STYLE-SURFER.png",
+      "background": "gris_argent",
+      "fur": "Light Tan",
+      "style": "Surfer",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0084",
+      "file": "LION_0084_FUR-TAN_EYES-WHITEGLOW_STYLE-HOUSEPAINTER.png",
+      "background": "gris_argent",
+      "fur": "Light Tan",
+      "style": "House Painter",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0085",
+      "file": "LION_0085_FUR-ICE_EYES-ORANGE_STYLE-SCIENTIST.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "Scientist",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0086",
+      "file": "LION_0086_FUR-PURPLE_EYES-AMBER_STYLE-FOOTBALLER.png",
+      "background": "bleu",
+      "fur": "Purple",
+      "style": "Footballer",
+      "rarity": "Common"
+    },
+    {
+      "id": "0087",
+      "file": "LION_0087_FUR-GREY_EYES-BLACKSHINE_STYLE-NURSE.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Nurse",
+      "rarity": "Common"
+    },
+    {
+      "id": "0088",
+      "file": "LION_0088_FUR-RED_EYES-VIOLET_STYLE-ZOMBIE.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Zombie",
+      "rarity": "Common"
+    },
+    {
+      "id": "0089",
+      "file": "LION_0089_FUR-GREY_EYES-EMERALD_STYLE-SHAMAN.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Shaman",
+      "rarity": "Common"
+    },
+    {
+      "id": "0090",
+      "file": "LION_0090_FUR-ICE_EYES-FLAME_STYLE-MECHANIC.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "Mechanic",
+      "rarity": "Rare"
+    },
+    {
+      "id": "0091",
+      "file": "LION_0091_FUR-RED_EYES-AMBER_STYLE-RASTA.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Rasta",
+      "rarity": "Common"
+    },
+    {
+      "id": "0092",
+      "file": "LION_0092_FUR-GREEN_EYES-AMBER_STYLE-ARCHER.png",
+      "background": "vert",
+      "fur": "Green",
+      "style": "Archer",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0093",
+      "file": "LION_0093_FUR-ICE_EYES-SKYBLUE_STYLE-BANKER.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "Banker",
+      "rarity": "Common"
+    },
+    {
+      "id": "0094",
+      "file": "LION_0094_FUR-RED_EYES-TURQUOISE_STYLE-MASON.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Mason",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0095",
+      "file": "LION_0095_FUR-GREEN_EYES-ICEBLUE_STYLE-MAGICIAN.png",
+      "background": "vert",
+      "fur": "Green",
+      "style": "Stage Magician",
+      "rarity": "Rare"
+    },
+    {
+      "id": "0096",
+      "file": "LION_0096_FUR-WHITE_EYES-YELLOW_STYLE-PIRATE.png",
+      "background": "gris_argent",
+      "fur": "Pure White",
+      "style": "Pirate",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0097",
+      "file": "LION_0097_FUR-RED_EYES-FLAME_STYLE-SURFER.png",
+      "background": "rouge",
+      "fur": "Red",
+      "style": "Surfer",
+      "rarity": "Uncommon"
+    },
+    {
+      "id": "0098",
+      "file": "LION_0098_FUR-ICE_EYES-ICEBLUE_STYLE-BANKER.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "Banker",
+      "rarity": "Common"
+    },
+    {
+      "id": "0099",
+      "file": "LION_0099_FUR-ICE_EYES-AMBER_STYLE-DJ.png",
+      "background": "bleu",
+      "fur": "Ice Blue",
+      "style": "DJ",
+      "rarity": "Common"
+    },
+    {
+      "id": "0100",
+      "file": "LION_0100_FUR-GREY_EYES-EMERALD_STYLE-MAFIA.png",
+      "background": "gris_argent",
+      "fur": "Silver Grey",
+      "style": "Mafia Boss",
+      "rarity": "Common"
+    }
+  ]
+}

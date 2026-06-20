@@ -13,13 +13,19 @@ def _idx(x, y, w):
     return (y * w + x) * 4
 
 
-def remove_background(rgba: bytearray, w: int, h: int, tolerance: int = 32) -> int:
+def remove_background(rgba: bytearray, w: int, h: int, tolerance: int = 32,
+                      remove_enclosed: bool = True, max_hole_ratio: float = 0.06) -> int:
     """Rend transparent le fond connecté aux bords (color-key par remplissage).
 
     Part des pixels de bord, et propage la transparence aux pixels voisins dont
     la couleur est proche (≤ tolerance) de la couleur de fond échantillonnée.
     Préserve le sujet central même s'il a une couleur proche, tant qu'il n'est
     pas connecté au bord. Retourne le nombre de pixels rendus transparents.
+
+    Si ``remove_enclosed`` est vrai, supprime ensuite les PETITES poches de fond
+    enfermées (entre les jambes, oreilles…) : composantes de couleur ~fond dont
+    la taille est < ``max_hole_ratio`` de l'image. Les grandes zones (fourrure
+    blanche) sont conservées.
     """
     # Couleur de fond de référence = moyenne des 4 coins.
     corners = [(0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1)]
@@ -64,7 +70,41 @@ def remove_background(rgba: bytearray, w: int, h: int, tolerance: int = 32) -> i
             q.append((x, y - 1))
         if y < h - 1:
             q.append((x, y + 1))
+
+    if remove_enclosed:
+        cleared += _remove_enclosed_pockets(rgba, w, h, close, max_hole_ratio)
     return cleared
+
+
+def _remove_enclosed_pockets(rgba, w, h, close, max_hole_ratio) -> int:
+    """Supprime les petites composantes de couleur ~fond non touchées au bord."""
+    max_area = int(w * h * max_hole_ratio)
+    seen = bytearray(w * h)
+    cleared = 0
+    for start in range(w * h):
+        if seen[start] or rgba[start * 4 + 3] == 0 or not close(start * 4):
+            continue
+        # BFS de la composante "couleur fond" encore opaque.
+        comp = []
+        dq = deque([start])
+        seen[start] = 1
+        while dq:
+            p = dq.popleft()
+            comp.append(p)
+            x = p % w; y = p // w
+            for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
+                if 0 <= nx < w and 0 <= ny < h:
+                    np_ = ny * w + nx
+                    if not seen[np_] and rgba[np_ * 4 + 3] != 0 and close(np_ * 4):
+                        seen[np_] = 1
+                        dq.append(np_)
+        # Petite poche enfermée -> on l'efface ; grande zone (fourrure) -> on garde.
+        if len(comp) <= max_area:
+            for p in comp:
+                rgba[p * 4 + 3] = 0
+            cleared += len(comp)
+    return cleared
+
 
 
 def erase_circle(rgba: bytearray, w: int, h: int, cx: int, cy: int, r: int) -> None:
@@ -137,6 +177,43 @@ def recolor(rgba: bytearray, w: int, h: int, target_rgb, strength: float = 0.85)
             rgba[i] = int(rgba[i] * (1 - strength) + nr * strength)
             rgba[i + 1] = int(rgba[i + 1] * (1 - strength) + ng * strength)
             rgba[i + 2] = int(rgba[i + 2] * (1 - strength) + nb * strength)
+
+
+def normalize_margins(rgba: bytearray, w: int, h: int, margin_ratio: float = 0.08):
+    """Recadre le sujet (zone non transparente) et le recentre avec une MARGE
+    uniforme tout autour (≈ ``margin_ratio`` de l'image). Garantit un bord
+    constant identique pour tous les personnages. Retourne un nouveau tampon.
+    """
+    minx = miny = 10 ** 9
+    maxx = maxy = -1
+    for y in range(h):
+        row = y * w
+        for x in range(w):
+            if rgba[(row + x) * 4 + 3] != 0:
+                if x < minx:
+                    minx = x
+                if x > maxx:
+                    maxx = x
+                if y < miny:
+                    miny = y
+                if y > maxy:
+                    maxy = y
+    if maxx < 0:
+        return rgba  # rien à recadrer
+
+    bw = maxx - minx + 1
+    bh = maxy - miny + 1
+    crop = bytearray(bw * bh * 4)
+    for yy in range(bh):
+        srow = (miny + yy) * w + minx
+        drow = yy * bw
+        for xx in range(bw):
+            so = (srow + xx) * 4
+            do = (drow + xx) * 4
+            crop[do:do + 4] = rgba[so:so + 4]
+
+    # Le sujet occupe (1 - 2*marge) de l'image, centré -> marge identique partout.
+    return fit_to_canvas(crop, bw, bh, w, h, scale=1.0 - 2 * margin_ratio)
 
 
 def fit_to_canvas(src: bytearray, sw: int, sh: int, dw: int, dh: int,
