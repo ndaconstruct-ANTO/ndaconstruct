@@ -16,6 +16,8 @@ from ..logging_setup import diagnostic_report, setup_logging
 from ..resources import icon_path
 from .collection_window import CollectionWindow
 from .dialogs import NewCollectionDialog
+from .editor import LayerEditor
+from .wizard import GuidedWizard
 
 
 class MainWindow(QMainWindow):
@@ -48,14 +50,19 @@ class MainWindow(QMainWindow):
         header.addWidget(tagline)
         root.addLayout(header)
 
+        # Bouton principal : assistant guidé (recommandé).
+        assistant = QPushButton("🚀 Assistant guidé (recommandé) — créer une collection pas à pas")
+        assistant.clicked.connect(self._open_wizard)
+        root.addWidget(assistant)
+
         # Cartes d'actions.
         grid = QGridLayout(); grid.setSpacing(16)
         actions = [
             ("➕ Nouvelle collection", self._new_collection),
             ("📂 Ouvrir une collection", self._open_collection),
+            ("🖼️ Éditeur de calques", self._open_editor),
+            ("🗂️ Bibliothèque / Générer", self._open_collection),
             ("🧪 Lancer la démo", self._run_demo),
-            ("🖼️ Bibliothèque de calques", self._open_collection),
-            ("⚙️ Générer une collection", self._open_collection),
             ("ℹ️ À propos", self._about),
         ]
         for i, (label, handler) in enumerate(actions):
@@ -83,6 +90,35 @@ class MainWindow(QMainWindow):
         win = CollectionWindow(self.conn, collection, self.paths)
         self._open_windows.append(win)
         win.show()
+
+    def _open_wizard(self) -> None:
+        wiz = GuidedWizard(self.conn, self.paths, self)
+        self._open_windows.append(wiz)
+        wiz.show()
+
+    def _pick_collection(self):
+        cols = store.list_collections(self.conn)
+        if not cols:
+            return None
+        if len(cols) == 1:
+            return cols[0]
+        from PySide6.QtWidgets import QInputDialog
+        names = [f"{c.name}  ({c.width}×{c.height})" for c in cols]
+        choice, ok = QInputDialog.getItem(
+            self, "Choisir une collection", "Collection :", names, 0, False)
+        return cols[names.index(choice)] if ok else None
+
+    def _open_editor(self) -> None:
+        col = self._pick_collection()
+        if col is None:
+            QMessageBox.information(
+                self, "Éditeur de calques",
+                "Créez d'abord une collection (« Nouvelle collection » ou "
+                "l'assistant guidé).")
+            return
+        ed = LayerEditor(self.conn, col, self.paths)
+        self._open_windows.append(ed)
+        ed.show()
 
     def _new_collection(self) -> None:
         dlg = NewCollectionDialog(self)

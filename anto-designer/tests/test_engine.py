@@ -6,8 +6,8 @@ import unittest
 from pathlib import Path
 
 from anto_designer import (
-    combination, database, dedup, layer_engine, metadata, pnglib, project,
-    service, store, validation,
+    combination, database, dedup, imageops, layer_engine, metadata, pnglib,
+    project, service, store, validation,
 )
 from demo.build_demo import build_demo
 
@@ -181,6 +181,52 @@ class ServiceTests(unittest.TestCase):
         rep = service.import_layers_from_folder(conn, col, root / "lay")
         self.assertEqual(rep["layers"], 1)
         self.assertEqual(len(rep["skipped"]), 1)
+
+
+class ImageOpsTests(unittest.TestCase):
+    def test_remove_background_keeps_center(self):
+        w = h = 16
+        buf = pnglib.new_canvas(w, h, (255, 255, 255, 255))  # fond blanc opaque
+        for y in range(6, 10):                                # carré rouge central
+            for x in range(6, 10):
+                o = (y * w + x) * 4
+                buf[o], buf[o + 1], buf[o + 2], buf[o + 3] = (255, 0, 0, 255)
+        cleared = imageops.remove_background(buf, w, h, tolerance=20)
+        self.assertGreater(cleared, 0)
+        self.assertEqual(buf[(0 * w + 0) * 4 + 3], 0)          # coin transparent
+        self.assertEqual(buf[(8 * w + 8) * 4 + 3], 255)        # centre conservé
+
+    def test_erase_circle(self):
+        w = h = 16
+        buf = pnglib.new_canvas(w, h, (0, 0, 0, 255))
+        imageops.erase_circle(buf, w, h, 8, 8, 3)
+        self.assertEqual(buf[(8 * w + 8) * 4 + 3], 0)
+
+    def test_fit_to_canvas(self):
+        src = pnglib.new_canvas(10, 20, (1, 2, 3, 255))
+        dst = imageops.fit_to_canvas(src, 10, 20, 32, 32)
+        self.assertEqual(len(dst), 32 * 32 * 4)
+
+
+class TemplateServiceTests(unittest.TestCase):
+    def test_example_template_importable(self):
+        tmp = tempfile.TemporaryDirectory(); self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+        conn = database.connect(root / "t.db"); self.addCleanup(conn.close)
+        col = service.new_collection(conn, "Tpl", 64, 64)
+        service.create_example_layers_template(root / "ex", col)
+        rep = service.import_layers_from_folder(conn, col, root / "ex")
+        self.assertEqual(rep["categories"], 5)
+        self.assertGreater(rep["layers"], 0)
+
+    def test_add_single_layer_file(self):
+        tmp = tempfile.TemporaryDirectory(); self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+        conn = database.connect(root / "t.db"); self.addCleanup(conn.close)
+        col = service.new_collection(conn, "One", 32, 32)
+        p = root / "hat.png"; _make_layer_png(p, 32, (10, 20, 30, 255))
+        out = service.add_layer_file(conn, col, "Headwear", p)
+        self.assertEqual(out["category"], "Headwear")
 
 
 class DemoPipelineTests(unittest.TestCase):

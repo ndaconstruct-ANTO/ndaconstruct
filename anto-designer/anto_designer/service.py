@@ -94,6 +94,66 @@ def import_layers_from_folder(conn, collection, folder) -> dict:
     return result
 
 
+_EXAMPLE_STRUCTURE = [
+    ("1_Fur", ["blanc", "noir", "or"]),
+    ("2_Eyes", ["bleu", "vert", "ambre"]),
+    ("3_Style", ["docteur", "samourai"]),
+    ("4_Shoes", ["bottes", "baskets"]),
+    ("5_Objet (opt)", ["livre", "katana"]),
+]
+
+
+def create_example_layers_template(folder, collection) -> str:
+    """Crée un dossier-exemple (structure + PNG placeholders à la bonne taille).
+
+    L'utilisateur n'a plus qu'à remplacer les images par les siennes.
+    Les placeholders sont quasi transparents (légère marque) pour rester légers.
+    """
+    folder = Path(folder)
+    folder.mkdir(parents=True, exist_ok=True)
+    w, h = collection.width, collection.height
+    palette = [(240, 240, 240, 90), (40, 40, 40, 90), (230, 180, 34, 90),
+               (0, 0, 255, 90), (0, 160, 0, 90)]
+    for ci, (cat, names) in enumerate(_EXAMPLE_STRUCTURE):
+        d = folder / cat
+        d.mkdir(parents=True, exist_ok=True)
+        for ni, nm in enumerate(names):
+            buf = pnglib.new_canvas(w, h, (0, 0, 0, 0))
+            color = palette[ci % len(palette)]
+            # petit repère pour visualiser la zone (sinon image vide)
+            x0, y0 = w // 4, h // 4 + ci * (h // 12)
+            for y in range(y0, min(h, y0 + h // 12)):
+                row = y * w
+                for x in range(x0, min(w, x0 + w // 2)):
+                    o = (row + x) * 4
+                    buf[o], buf[o + 1], buf[o + 2], buf[o + 3] = color
+            pnglib.write_rgba(d / f"{nm}.png", w, h, buf)
+    return str(folder)
+
+
+def add_layer_file(conn, collection, category_name: str, image_path, *,
+                   name=None, weight=1.0, rarity_tier="Common") -> dict:
+    """Ajoute un seul calque (depuis un PNG) à une catégorie (créée si besoin)."""
+    image_path = Path(image_path)
+    w, h = pnglib.read_size(image_path)
+    if (w, h) != (collection.width, collection.height):
+        raise ValueError(
+            f"Taille {w}x{h} != collection {collection.width}x{collection.height}")
+
+    cats = store.list_categories(conn, collection.id)
+    match = next((c for c in cats if c.name.lower() == category_name.lower()), None)
+    if match is None:
+        z = (max((c.z_index for c in cats), default=0) + 1)
+        match = store.add_category(conn, collection.id, category_name, z)
+
+    stem = name or image_path.stem
+    code = f"{_slug(category_name)}_{_slug(stem)}"
+    layer = store.add_layer(conn, collection.id, match.id, stem.title(), code,
+                            str(image_path), weight=weight, rarity_tier=rarity_tier,
+                            trait_value=stem.title())
+    return {"category": match.name, "layer": layer.name}
+
+
 def generate(conn, collection, count: int, out_dir, *, seed=None,
              progress_cb=None, stop_event=None) -> dict:
     return generator.generate_collection(conn, collection, count, out_dir,
