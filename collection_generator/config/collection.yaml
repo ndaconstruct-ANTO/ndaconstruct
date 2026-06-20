@@ -21,7 +21,7 @@ format:
 background:
   mode: "white"           # extensible : un autre fond unique pourra être ajouté
   color_hex: "#FFFFFF"
-  contact_shadow: true    # légère ombre de contact identique sous les pieds
+  contact_shadow: false   # fond blanc SANS ombre (demande utilisateur)
   # Tolérance utilisée par le contrôle qualité pour juger un fond "blanc".
   white_min_channel: 240  # un pixel est "blanc" si R,G,B >= cette valeur
   white_min_ratio: 0.22   # proportion minimale de pixels blancs (perso large = peu de blanc)

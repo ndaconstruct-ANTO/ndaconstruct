@@ -30,9 +30,9 @@ styles:
     name_fr: "Gangster"
     outfit: "oversized streetwear jacket, baggy trousers, gold chain"
     headwear: "Snapback cap (no logo)"
-    held_object: "Single spray paint can"
+    held_object: "Single revolver"
     palette: ["#222222", "#B8860B", "#5A5A5A"]
-    forbidden: ["baseball bat together with can", "second object", "brand logo"]
+    forbidden: ["second object", "second weapon", "brand logo"]
     rarity: "Uncommon"
 
   - code: STREETGANG
@@ -40,7 +40,7 @@ styles:
     name_fr: "Street gang"
     outfit: "hooded sweatshirt, ripped jeans, bandana around the neck"
     headwear: "Hood up"
-    held_object: "Single skateboard"
+    held_object: "Single baseball bat"
     palette: ["#2C2C2C", "#C0392B", "#ECF0F1"]
     forbidden: ["weapon", "second object"]
     rarity: "Uncommon"
@@ -450,7 +450,7 @@ styles:
     name_fr: "Biker"
     outfit: "heavy leather biker jacket with patches and gloves"
     headwear: "Open-face biker helmet"
-    held_object: "Single wrench"
+    held_object: "Single metal chain"
     palette: ["#161616", "#7F8C8D", "#C0392B"]
     forbidden: ["second object"]
     rarity: "Uncommon"
@@ -730,9 +730,9 @@ styles:
     name_fr: "Agent secret"
     outfit: "sharp black tuxedo with bow tie"
     headwear: "None"
-    held_object: "Single briefcase"
+    held_object: "Single pistol"
     palette: ["#0B0B0B", "#FFFFFF", "#7F8C8D"]
-    forbidden: ["gun plus briefcase together", "second object"]
+    forbidden: ["second object", "second weapon"]
     rarity: "Rare"
 
   - code: DJ

@@ -66,7 +66,7 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(p1, p2, "le prompt doit être déterministe")
         # Les éléments fixes essentiels (verrouillage) doivent être présents.
         for token in ("master lion cub", "right paw", "no human hands",
-                      "pure uniform white background", "mandatory"):
+                      "pure uniform flat white background", "mandatory", "NO shadow"):
             self.assertIn(token, p1)
         # L'objet doit être annoncé dans la patte droite (gauche de l'image).
         self.assertIn("viewer's left side", p1)
