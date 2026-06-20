@@ -10,6 +10,11 @@ A single cute baby lion cub character, anthropomorphic, standing upright on two 
 [MORPHOLOGY — LOCKED, IDENTICAL ON EVERY IMAGE]
 Compact childlike body, head slightly larger than the body, soft yet expressive face, identical rounded ears, identical short muzzle, identical shoulder width, identical arm length and identical leg length, straight and natural posture, lion cub paws instead of hands, plantigrade little feet placed exactly at the same spot at the bottom center of the frame. Same head-to-body proportions on every image. No perspective change, no zoom change, no camera angle change.
 
+／／ Marqueurs d'identite tires de l'IMAGE MAITRE OFFICIELLE fournie par le client.
+／／ Volontairement NEUTRES en couleur pour rester compatibles avec les 9 pelages.
+[MASTER IDENTITY MARKERS — LOCKED, harmonised with the assigned fur color]
+Large rounded forward-facing eyes with soft round pupils and a single gentle catchlight, identical eye size, shape and spacing on every image. Short soft rounded muzzle with a small triangular nose and a slightly lighter chin and inner muzzle. Subtle symmetrical whisker-dot pattern on the muzzle with a few fine light whiskers. Rounded ears with softly tufted lighter inner fur. Slightly lighter fur on the chest, belly and lower muzzle, blended naturally into the assigned fur color, never a flat colored overlay. Short arms resting naturally at the sides, large soft padded paws with four rounded toes, plantigrade little feet placed flat and parallel. Calm, friendly, gentle neutral expression with the mouth closed.
+
 [FRAMING — LOCKED]
 Centered subject, full-length head-to-toe shot, identical equal margin all around the character, character occupying the same image area on every render, eye level camera, straight frontal view, no crop, never cut off.
 
