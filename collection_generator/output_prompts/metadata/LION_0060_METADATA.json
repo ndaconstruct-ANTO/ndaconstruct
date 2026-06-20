@@ -1,0 +1,52 @@
+{
+  "id": "LION-0060",
+  "name": "Lion #0060",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0060_FUR-RED_EYES-TURQUOISE_STYLE-ELECTRICIAN.png",
+  "species": "Lion cub",
+  "fur_color": "Red",
+  "eye_color_left": "Turquoise",
+  "eye_color_right": "Turquoise",
+  "style": "Electrician",
+  "outfit": "work jacket with insulated gloves and tool belt",
+  "headwear": "Safety helmet",
+  "held_object": "Single insulated screwdriver",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 39.69,
+  "seed": 2026006138,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Turquoise"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Turquoise"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Électricien"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single insulated screwdriver"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

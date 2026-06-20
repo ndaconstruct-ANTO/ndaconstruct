@@ -1,0 +1,52 @@
+{
+  "id": "LION-0035",
+  "name": "Lion #0035",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0035_FUR-GREY_EYES-PINK_STYLE-SKATER.png",
+  "species": "Lion cub",
+  "fur_color": "Silver Grey",
+  "eye_color_left": "Pink",
+  "eye_color_right": "Pink",
+  "style": "Skater",
+  "outfit": "baggy tee and shorts with knee pads",
+  "headwear": "Cap turned back",
+  "held_object": "Single skateboard",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 30.32,
+  "seed": 2026006113,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Gris"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Rose"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Rose"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Skateur"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single skateboard"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

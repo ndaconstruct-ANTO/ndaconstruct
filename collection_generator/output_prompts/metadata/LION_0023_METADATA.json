@@ -1,0 +1,52 @@
+{
+  "id": "LION-0023",
+  "name": "Lion #0023",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0023_FUR-RED_EYES-AMBER_STYLE-FUTURISTIC.png",
+  "species": "Lion cub",
+  "fur_color": "Red",
+  "eye_color_left": "Amber",
+  "eye_color_right": "Amber",
+  "style": "Futuristic Hero",
+  "outfit": "sleek white-and-chrome future armor with glowing seams",
+  "headwear": "Smooth tech helmet (face visible)",
+  "held_object": "Single energy orb",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 17.64,
+  "seed": 2026006101,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Personnage futuriste"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single energy orb"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

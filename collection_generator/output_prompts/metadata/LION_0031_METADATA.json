@@ -1,0 +1,52 @@
+{
+  "id": "LION-0031",
+  "name": "Lion #0031",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0031_FUR-GREY_EYES-ICEBLUE_STYLE-SAILOR.png",
+  "species": "Lion cub",
+  "fur_color": "Silver Grey",
+  "eye_color_left": "Glacier Blue",
+  "eye_color_right": "Glacier Blue",
+  "style": "Sailor",
+  "outfit": "classic striped sailor shirt with navy jacket",
+  "headwear": "Sailor cap",
+  "held_object": "Single rope coil",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 35.83,
+  "seed": 2026006109,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Gris"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Bleu glacier"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu glacier"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Marin"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single rope coil"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

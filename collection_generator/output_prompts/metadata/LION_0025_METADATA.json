@@ -1,0 +1,52 @@
+{
+  "id": "LION-0025",
+  "name": "Lion #0025",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0025_FUR-GOLD_EYES-AMBER_STYLE-FOOTBALLER.png",
+  "species": "Lion cub",
+  "fur_color": "Gold",
+  "eye_color_left": "Amber",
+  "eye_color_right": "Amber",
+  "style": "Footballer",
+  "outfit": "generic football kit with shorts and socks, no team logo",
+  "headwear": "None",
+  "held_object": "Single football ball",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 33.63,
+  "seed": 2026006103,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Or"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Footballeur"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single football ball"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "LION-0096",
+  "name": "Lion #0096",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0096_FUR-WHITE_EYES-YELLOW_STYLE-PIRATE.png",
+  "species": "Lion cub",
+  "fur_color": "Pure White",
+  "eye_color_left": "Yellow",
+  "eye_color_right": "Yellow",
+  "style": "Pirate",
+  "outfit": "long captain coat with sash and wide belt",
+  "headwear": "Pirate tricorn hat",
+  "held_object": "Single cutlass sabre",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 43.55,
+  "seed": 2026006174,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Blanc pur"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Jaune"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Jaune"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Pirate"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single cutlass sabre"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

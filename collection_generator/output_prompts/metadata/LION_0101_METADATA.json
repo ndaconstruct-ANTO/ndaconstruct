@@ -1,0 +1,52 @@
+{
+  "id": "LION-0101",
+  "name": "Lion #0101",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0101_FUR-ICE_EYES-ORANGE_STYLE-NURSE.png",
+  "species": "Lion cub",
+  "fur_color": "Ice Blue",
+  "eye_color_left": "Orange",
+  "eye_color_right": "Orange",
+  "style": "Nurse",
+  "outfit": "clean nurse uniform with small cross emblem",
+  "headwear": "Nurse cap",
+  "held_object": "Single clipboard",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 27.56,
+  "seed": 2026006179,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Bleu ice"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Orange"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Orange"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Infirmier"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single clipboard"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

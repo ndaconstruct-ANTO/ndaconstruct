@@ -1,0 +1,52 @@
+{
+  "id": "LION-0080",
+  "name": "Lion #0080",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0080_FUR-PURPLE_EYES-ORANGE_STYLE-PLUMBER.png",
+  "species": "Lion cub",
+  "fur_color": "Purple",
+  "eye_color_left": "Orange",
+  "eye_color_right": "Orange",
+  "style": "Plumber",
+  "outfit": "blue work overalls with tool belt",
+  "headwear": "None",
+  "held_object": "Single pipe wrench",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 43.0,
+  "seed": 2026006158,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Mauve"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Orange"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Orange"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Plombier"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single pipe wrench"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

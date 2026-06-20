@@ -1,0 +1,52 @@
+{
+  "id": "LION-0001",
+  "name": "Lion #0001",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0001_FUR-WHITE_EYES-AMBER_STYLE-BUSINESSMAN.png",
+  "species": "Lion cub",
+  "fur_color": "Pure White",
+  "eye_color_left": "Amber",
+  "eye_color_right": "Amber",
+  "style": "Businessman",
+  "outfit": "tailored navy business suit with tie",
+  "headwear": "None",
+  "held_object": "Single briefcase",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 27.01,
+  "seed": 2026006079,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Blanc pur"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Homme d'affaires"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single briefcase"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

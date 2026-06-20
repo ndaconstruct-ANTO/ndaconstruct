@@ -1,0 +1,36 @@
+PROMPT DU MODÈLE MAÎTRE CORRIGÉ — à générer en local (gratuit) puis à valider.
+
+But : créer UN lionceau de référence parfait (proportions correctes, bras COURTS,
+entièrement habillé) qui servira de base de cohérence pour toute la collection.
+
+------------------------- PROMPT POSITIF -------------------------
+Premium ultra-realistic 3D collectible anthropomorphic baby lion cub, full body
+from the top of the head down to the shoes, standing perfectly upright, strict
+front view, looking straight at the camera. Compact childlike feline morphology,
+rounded feline head slightly larger than the body but well-proportioned (not
+oversized), short soft muzzle, large rounded ears, dense ultra-detailed realistic
+fur with visible fine hairs. VERY SHORT arms relaxed along the sides, VERY SHORT
+legs, large feline paws, feet flat and parallel slightly apart. Absolutely no
+human hands, no human fingers, no visible tail, no adult mane.
+
+Light tan-brown natural fur, warm amber eyes. Wears a simple COMPLETE modern
+neutral outfit: a plain fitted dark-grey crew-neck top, plain dark navy trousers
+fully covering the legs, and a clean pair of simple white sneakers (no brand, no
+logo). Fully dressed head to toe.
+
+Perfectly centered, identical constant margins all around, full body inside the
+frame, pure uniform flat white background, absolutely no shadow, soft studio
+lighting, sharp focus, square 1:1, ultra high definition.
+
+------------------------- PROMPT NÉGATIF -------------------------
+long arms, lanky arms, stretched arms, elongated limbs, oversized head, bobblehead,
+human hands, human fingers, naked, bare legs, no trousers, missing pants, barefoot,
+missing shoes, visible tail, adult mane, tiger, bear, side view, three-quarter view,
+tilted body, dynamic pose, cropped, colored background, shadow, blurry, low detail,
+flat cartoon, 2D, brand logo, text, watermark.
+
+------------------------- CONSEILS -------------------------
+- Génère 3 ou 4 variantes, choisis celle avec les BRAS LES PLUS COURTS et les
+  proportions les plus mignonnes/équilibrées.
+- C'est CE lionceau qui devient la référence. On le verrouille avant de lancer
+  la série.

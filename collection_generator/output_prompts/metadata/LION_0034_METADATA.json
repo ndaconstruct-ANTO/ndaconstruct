@@ -1,0 +1,52 @@
+{
+  "id": "LION-0034",
+  "name": "Lion #0034",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0034_FUR-TAN_EYES-YELLOW_STYLE-SHERIFF.png",
+  "species": "Lion cub",
+  "fur_color": "Light Tan",
+  "eye_color_left": "Yellow",
+  "eye_color_right": "Yellow",
+  "style": "Sheriff",
+  "outfit": "western lawman outfit with star badge and leather belt",
+  "headwear": "Sheriff hat",
+  "held_object": "Single sheriff badge",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 50.72,
+  "seed": 2026006112,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Brun clair"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Jaune"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Jaune"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Shérif"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single sheriff badge"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "LION-0077",
+  "name": "Lion #0077",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0077_FUR-ICE_EYES-NIGHTBLUE_STYLE-STREETGANG.png",
+  "species": "Lion cub",
+  "fur_color": "Ice Blue",
+  "eye_color_left": "Night Blue",
+  "eye_color_right": "Night Blue",
+  "style": "Street Gang",
+  "outfit": "hooded sweatshirt, ripped jeans, bandana around the neck",
+  "headwear": "Hood up",
+  "held_object": "Single baseball bat",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 44.1,
+  "seed": 2026006155,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Bleu ice"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Bleu nuit"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu nuit"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Street gang"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single baseball bat"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

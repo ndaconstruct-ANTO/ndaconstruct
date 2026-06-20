@@ -1,0 +1,52 @@
+{
+  "id": "LION-0067",
+  "name": "Lion #0067",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0067_FUR-GOLD_EYES-EMERALD_STYLE-SKATER.png",
+  "species": "Lion cub",
+  "fur_color": "Gold",
+  "eye_color_left": "Emerald Green",
+  "eye_color_right": "Emerald Green",
+  "style": "Skater",
+  "outfit": "baggy tee and shorts with knee pads",
+  "headwear": "Cap turned back",
+  "held_object": "Single skateboard",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 33.63,
+  "seed": 2026006145,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Or"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Vert émeraude"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Vert émeraude"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Skateur"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single skateboard"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "LION-0063",
+  "name": "Lion #0063",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0063_FUR-GOLD_EYES-COSMIC_STYLE-ROCKER.png",
+  "species": "Lion cub",
+  "fur_color": "Gold",
+  "eye_color_left": "Cosmic",
+  "eye_color_right": "Cosmic",
+  "style": "Rocker",
+  "outfit": "studded black leather jacket with ripped jeans",
+  "headwear": "None",
+  "held_object": "Single electric guitar",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Legendary",
+  "rarity_score": 72.22,
+  "seed": 2026006141,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Or"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Cosmique"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Cosmique"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Rockeur"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single electric guitar"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Legendary"
+    }
+  ]
+}

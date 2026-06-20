@@ -1,0 +1,52 @@
+{
+  "id": "LION-0054",
+  "name": "Lion #0054",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0054_FUR-BLACK_EYES-AMBER_STYLE-NURSE.png",
+  "species": "Lion cub",
+  "fur_color": "Deep Black",
+  "eye_color_left": "Amber",
+  "eye_color_right": "Amber",
+  "style": "Nurse",
+  "outfit": "clean nurse uniform with small cross emblem",
+  "headwear": "Nurse cap",
+  "held_object": "Single clipboard",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 16.54,
+  "seed": 2026006132,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Noir profond"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Infirmier"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single clipboard"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

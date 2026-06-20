@@ -1,0 +1,52 @@
+{
+  "id": "LION-0058",
+  "name": "Lion #0058",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0058_FUR-ICE_EYES-PINK_STYLE-FARMER.png",
+  "species": "Lion cub",
+  "fur_color": "Ice Blue",
+  "eye_color_left": "Pink",
+  "eye_color_right": "Pink",
+  "style": "Farmer",
+  "outfit": "denim overalls over a plaid shirt",
+  "headwear": "Straw farmer hat",
+  "held_object": "Single pitchfork",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 41.9,
+  "seed": 2026006136,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Bleu ice"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Rose"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Rose"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Fermier"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single pitchfork"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

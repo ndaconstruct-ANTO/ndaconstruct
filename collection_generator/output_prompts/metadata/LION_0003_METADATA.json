@@ -1,0 +1,52 @@
+{
+  "id": "LION-0003",
+  "name": "Lion #0003",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0003_FUR-RED_EYES-VIOLET_STYLE-GRAFFITI.png",
+  "species": "Lion cub",
+  "fur_color": "Red",
+  "eye_color_left": "Violet",
+  "eye_color_right": "Violet",
+  "style": "Graffiti Artist",
+  "outfit": "paint-stained hoodie with cargo pants and a dust mask on neck",
+  "headwear": "Cap turned back",
+  "held_object": "Single spray can",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 36.38,
+  "seed": 2026006081,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Violet"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Violet"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Graffeur"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single spray can"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

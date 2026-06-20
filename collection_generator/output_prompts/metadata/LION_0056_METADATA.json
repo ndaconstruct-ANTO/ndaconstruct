@@ -1,0 +1,52 @@
+{
+  "id": "LION-0056",
+  "name": "Lion #0056",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0056_FUR-GREY_EYES-TURQUOISE_STYLE-HOUSEPAINTER.png",
+  "species": "Lion cub",
+  "fur_color": "Silver Grey",
+  "eye_color_left": "Turquoise",
+  "eye_color_right": "Turquoise",
+  "style": "House Painter",
+  "outfit": "white painter coveralls with paint splatters",
+  "headwear": "Paper painter cap",
+  "held_object": "Single paint roller",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 43.55,
+  "seed": 2026006134,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Gris"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Turquoise"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Turquoise"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Peintre en bâtiment"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single paint roller"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

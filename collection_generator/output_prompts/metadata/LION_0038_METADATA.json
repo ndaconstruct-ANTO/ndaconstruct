@@ -1,0 +1,52 @@
+{
+  "id": "LION-0038",
+  "name": "Lion #0038",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0038_FUR-WHITE_EYES-EMERALD_STYLE-PROFESSOR.png",
+  "species": "Lion cub",
+  "fur_color": "Pure White",
+  "eye_color_left": "Emerald Green",
+  "eye_color_right": "Emerald Green",
+  "style": "Professor",
+  "outfit": "tweed jacket with elbow patches and bow tie",
+  "headwear": "None",
+  "held_object": "Single book",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 44.65,
+  "seed": 2026006116,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Blanc pur"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Vert émeraude"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Vert émeraude"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Professeur"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single book"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

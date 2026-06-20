@@ -1,0 +1,52 @@
+{
+  "id": "LION-0065",
+  "name": "Lion #0065",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0065_FUR-TAN_EYES-ICEBLUE_STYLE-ARCHITECT.png",
+  "species": "Lion cub",
+  "fur_color": "Light Tan",
+  "eye_color_left": "Glacier Blue",
+  "eye_color_right": "Glacier Blue",
+  "style": "Architect",
+  "outfit": "smart blazer with turtleneck and slim trousers",
+  "headwear": "None",
+  "held_object": "Single rolled blueprint",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 44.1,
+  "seed": 2026006143,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Brun clair"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Bleu glacier"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu glacier"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Architecte"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single rolled blueprint"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

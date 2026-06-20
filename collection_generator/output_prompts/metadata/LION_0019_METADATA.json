@@ -1,0 +1,52 @@
+{
+  "id": "LION-0019",
+  "name": "Lion #0019",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0019_FUR-PURPLE_EYES-BLACKSHINE_STYLE-JUDGE.png",
+  "species": "Lion cub",
+  "fur_color": "Purple",
+  "eye_color_left": "Shiny Black",
+  "eye_color_right": "Shiny Black",
+  "style": "Judge",
+  "outfit": "judicial robe with white collar bands",
+  "headwear": "None",
+  "held_object": "Single gavel",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Rare",
+  "rarity_score": 65.05,
+  "seed": 2026006097,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Mauve"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Noir brillant"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Noir brillant"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Juge"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single gavel"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Rare"
+    }
+  ]
+}

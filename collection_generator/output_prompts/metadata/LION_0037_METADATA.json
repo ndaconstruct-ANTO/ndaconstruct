@@ -1,0 +1,52 @@
+{
+  "id": "LION-0037",
+  "name": "Lion #0037",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0037_FUR-ICE_EYES-ELECTRICBLUE_STYLE-GANGSTER.png",
+  "species": "Lion cub",
+  "fur_color": "Ice Blue",
+  "eye_color_left": "Electric Blue",
+  "eye_color_right": "Electric Blue",
+  "style": "Gangster",
+  "outfit": "oversized streetwear jacket, baggy trousers, gold chain",
+  "headwear": "Snapback cap (no logo)",
+  "held_object": "Single revolver",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 50.72,
+  "seed": 2026006115,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Bleu ice"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Bleu électrique"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu électrique"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Gangster"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single revolver"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "LION-0073",
+  "name": "Lion #0073",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0073_FUR-GREY_EYES-SKYBLUE_STYLE-FISHERMAN.png",
+  "species": "Lion cub",
+  "fur_color": "Silver Grey",
+  "eye_color_left": "Sky Blue",
+  "eye_color_right": "Sky Blue",
+  "style": "Fisherman",
+  "outfit": "yellow waterproof raincoat with overalls",
+  "headwear": "Fisherman rain hat",
+  "held_object": "Single fishing rod",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 41.35,
+  "seed": 2026006151,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Gris"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Bleu ciel"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu ciel"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Pêcheur"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single fishing rod"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

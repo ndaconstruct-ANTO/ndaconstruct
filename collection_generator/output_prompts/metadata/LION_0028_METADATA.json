@@ -1,0 +1,52 @@
+{
+  "id": "LION-0028",
+  "name": "Lion #0028",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0028_FUR-GOLD_EYES-YELLOW_STYLE-POLICE.png",
+  "species": "Lion cub",
+  "fur_color": "Gold",
+  "eye_color_left": "Yellow",
+  "eye_color_right": "Sky Blue",
+  "style": "Police Officer",
+  "outfit": "police uniform with badge and utility belt",
+  "headwear": "Police cap",
+  "held_object": "Single pair of handcuffs",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Rare",
+  "rarity_score": 74.09,
+  "seed": 2026006106,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Or"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Jaune"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu ciel"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Policier"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single pair of handcuffs"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Oui"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Rare"
+    }
+  ]
+}

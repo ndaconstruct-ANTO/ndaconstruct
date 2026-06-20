@@ -1,0 +1,52 @@
+{
+  "id": "LION-0072",
+  "name": "Lion #0072",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0072_FUR-GREY_EYES-ELECTRICBLUE_STYLE-DOCTOR.png",
+  "species": "Lion cub",
+  "fur_color": "Silver Grey",
+  "eye_color_left": "Electric Blue",
+  "eye_color_right": "Electric Blue",
+  "style": "Doctor",
+  "outfit": "white medical coat over a shirt",
+  "headwear": "None",
+  "held_object": "Single stethoscope",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 43.55,
+  "seed": 2026006150,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Gris"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Bleu électrique"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu électrique"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Médecin"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single stethoscope"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

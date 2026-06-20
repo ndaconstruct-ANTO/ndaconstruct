@@ -1,0 +1,52 @@
+{
+  "id": "LION-0026",
+  "name": "Lion #0026",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0026_FUR-TAN_EYES-WHITEGLOW_STYLE-BARBARIAN.png",
+  "species": "Lion cub",
+  "fur_color": "Light Tan",
+  "eye_color_left": "Glowing White",
+  "eye_color_right": "Glowing White",
+  "style": "Barbarian",
+  "outfit": "fur-and-leather barbarian garb with bone ornaments",
+  "headwear": "Fur hood",
+  "held_object": "Single great axe",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Rare",
+  "rarity_score": 67.25,
+  "seed": 2026006104,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Brun clair"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Blanc lumineux"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Blanc lumineux"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Barbare"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single great axe"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Rare"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "LION-0042",
+  "name": "Lion #0042",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0042_FUR-BLACK_EYES-RED_STYLE-BIKER.png",
+  "species": "Lion cub",
+  "fur_color": "Deep Black",
+  "eye_color_left": "Red",
+  "eye_color_right": "Emerald Green",
+  "style": "Biker",
+  "outfit": "heavy leather biker jacket with patches and gloves",
+  "headwear": "Open-face biker helmet",
+  "held_object": "Single metal chain",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Rare",
+  "rarity_score": 76.3,
+  "seed": 2026006120,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Noir profond"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Vert émeraude"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Biker"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single metal chain"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Oui"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Rare"
+    }
+  ]
+}

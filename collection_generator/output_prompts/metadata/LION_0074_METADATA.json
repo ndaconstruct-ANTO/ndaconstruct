@@ -1,0 +1,52 @@
+{
+  "id": "LION-0074",
+  "name": "Lion #0074",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0074_FUR-GREEN_EYES-NIGHTBLUE_STYLE-PILOT.png",
+  "species": "Lion cub",
+  "fur_color": "Green",
+  "eye_color_left": "Night Blue",
+  "eye_color_right": "Night Blue",
+  "style": "Pilot",
+  "outfit": "airline pilot uniform with epaulettes and tie",
+  "headwear": "Pilot cap",
+  "held_object": "Single aviator sunglasses",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Rare",
+  "rarity_score": 67.81,
+  "seed": 2026006152,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Vert"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Bleu nuit"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu nuit"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Pilote"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single aviator sunglasses"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Rare"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "LION-0095",
+  "name": "Lion #0095",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0095_FUR-GREEN_EYES-ICEBLUE_STYLE-MAGICIAN.png",
+  "species": "Lion cub",
+  "fur_color": "Green",
+  "eye_color_left": "Glacier Blue",
+  "eye_color_right": "Glacier Blue",
+  "style": "Stage Magician",
+  "outfit": "elegant tailcoat with bow tie and cape",
+  "headwear": "Top hat",
+  "held_object": "Single magic wand",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Rare",
+  "rarity_score": 66.7,
+  "seed": 2026006173,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Vert"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Bleu glacier"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu glacier"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Magicien"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single magic wand"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Rare"
+    }
+  ]
+}

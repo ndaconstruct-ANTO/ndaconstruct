@@ -1,0 +1,102 @@
+id,name,image,fur,eye_left,eye_right,style,object,heterochromia,rarity,rarity_score,seed
+LION-0001,Lion #0001,LION_0001_FUR-WHITE_EYES-AMBER_STYLE-BUSINESSMAN.png,Blanc pur,Ambre,Ambre,Homme d'affaires,Single briefcase,False,Common,27.01,2026006079
+LION-0002,Lion #0002,LION_0002_FUR-WHITE_EYES-ORANGE_STYLE-HOUSEPAINTER.png,Blanc pur,Orange,Orange,Peintre en bâtiment,Single paint roller,False,Common,39.14,2026006080
+LION-0003,Lion #0003,LION_0003_FUR-RED_EYES-VIOLET_STYLE-GRAFFITI.png,Rouge,Violet,Violet,Graffeur,Single spray can,False,Common,36.38,2026006081
+LION-0004,Lion #0004,LION_0004_FUR-GOLD_EYES-NIGHTBLUE_STYLE-RASTA.png,Or,Bleu nuit,Bleu nuit,Rasta,Single djembe drum,False,Uncommon,57.88,2026006082
+LION-0005,Lion #0005,LION_0005_FUR-WHITE_EYES-YELLOW_STYLE-FIREHERO.png,Blanc pur,Jaune,Jaune,Personnage de feu,Single flame sword,False,Uncommon,43.55,2026006083
+LION-0006,Lion #0006,LION_0006_FUR-GOLD_EYES-ICEBLUE_STYLE-FARMER.png,Or,Bleu glacier,Bleu glacier,Fermier,Single pitchfork,False,Uncommon,52.37,2026006084
+LION-0007,Lion #0007,LION_0007_FUR-TAN_EYES-SILVER_STYLE-SKATER.png,Brun clair,Argent,Argent,Skateur,Single skateboard,False,Uncommon,45.2,2026006085
+LION-0008,Lion #0008,LION_0008_FUR-PURPLE_EYES-EMERALD_STYLE-CARDINAL.png,Mauve,Vert émeraude,Vert émeraude,Cardinal,Single rosary,False,Uncommon,52.92,2026006086
+LION-0009,Lion #0009,LION_0009_FUR-GREY_EYES-VIOLET_STYLE-STREETGANG.png,Gris,Violet,Violet,Street gang,Single baseball bat,False,Uncommon,44.65,2026006087
+LION-0010,Lion #0010,LION_0010_FUR-GREEN_EYES-AMBER_STYLE-FIREFIGHTER.png,Vert,Ambre,Ambre,Pompier,Single fire axe,False,Uncommon,43.55,2026006088
+LION-0011,Lion #0011,LION_0011_FUR-WHITE_EYES-PINK_STYLE-BANKER.png,Blanc pur,Rose,Rose,Banquier,Single ledger book,False,Uncommon,40.24,2026006089
+LION-0012,Lion #0012,LION_0012_FUR-PURPLE_EYES-NIGHTBLUE_STYLE-RACER.png,Mauve,Bleu nuit,Bleu nuit,Pilote de course,Single racing helmet,False,Uncommon,59.54,2026006090
+LION-0013,Lion #0013,LION_0013_FUR-TAN_EYES-AMBER_STYLE-JUDGE.png,Brun clair,Ambre,Bleu nuit,Juge,Single gavel,True,Uncommon,61.96,2026006091
+LION-0014,Lion #0014,LION_0014_FUR-WHITE_EYES-VIOLET_STYLE-TEMPLAR.png,Blanc pur,Violet,Violet,Templier,Single longsword,False,Uncommon,54.58,2026006092
+LION-0015,Lion #0015,LION_0015_FUR-WHITE_EYES-YELLOW_STYLE-SAILOR.png,Blanc pur,Jaune,Jaune,Marin,Single rope coil,False,Common,34.73,2026006093
+LION-0016,Lion #0016,LION_0016_FUR-ICE_EYES-ORANGE_STYLE-DJ.png,Bleu ice,Orange,Orange,DJ,Single vinyl record,False,Uncommon,40.79,2026006094
+LION-0017,Lion #0017,LION_0017_FUR-PURPLE_EYES-FLAME_STYLE-SKATER.png,Mauve,Flamme,Flamme,Skateur,Single skateboard,False,Uncommon,50.72,2026006095
+LION-0018,Lion #0018,LION_0018_FUR-GREY_EYES-TURQUOISE_STYLE-FARMER.png,Gris,Turquoise,Turquoise,Fermier,Single pitchfork,False,Common,39.14,2026006096
+LION-0019,Lion #0019,LION_0019_FUR-PURPLE_EYES-BLACKSHINE_STYLE-JUDGE.png,Mauve,Noir brillant,Noir brillant,Juge,Single gavel,False,Rare,65.05,2026006097
+LION-0020,Lion #0020,LION_0020_FUR-BLACK_EYES-SKYBLUE_STYLE-PLUMBER.png,Noir profond,Bleu ciel,Bleu ciel,Plombier,Single pipe wrench,False,Uncommon,40.79,2026006098
+LION-0021,Lion #0021,LION_0021_FUR-GREY_EYES-AMBER_STYLE-LAWYER.png,Gris,Ambre,Ambre,Avocat,Single legal folder,False,Common,21.5,2026006099
+LION-0022,Lion #0022,LION_0022_FUR-TAN_EYES-YELLOW_STYLE-PLUMBER.png,Brun clair,Jaune,Jaune,Plombier,Single pipe wrench,False,Common,37.49,2026006100
+LION-0023,Lion #0023,LION_0023_FUR-RED_EYES-AMBER_STYLE-FUTURISTIC.png,Rouge,Ambre,Ambre,Personnage futuriste,Single energy orb,False,Common,17.64,2026006101
+LION-0024,Lion #0024,LION_0024_FUR-RED_EYES-GOLD_STYLE-ARCHITECT.png,Rouge,Doré,Doré,Architecte,Single rolled blueprint,False,Uncommon,44.1,2026006102
+LION-0025,Lion #0025,LION_0025_FUR-GOLD_EYES-AMBER_STYLE-FOOTBALLER.png,Or,Ambre,Ambre,Footballeur,Single football ball,False,Common,33.63,2026006103
+LION-0026,Lion #0026,LION_0026_FUR-TAN_EYES-WHITEGLOW_STYLE-BARBARIAN.png,Brun clair,Blanc lumineux,Blanc lumineux,Barbare,Single great axe,False,Rare,67.25,2026006104
+LION-0027,Lion #0027,LION_0027_FUR-WHITE_EYES-YELLOW_STYLE-PLUMBER.png,Blanc pur,Jaune,Jaune,Plombier,Single pipe wrench,False,Common,34.73,2026006105
+LION-0028,Lion #0028,LION_0028_FUR-GOLD_EYES-YELLOW_STYLE-POLICE.png,Or,Jaune,Bleu ciel,Policier,Single pair of handcuffs,True,Rare,74.09,2026006106
+LION-0029,Lion #0029,LION_0029_FUR-GREY_EYES-SKYBLUE_STYLE-SKATER.png,Gris,Bleu ciel,Bleu ciel,Skateur,Single skateboard,False,Common,23.7,2026006107
+LION-0030,Lion #0030,LION_0030_FUR-BLACK_EYES-PINK_STYLE-SAILOR.png,Noir profond,Rose,Rose,Marin,Single rope coil,False,Uncommon,47.41,2026006108
+LION-0031,Lion #0031,LION_0031_FUR-GREY_EYES-ICEBLUE_STYLE-SAILOR.png,Gris,Bleu glacier,Bleu glacier,Marin,Single rope coil,False,Common,35.83,2026006109
+LION-0032,Lion #0032,LION_0032_FUR-GREY_EYES-COSMIC_STYLE-BOXER.png,Gris,Cosmique,Cosmique,Boxeur,Single pair of boxing gloves,False,Uncommon,55.68,2026006110
+LION-0033,Lion #0033,LION_0033_FUR-GOLD_EYES-NIGHTBLUE_STYLE-NURSE.png,Or,Bleu nuit,Bleu nuit,Infirmier,Single clipboard,False,Uncommon,44.65,2026006111
+LION-0034,Lion #0034,LION_0034_FUR-TAN_EYES-YELLOW_STYLE-SHERIFF.png,Brun clair,Jaune,Jaune,Shérif,Single sheriff badge,False,Uncommon,50.72,2026006112
+LION-0035,Lion #0035,LION_0035_FUR-GREY_EYES-PINK_STYLE-SKATER.png,Gris,Rose,Rose,Skateur,Single skateboard,False,Common,30.32,2026006113
+LION-0036,Lion #0036,LION_0036_FUR-BLACK_EYES-SILVER_STYLE-POLICE.png,Noir profond,Argent,Argent,Policier,Single pair of handcuffs,False,Uncommon,58.43,2026006114
+LION-0037,Lion #0037,LION_0037_FUR-ICE_EYES-ELECTRICBLUE_STYLE-GANGSTER.png,Bleu ice,Bleu électrique,Bleu électrique,Gangster,Single revolver,False,Uncommon,50.72,2026006115
+LION-0038,Lion #0038,LION_0038_FUR-WHITE_EYES-EMERALD_STYLE-PROFESSOR.png,Blanc pur,Vert émeraude,Vert émeraude,Professeur,Single book,False,Uncommon,44.65,2026006116
+LION-0039,Lion #0039,LION_0039_FUR-WHITE_EYES-TURQUOISE_STYLE-BANKER.png,Blanc pur,Turquoise,Turquoise,Banquier,Single ledger book,False,Uncommon,40.24,2026006117
+LION-0040,Lion #0040,LION_0040_FUR-BLACK_EYES-COSMIC_STYLE-SURGEON.png,Noir profond,Cosmique,Cosmique,Chirurgien,Single scalpel,False,Uncommon,59.54,2026006118
+LION-0041,Lion #0041,LION_0041_FUR-RED_EYES-AMBER_STYLE-NURSE.png,Rouge,Ambre,Ambre,Infirmier,Single clipboard,False,Common,0.0,2026006119
+LION-0042,Lion #0042,LION_0042_FUR-BLACK_EYES-RED_STYLE-BIKER.png,Noir profond,Rouge,Vert émeraude,Biker,Single metal chain,True,Rare,76.3,2026006120
+LION-0043,Lion #0043,LION_0043_FUR-ICE_EYES-SKYBLUE_STYLE-SKATER.png,Bleu ice,Bleu ciel,Bleu ciel,Skateur,Single skateboard,False,Common,26.46,2026006121
+LION-0044,Lion #0044,LION_0044_FUR-RED_EYES-PINK_STYLE-LAWYER.png,Rouge,Rose,Rose,Avocat,Single legal folder,False,Common,39.69,2026006122
+LION-0045,Lion #0045,LION_0045_FUR-GOLD_EYES-ELECTRICBLUE_STYLE-SECRETAGENT.png,Or,Bleu électrique,Bleu électrique,Agent secret,Single pistol,False,Uncommon,60.09,2026006123
+LION-0046,Lion #0046,LION_0046_FUR-RED_EYES-FROST_STYLE-BANKER.png,Rouge,Givre,Givre,Banquier,Single ledger book,False,Common,39.69,2026006124
+LION-0047,Lion #0047,LION_0047_FUR-RED_EYES-NEONGREEN_STYLE-FIREFIGHTER.png,Rouge,Vert néon,Vert néon,Pompier,Single fire axe,False,Uncommon,46.31,2026006125
+LION-0048,Lion #0048,LION_0048_FUR-WHITE_EYES-EMERALD_STYLE-ELECTRICIAN.png,Blanc pur,Vert émeraude,Vert émeraude,Électricien,Single insulated screwdriver,False,Uncommon,40.24,2026006126
+LION-0049,Lion #0049,LION_0049_FUR-PURPLE_EYES-NEONGREEN_STYLE-FOOTBALLER.png,Mauve,Vert néon,Vert néon,Footballeur,Single football ball,False,Uncommon,63.95,2026006127
+LION-0050,Lion #0050,LION_0050_FUR-BLACK_EYES-ELECTRICBLUE_STYLE-BUSINESSMAN.png,Noir profond,Bleu électrique,Bleu électrique,Homme d'affaires,Single briefcase,False,Uncommon,56.23,2026006128
+LION-0051,Lion #0051,LION_0051_FUR-RED_EYES-WHITEGLOW_STYLE-FIREHERO.png,Rouge,Blanc lumineux,Blanc lumineux,Personnage de feu,Single flame sword,False,Uncommon,46.31,2026006129
+LION-0052,Lion #0052,LION_0052_FUR-TAN_EYES-ORANGE_STYLE-SECRETAGENT.png,Brun clair,Orange,Orange,Agent secret,Single pistol,False,Uncommon,41.9,2026006130
+LION-0053,Lion #0053,LION_0053_FUR-RED_EYES-RED_STYLE-MUMMY.png,Rouge,Rouge,Rouge,Momie,Single ankh staff,False,Uncommon,44.1,2026006131
+LION-0054,Lion #0054,LION_0054_FUR-BLACK_EYES-AMBER_STYLE-NURSE.png,Noir profond,Ambre,Ambre,Infirmier,Single clipboard,False,Common,16.54,2026006132
+LION-0055,Lion #0055,LION_0055_FUR-PURPLE_EYES-VIOLET_STYLE-DOCTOR.png,Mauve,Violet,Violet,Médecin,Single stethoscope,False,Uncommon,54.02,2026006133
+LION-0056,Lion #0056,LION_0056_FUR-GREY_EYES-TURQUOISE_STYLE-HOUSEPAINTER.png,Gris,Turquoise,Turquoise,Peintre en bâtiment,Single paint roller,False,Uncommon,43.55,2026006134
+LION-0057,Lion #0057,LION_0057_FUR-GREY_EYES-NIGHTBLUE_STYLE-DOCTOR.png,Gris,Bleu nuit,Bleu nuit,Médecin,Single stethoscope,False,Common,36.93,2026006135
+LION-0058,Lion #0058,LION_0058_FUR-ICE_EYES-PINK_STYLE-FARMER.png,Bleu ice,Rose,Rose,Fermier,Single pitchfork,False,Uncommon,41.9,2026006136
+LION-0059,Lion #0059,LION_0059_FUR-ICE_EYES-YELLOW_STYLE-SAILOR.png,Bleu ice,Jaune,Jaune,Marin,Single rope coil,False,Common,31.97,2026006137
+LION-0060,Lion #0060,LION_0060_FUR-RED_EYES-TURQUOISE_STYLE-ELECTRICIAN.png,Rouge,Turquoise,Turquoise,Électricien,Single insulated screwdriver,False,Common,39.69,2026006138
+LION-0061,Lion #0061,LION_0061_FUR-WHITE_EYES-BLACKSHINE_STYLE-POLICE.png,Blanc pur,Noir brillant,Noir brillant,Policier,Single pair of handcuffs,False,Uncommon,52.37,2026006139
+LION-0062,Lion #0062,LION_0062_FUR-GREEN_EYES-ELECTRICBLUE_STYLE-GANGSTER.png,Vert,Bleu électrique,Bleu électrique,Gangster,Single revolver,False,Rare,70.01,2026006140
+LION-0063,Lion #0063,LION_0063_FUR-GOLD_EYES-COSMIC_STYLE-ROCKER.png,Or,Cosmique,Cosmique,Rockeur,Single electric guitar,False,Legendary,72.22,2026006141
+LION-0064,Lion #0064,LION_0064_FUR-RED_EYES-ORANGE_STYLE-PIRATE.png,Rouge,Orange,Orange,Pirate,Single cutlass sabre,False,Common,29.77,2026006142
+LION-0065,Lion #0065,LION_0065_FUR-TAN_EYES-ICEBLUE_STYLE-ARCHITECT.png,Brun clair,Bleu glacier,Bleu glacier,Architecte,Single rolled blueprint,False,Uncommon,44.1,2026006143
+LION-0066,Lion #0066,LION_0066_FUR-TAN_EYES-RED_STYLE-SECRETAGENT.png,Brun clair,Rouge,Rouge,Agent secret,Single pistol,False,Uncommon,51.82,2026006144
+LION-0067,Lion #0067,LION_0067_FUR-GOLD_EYES-EMERALD_STYLE-SKATER.png,Or,Vert émeraude,Vert émeraude,Skateur,Single skateboard,False,Common,33.63,2026006145
+LION-0068,Lion #0068,LION_0068_FUR-GREEN_EYES-NEONGREEN_STYLE-BAKER.png,Vert,Vert néon,Rouge,Boulanger,Single baguette,True,Legendary,100.0,2026006146
+LION-0069,Lion #0069,LION_0069_FUR-BLACK_EYES-SILVER_STYLE-ARCHER.png,Noir profond,Argent,Argent,Archer,Single bow,False,Uncommon,62.84,2026006147
+LION-0070,Lion #0070,LION_0070_FUR-RED_EYES-BLACKSHINE_STYLE-ARCHITECT.png,Rouge,Noir brillant,Noir brillant,Architecte,Single rolled blueprint,False,Common,34.18,2026006148
+LION-0071,Lion #0071,LION_0071_FUR-BLACK_EYES-VIOLET_STYLE-MUSICIAN.png,Noir profond,Violet,Violet,Musicien,Single acoustic guitar,False,Uncommon,57.33,2026006149
+LION-0072,Lion #0072,LION_0072_FUR-GREY_EYES-ELECTRICBLUE_STYLE-DOCTOR.png,Gris,Bleu électrique,Bleu électrique,Médecin,Single stethoscope,False,Uncommon,43.55,2026006150
+LION-0073,Lion #0073,LION_0073_FUR-GREY_EYES-SKYBLUE_STYLE-FISHERMAN.png,Gris,Bleu ciel,Bleu ciel,Pêcheur,Single fishing rod,False,Uncommon,41.35,2026006151
+LION-0074,Lion #0074,LION_0074_FUR-GREEN_EYES-NIGHTBLUE_STYLE-PILOT.png,Vert,Bleu nuit,Bleu nuit,Pilote,Single aviator sunglasses,False,Rare,67.81,2026006152
+LION-0075,Lion #0075,LION_0075_FUR-ICE_EYES-AMBER_STYLE-SURGEON.png,Bleu ice,Ambre,Ambre,Chirurgien,Single scalpel,False,Common,24.26,2026006153
+LION-0076,Lion #0076,LION_0076_FUR-TAN_EYES-EMERALD_STYLE-FARMER.png,Brun clair,Vert émeraude,Vert émeraude,Fermier,Single pitchfork,False,Common,34.18,2026006154
+LION-0077,Lion #0077,LION_0077_FUR-ICE_EYES-NIGHTBLUE_STYLE-STREETGANG.png,Bleu ice,Bleu nuit,Bleu nuit,Street gang,Single baseball bat,False,Uncommon,44.1,2026006155
+LION-0078,Lion #0078,LION_0078_FUR-BLACK_EYES-COSMIC_STYLE-ARCHITECT.png,Noir profond,Cosmique,Cosmique,Architecte,Single rolled blueprint,False,Uncommon,50.72,2026006156
+LION-0079,Lion #0079,LION_0079_FUR-RED_EYES-ORANGE_STYLE-GRAFFITI.png,Rouge,Orange,Orange,Graffeur,Single spray can,False,Common,29.77,2026006157
+LION-0080,Lion #0080,LION_0080_FUR-PURPLE_EYES-ORANGE_STYLE-PLUMBER.png,Mauve,Orange,Orange,Plombier,Single pipe wrench,False,Uncommon,43.0,2026006158
+LION-0081,Lion #0081,LION_0081_FUR-BLACK_EYES-SKYBLUE_STYLE-FISHERMAN.png,Noir profond,Bleu ciel,Bleu ciel,Pêcheur,Single fishing rod,False,Uncommon,49.61,2026006159
+LION-0082,Lion #0082,LION_0082_FUR-PURPLE_EYES-RED_STYLE-MAGICIAN.png,Mauve,Rouge,Rouge,Magicien,Single magic wand,False,Uncommon,61.74,2026006160
+LION-0083,Lion #0083,LION_0083_FUR-TAN_EYES-EMERALD_STYLE-SURFER.png,Brun clair,Vert émeraude,Vert émeraude,Surfeur,Single surfboard,False,Uncommon,43.0,2026006161
+LION-0084,Lion #0084,LION_0084_FUR-TAN_EYES-WHITEGLOW_STYLE-HOUSEPAINTER.png,Brun clair,Blanc lumineux,Blanc lumineux,Peintre en bâtiment,Single paint roller,False,Uncommon,58.43,2026006162
+LION-0085,Lion #0085,LION_0085_FUR-ICE_EYES-ORANGE_STYLE-SCIENTIST.png,Bleu ice,Orange,Orange,Savant,Single test tube,False,Uncommon,45.2,2026006163
+LION-0086,Lion #0086,LION_0086_FUR-PURPLE_EYES-AMBER_STYLE-FOOTBALLER.png,Mauve,Ambre,Ambre,Footballeur,Single football ball,False,Common,30.87,2026006164
+LION-0087,Lion #0087,LION_0087_FUR-GREY_EYES-BLACKSHINE_STYLE-NURSE.png,Gris,Noir brillant,Noir brillant,Infirmier,Single clipboard,False,Common,38.04,2026006165
+LION-0088,Lion #0088,LION_0088_FUR-RED_EYES-VIOLET_STYLE-ZOMBIE.png,Rouge,Violet,Violet,Zombie,Single old lantern,False,Uncommon,40.79,2026006166
+LION-0089,Lion #0089,LION_0089_FUR-GREY_EYES-EMERALD_STYLE-SHAMAN.png,Gris,Vert émeraude,Vert émeraude,Chaman,Single wooden staff,False,Common,39.14,2026006167
+LION-0090,Lion #0090,LION_0090_FUR-ICE_EYES-FLAME_STYLE-MECHANIC.png,Bleu ice,Flamme,Bleu glacier,Mécanicien,Single wrench,True,Rare,79.05,2026006168
+LION-0091,Lion #0091,LION_0091_FUR-RED_EYES-AMBER_STYLE-RASTA.png,Rouge,Ambre,Ambre,Rasta,Single djembe drum,False,Common,13.23,2026006169
+LION-0092,Lion #0092,LION_0092_FUR-GREEN_EYES-AMBER_STYLE-ARCHER.png,Vert,Ambre,Ambre,Archer,Single bow,False,Uncommon,43.55,2026006170
+LION-0093,Lion #0093,LION_0093_FUR-ICE_EYES-SKYBLUE_STYLE-BANKER.png,Bleu ice,Bleu ciel,Bleu ciel,Banquier,Single ledger book,False,Common,30.87,2026006171
+LION-0094,Lion #0094,LION_0094_FUR-RED_EYES-TURQUOISE_STYLE-MASON.png,Rouge,Turquoise,Turquoise,Maçon,Single trowel,False,Uncommon,44.1,2026006172
+LION-0095,Lion #0095,LION_0095_FUR-GREEN_EYES-ICEBLUE_STYLE-MAGICIAN.png,Vert,Bleu glacier,Bleu glacier,Magicien,Single magic wand,False,Rare,66.7,2026006173
+LION-0096,Lion #0096,LION_0096_FUR-WHITE_EYES-YELLOW_STYLE-PIRATE.png,Blanc pur,Jaune,Jaune,Pirate,Single cutlass sabre,False,Uncommon,43.55,2026006174
+LION-0097,Lion #0097,LION_0097_FUR-RED_EYES-FLAME_STYLE-SURFER.png,Rouge,Flamme,Flamme,Surfeur,Single surfboard,False,Uncommon,46.31,2026006175
+LION-0098,Lion #0098,LION_0098_FUR-ICE_EYES-ICEBLUE_STYLE-BANKER.png,Bleu ice,Bleu glacier,Bleu glacier,Banquier,Single ledger book,False,Common,34.18,2026006176
+LION-0099,Lion #0099,LION_0099_FUR-ICE_EYES-AMBER_STYLE-DJ.png,Bleu ice,Ambre,Ambre,DJ,Single vinyl record,False,Common,24.26,2026006177
+LION-0100,Lion #0100,LION_0100_FUR-GREY_EYES-EMERALD_STYLE-MAFIA.png,Gris,Vert émeraude,Vert émeraude,Mafieux,Single cigar,False,Common,39.14,2026006178
+LION-0101,Lion #0101,LION_0101_FUR-ICE_EYES-ORANGE_STYLE-NURSE.png,Bleu ice,Orange,Orange,Infirmier,Single clipboard,False,Common,27.56,2026006179

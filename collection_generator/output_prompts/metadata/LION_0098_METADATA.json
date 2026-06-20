@@ -1,0 +1,52 @@
+{
+  "id": "LION-0098",
+  "name": "Lion #0098",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0098_FUR-ICE_EYES-ICEBLUE_STYLE-BANKER.png",
+  "species": "Lion cub",
+  "fur_color": "Ice Blue",
+  "eye_color_left": "Glacier Blue",
+  "eye_color_right": "Glacier Blue",
+  "style": "Banker",
+  "outfit": "pinstripe suit with vest and pocket square",
+  "headwear": "None",
+  "held_object": "Single ledger book",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 34.18,
+  "seed": 2026006176,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Bleu ice"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Bleu glacier"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu glacier"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Banquier"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single ledger book"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

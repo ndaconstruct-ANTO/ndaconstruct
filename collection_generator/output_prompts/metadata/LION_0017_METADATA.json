@@ -1,0 +1,52 @@
+{
+  "id": "LION-0017",
+  "name": "Lion #0017",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0017_FUR-PURPLE_EYES-FLAME_STYLE-SKATER.png",
+  "species": "Lion cub",
+  "fur_color": "Purple",
+  "eye_color_left": "Flame",
+  "eye_color_right": "Flame",
+  "style": "Skater",
+  "outfit": "baggy tee and shorts with knee pads",
+  "headwear": "Cap turned back",
+  "held_object": "Single skateboard",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 50.72,
+  "seed": 2026006095,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Mauve"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Flamme"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Flamme"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Skateur"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single skateboard"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

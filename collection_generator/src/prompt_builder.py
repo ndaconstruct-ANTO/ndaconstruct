@@ -82,9 +82,20 @@ class PromptBuilder:
     def build(self, combo: Combination) -> dict:
         """Retourne {positive, negative} pour une combinaison donnée."""
         resolution = f"{self.config.resolution} x {self.config.resolution} pixels"
+        eye_name = combo.eye_left.name_en
+        if combo.heterochromia:
+            eye_name = f"{combo.eye_left.name_en} or {combo.eye_right.name_en}"
         replacements = {
             "[FUR_COLOR]": self._fur_text(combo.fur),
             "[EYE_COLOR]": self._eye_text(combo),
+            "[LEFT_EYE_COLOR]": combo.eye_left.name_en,
+            "[RIGHT_EYE_COLOR]": combo.eye_right.name_en,
+            "[FUR_NAME]": combo.fur.name_en,
+            "[EYE_NAME]": eye_name,
+            "[STYLE]": combo.style.name_en,
+            "[TOP]": f"a detailed {combo.style.name_en.lower()} upper garment",
+            "[BOTTOM]": f"matching trousers/pants fully covering the legs, suited to the "
+                        f"{combo.style.name_en.lower()} style",
             "[OUTFIT]": combo.style.outfit,
             "[HEADWEAR]": self._headwear_text(combo.style),
             "[SHOES]": shoe_description(combo.style),

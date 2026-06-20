@@ -1,0 +1,52 @@
+{
+  "id": "LION-0043",
+  "name": "Lion #0043",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0043_FUR-ICE_EYES-SKYBLUE_STYLE-SKATER.png",
+  "species": "Lion cub",
+  "fur_color": "Ice Blue",
+  "eye_color_left": "Sky Blue",
+  "eye_color_right": "Sky Blue",
+  "style": "Skater",
+  "outfit": "baggy tee and shorts with knee pads",
+  "headwear": "Cap turned back",
+  "held_object": "Single skateboard",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 26.46,
+  "seed": 2026006121,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Bleu ice"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Bleu ciel"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu ciel"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Skateur"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single skateboard"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

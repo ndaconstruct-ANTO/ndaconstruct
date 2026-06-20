@@ -1,0 +1,52 @@
+{
+  "id": "LION-0068",
+  "name": "Lion #0068",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0068_FUR-GREEN_EYES-NEONGREEN_STYLE-BAKER.png",
+  "species": "Lion cub",
+  "fur_color": "Green",
+  "eye_color_left": "Neon Green",
+  "eye_color_right": "Red",
+  "style": "Baker",
+  "outfit": "flour-dusted apron over a rolled-sleeve shirt",
+  "headwear": "Soft baker cap",
+  "held_object": "Single baguette",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Legendary",
+  "rarity_score": 100.0,
+  "seed": 2026006146,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Vert"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Vert néon"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Boulanger"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single baguette"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Oui"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Legendary"
+    }
+  ]
+}

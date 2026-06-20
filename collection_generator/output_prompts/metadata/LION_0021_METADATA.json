@@ -1,0 +1,52 @@
+{
+  "id": "LION-0021",
+  "name": "Lion #0021",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0021_FUR-GREY_EYES-AMBER_STYLE-LAWYER.png",
+  "species": "Lion cub",
+  "fur_color": "Silver Grey",
+  "eye_color_left": "Amber",
+  "eye_color_right": "Amber",
+  "style": "Lawyer",
+  "outfit": "formal black robe over a suit",
+  "headwear": "None",
+  "held_object": "Single legal folder",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 21.5,
+  "seed": 2026006099,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Gris"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Avocat"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single legal folder"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

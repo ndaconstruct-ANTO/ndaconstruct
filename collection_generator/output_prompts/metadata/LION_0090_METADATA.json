@@ -1,0 +1,52 @@
+{
+  "id": "LION-0090",
+  "name": "Lion #0090",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0090_FUR-ICE_EYES-FLAME_STYLE-MECHANIC.png",
+  "species": "Lion cub",
+  "fur_color": "Ice Blue",
+  "eye_color_left": "Flame",
+  "eye_color_right": "Glacier Blue",
+  "style": "Mechanic",
+  "outfit": "greasy work overalls with name patch and rag",
+  "headwear": "None",
+  "held_object": "Single wrench",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Rare",
+  "rarity_score": 79.05,
+  "seed": 2026006168,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Bleu ice"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Flamme"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Bleu glacier"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Mécanicien"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single wrench"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Oui"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Rare"
+    }
+  ]
+}

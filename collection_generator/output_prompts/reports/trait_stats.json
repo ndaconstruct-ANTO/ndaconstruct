@@ -1,0 +1,341 @@
+{
+  "total": 101,
+  "traits": {
+    "fur": {
+      "Rouge": {
+        "count": 17,
+        "percent": 16.83
+      },
+      "Gris": {
+        "count": 14,
+        "percent": 13.86
+      },
+      "Bleu ice": {
+        "count": 13,
+        "percent": 12.87
+      },
+      "Blanc pur": {
+        "count": 12,
+        "percent": 11.88
+      },
+      "Brun clair": {
+        "count": 11,
+        "percent": 10.89
+      },
+      "Noir profond": {
+        "count": 11,
+        "percent": 10.89
+      },
+      "Mauve": {
+        "count": 9,
+        "percent": 8.91
+      },
+      "Or": {
+        "count": 8,
+        "percent": 7.92
+      },
+      "Vert": {
+        "count": 6,
+        "percent": 5.94
+      }
+    },
+    "eyes": {
+      "Ambre": {
+        "count": 13,
+        "percent": 12.26
+      },
+      "Vert émeraude": {
+        "count": 9,
+        "percent": 8.49
+      },
+      "Orange": {
+        "count": 8,
+        "percent": 7.55
+      },
+      "Jaune": {
+        "count": 8,
+        "percent": 7.55
+      },
+      "Bleu nuit": {
+        "count": 7,
+        "percent": 6.6
+      },
+      "Bleu ciel": {
+        "count": 7,
+        "percent": 6.6
+      },
+      "Violet": {
+        "count": 6,
+        "percent": 5.66
+      },
+      "Bleu glacier": {
+        "count": 6,
+        "percent": 5.66
+      },
+      "Rose": {
+        "count": 5,
+        "percent": 4.72
+      },
+      "Turquoise": {
+        "count": 5,
+        "percent": 4.72
+      },
+      "Bleu électrique": {
+        "count": 5,
+        "percent": 4.72
+      },
+      "Rouge": {
+        "count": 5,
+        "percent": 4.72
+      },
+      "Noir brillant": {
+        "count": 4,
+        "percent": 3.77
+      },
+      "Cosmique": {
+        "count": 4,
+        "percent": 3.77
+      },
+      "Argent": {
+        "count": 3,
+        "percent": 2.83
+      },
+      "Flamme": {
+        "count": 3,
+        "percent": 2.83
+      },
+      "Blanc lumineux": {
+        "count": 3,
+        "percent": 2.83
+      },
+      "Vert néon": {
+        "count": 3,
+        "percent": 2.83
+      },
+      "Doré": {
+        "count": 1,
+        "percent": 0.94
+      },
+      "Givre": {
+        "count": 1,
+        "percent": 0.94
+      }
+    },
+    "style": {
+      "Skateur": {
+        "count": 6,
+        "percent": 5.94
+      },
+      "Banquier": {
+        "count": 5,
+        "percent": 4.95
+      },
+      "Infirmier": {
+        "count": 5,
+        "percent": 4.95
+      },
+      "Fermier": {
+        "count": 4,
+        "percent": 3.96
+      },
+      "Marin": {
+        "count": 4,
+        "percent": 3.96
+      },
+      "Plombier": {
+        "count": 4,
+        "percent": 3.96
+      },
+      "Architecte": {
+        "count": 4,
+        "percent": 3.96
+      },
+      "Peintre en bâtiment": {
+        "count": 3,
+        "percent": 2.97
+      },
+      "Footballeur": {
+        "count": 3,
+        "percent": 2.97
+      },
+      "Policier": {
+        "count": 3,
+        "percent": 2.97
+      },
+      "Agent secret": {
+        "count": 3,
+        "percent": 2.97
+      },
+      "Médecin": {
+        "count": 3,
+        "percent": 2.97
+      },
+      "Homme d'affaires": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Graffeur": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Rasta": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Personnage de feu": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Street gang": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Pompier": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Juge": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "DJ": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Avocat": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Gangster": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Chirurgien": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Électricien": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Pirate": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Archer": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Pêcheur": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Magicien": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Surfeur": {
+        "count": 2,
+        "percent": 1.98
+      },
+      "Cardinal": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Pilote de course": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Templier": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Personnage futuriste": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Barbare": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Boxeur": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Shérif": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Professeur": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Biker": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Momie": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Rockeur": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Boulanger": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Musicien": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Pilote": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Savant": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Zombie": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Chaman": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Mécanicien": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Maçon": {
+        "count": 1,
+        "percent": 0.99
+      },
+      "Mafieux": {
+        "count": 1,
+        "percent": 0.99
+      }
+    }
+  },
+  "rarity_tiers": {
+    "Uncommon": {
+      "count": 55,
+      "percent": 54.46
+    },
+    "Common": {
+      "count": 36,
+      "percent": 35.64
+    },
+    "Rare": {
+      "count": 8,
+      "percent": 7.92
+    },
+    "Legendary": {
+      "count": 2,
+      "percent": 1.98
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "LION-0088",
+  "name": "Lion #0088",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0088_FUR-RED_EYES-VIOLET_STYLE-ZOMBIE.png",
+  "species": "Lion cub",
+  "fur_color": "Red",
+  "eye_color_left": "Violet",
+  "eye_color_right": "Violet",
+  "style": "Zombie",
+  "outfit": "torn ragged clothes with dusty stains",
+  "headwear": "None",
+  "held_object": "Single old lantern",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 40.79,
+  "seed": 2026006166,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Violet"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Violet"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Zombie"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single old lantern"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

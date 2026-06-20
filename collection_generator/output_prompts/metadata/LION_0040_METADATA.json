@@ -1,0 +1,52 @@
+{
+  "id": "LION-0040",
+  "name": "Lion #0040",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0040_FUR-BLACK_EYES-COSMIC_STYLE-SURGEON.png",
+  "species": "Lion cub",
+  "fur_color": "Deep Black",
+  "eye_color_left": "Cosmic",
+  "eye_color_right": "Cosmic",
+  "style": "Surgeon",
+  "outfit": "surgical scrubs with gown and gloves",
+  "headwear": "Surgical cap and mask down on neck",
+  "held_object": "Single scalpel",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 59.54,
+  "seed": 2026006118,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Noir profond"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Cosmique"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Cosmique"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Chirurgien"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single scalpel"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

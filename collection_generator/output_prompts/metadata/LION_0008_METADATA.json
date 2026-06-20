@@ -1,0 +1,52 @@
+{
+  "id": "LION-0008",
+  "name": "Lion #0008",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0008_FUR-PURPLE_EYES-EMERALD_STYLE-CARDINAL.png",
+  "species": "Lion cub",
+  "fur_color": "Purple",
+  "eye_color_left": "Emerald Green",
+  "eye_color_right": "Emerald Green",
+  "style": "Cardinal",
+  "outfit": "scarlet cardinal robe with embroidered details",
+  "headwear": "Red cardinal biretta",
+  "held_object": "Single rosary",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 52.92,
+  "seed": 2026006086,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Mauve"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Vert émeraude"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Vert émeraude"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Cardinal"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single rosary"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

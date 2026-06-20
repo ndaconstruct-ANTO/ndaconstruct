@@ -1,0 +1,52 @@
+{
+  "id": "LION-0010",
+  "name": "Lion #0010",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0010_FUR-GREEN_EYES-AMBER_STYLE-FIREFIGHTER.png",
+  "species": "Lion cub",
+  "fur_color": "Green",
+  "eye_color_left": "Amber",
+  "eye_color_right": "Amber",
+  "style": "Firefighter",
+  "outfit": "heavy firefighter turnout coat with reflective stripes",
+  "headwear": "Firefighter helmet",
+  "held_object": "Single fire axe",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 43.55,
+  "seed": 2026006088,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Vert"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Pompier"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single fire axe"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "LION-0070",
+  "name": "Lion #0070",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0070_FUR-RED_EYES-BLACKSHINE_STYLE-ARCHITECT.png",
+  "species": "Lion cub",
+  "fur_color": "Red",
+  "eye_color_left": "Shiny Black",
+  "eye_color_right": "Shiny Black",
+  "style": "Architect",
+  "outfit": "smart blazer with turtleneck and slim trousers",
+  "headwear": "None",
+  "held_object": "Single rolled blueprint",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 34.18,
+  "seed": 2026006148,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Noir brillant"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Noir brillant"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Architecte"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single rolled blueprint"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

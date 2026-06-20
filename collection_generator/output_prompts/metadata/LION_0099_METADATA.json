@@ -1,0 +1,52 @@
+{
+  "id": "LION-0099",
+  "name": "Lion #0099",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0099_FUR-ICE_EYES-AMBER_STYLE-DJ.png",
+  "species": "Lion cub",
+  "fur_color": "Ice Blue",
+  "eye_color_left": "Amber",
+  "eye_color_right": "Amber",
+  "style": "DJ",
+  "outfit": "streetwear hoodie with neon accents",
+  "headwear": "Large DJ headphones",
+  "held_object": "Single vinyl record",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 24.26,
+  "seed": 2026006177,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Bleu ice"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Style",
+      "value": "DJ"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single vinyl record"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

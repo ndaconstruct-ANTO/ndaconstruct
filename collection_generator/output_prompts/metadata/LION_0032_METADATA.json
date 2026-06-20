@@ -1,0 +1,52 @@
+{
+  "id": "LION-0032",
+  "name": "Lion #0032",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0032_FUR-GREY_EYES-COSMIC_STYLE-BOXER.png",
+  "species": "Lion cub",
+  "fur_color": "Silver Grey",
+  "eye_color_left": "Cosmic",
+  "eye_color_right": "Cosmic",
+  "style": "Boxer",
+  "outfit": "boxing shorts with hand wraps and a robe over the shoulders",
+  "headwear": "None",
+  "held_object": "Single pair of boxing gloves",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 55.68,
+  "seed": 2026006110,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Gris"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Cosmique"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Cosmique"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Boxeur"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single pair of boxing gloves"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

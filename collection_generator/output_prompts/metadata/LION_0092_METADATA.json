@@ -1,0 +1,52 @@
+{
+  "id": "LION-0092",
+  "name": "Lion #0092",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0092_FUR-GREEN_EYES-AMBER_STYLE-ARCHER.png",
+  "species": "Lion cub",
+  "fur_color": "Green",
+  "eye_color_left": "Amber",
+  "eye_color_right": "Amber",
+  "style": "Archer",
+  "outfit": "green ranger tunic with leather bracers and quiver",
+  "headwear": "Hooded ranger cap",
+  "held_object": "Single bow",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 43.55,
+  "seed": 2026006170,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Vert"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Archer"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single bow"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

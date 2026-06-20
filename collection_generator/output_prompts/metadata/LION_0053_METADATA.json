@@ -1,0 +1,52 @@
+{
+  "id": "LION-0053",
+  "name": "Lion #0053",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0053_FUR-RED_EYES-RED_STYLE-MUMMY.png",
+  "species": "Lion cub",
+  "fur_color": "Red",
+  "eye_color_left": "Red",
+  "eye_color_right": "Red",
+  "style": "Mummy",
+  "outfit": "aged wrapping bandages with a few golden ornaments",
+  "headwear": "Bandaged head wrap",
+  "held_object": "Single ankh staff",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 44.1,
+  "seed": 2026006131,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Momie"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single ankh staff"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

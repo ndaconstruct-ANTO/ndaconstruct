@@ -1,0 +1,52 @@
+{
+  "id": "LION-0091",
+  "name": "Lion #0091",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0091_FUR-RED_EYES-AMBER_STYLE-RASTA.png",
+  "species": "Lion cub",
+  "fur_color": "Red",
+  "eye_color_left": "Amber",
+  "eye_color_right": "Amber",
+  "style": "Rasta",
+  "outfit": "loose knitted vest with earthy colors",
+  "headwear": "Large knitted rasta hat",
+  "held_object": "Single djembe drum",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 13.23,
+  "seed": 2026006169,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Rasta"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single djembe drum"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}

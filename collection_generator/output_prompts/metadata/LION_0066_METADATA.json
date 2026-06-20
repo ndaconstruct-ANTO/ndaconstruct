@@ -1,0 +1,52 @@
+{
+  "id": "LION-0066",
+  "name": "Lion #0066",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0066_FUR-TAN_EYES-RED_STYLE-SECRETAGENT.png",
+  "species": "Lion cub",
+  "fur_color": "Light Tan",
+  "eye_color_left": "Red",
+  "eye_color_right": "Red",
+  "style": "Secret Agent",
+  "outfit": "sharp black tuxedo with bow tie",
+  "headwear": "None",
+  "held_object": "Single pistol",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Uncommon",
+  "rarity_score": 51.82,
+  "seed": 2026006144,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Brun clair"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Rouge"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Agent secret"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single pistol"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Uncommon"
+    }
+  ]
+}

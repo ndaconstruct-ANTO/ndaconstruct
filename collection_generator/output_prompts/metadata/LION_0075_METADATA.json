@@ -1,0 +1,52 @@
+{
+  "id": "LION-0075",
+  "name": "Lion #0075",
+  "collection": "LIONCEAUX NFT",
+  "description": "Collection de lionceaux uniques",
+  "image": "LION_0075_FUR-ICE_EYES-AMBER_STYLE-SURGEON.png",
+  "species": "Lion cub",
+  "fur_color": "Ice Blue",
+  "eye_color_left": "Amber",
+  "eye_color_right": "Amber",
+  "style": "Surgeon",
+  "outfit": "surgical scrubs with gown and gloves",
+  "headwear": "Surgical cap and mask down on neck",
+  "held_object": "Single scalpel",
+  "background": "Pure white",
+  "camera": "Front view",
+  "format": "1:1",
+  "rarity": "Common",
+  "rarity_score": 24.26,
+  "seed": 2026006153,
+  "prompt_version": "1.0",
+  "attributes": [
+    {
+      "trait_type": "Pelage",
+      "value": "Bleu ice"
+    },
+    {
+      "trait_type": "Yeux gauche",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Yeux droite",
+      "value": "Ambre"
+    },
+    {
+      "trait_type": "Style",
+      "value": "Chirurgien"
+    },
+    {
+      "trait_type": "Objet",
+      "value": "Single scalpel"
+    },
+    {
+      "trait_type": "Hétérochromie",
+      "value": "Non"
+    },
+    {
+      "trait_type": "Rareté",
+      "value": "Common"
+    }
+  ]
+}
